@@ -1,6 +1,4 @@
-.container {
-    padding: 4rem;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.container .offers {
+    width: 100%;
+    top: inherit;
 }
