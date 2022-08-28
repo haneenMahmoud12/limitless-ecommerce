@@ -15,6 +15,11 @@
     padding: 0;
 }
 
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
 body {
     font-family: 'Runda';
     font-style: normal;
