@@ -1,0 +1,16 @@
+.container {
+    width: inherit;
+    background-color: var(--color-primary);
+    position: relative;
+}
+
+.container .content {
+    width: inherit;
+    position: relative;
+}
+
+.container .content .info-window {
+    position: relative;
+    top: 183px;
+    width: 100%;
+}

@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    /* COLORS */
+    --color-primary: #ffffff;
+    --color-secondary: #F9FAFB;
+    --color-green: #2D906E;
+    --color-mint: #49C69B;
+    --color-lightMint: #3AC591;
+    --color-font1: #2D906E;
+    --color-font2: #5e5e5eb3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    font-family: 'Runda';
+    font-style: normal;
+    font-weight: 400;
+    color: var(--color-font1);
+    background-color: var(--color-primary);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+

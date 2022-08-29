@@ -1,0 +1,90 @@
+.container {
+    width: inherit;
+    /* position: relative; */
+    top: inherit;
+}
+
+.container .upper-cards {
+    position: relative;
+    width: 100%;
+    height: 842px;
+    background: linear-gradient(115.8deg, #000000 13.04%, rgba(0, 0, 0, 0.12) 53.01%);
+    opacity: 0.8;
+}
+
+.container .upper-cards img.img-active {
+    display: block;
+    width: 100%;
+    height: 842px;
+}
+
+.container .upper-cards img {
+    display: none;
+    /* width: 100%; */
+}
+
+.container .upper-cards .carousel-container {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    margin-bottom: 1rem;
+}
+
+.carousel {
+    cursor: pointer;
+    height: 5px;
+    width: 60px;
+    margin: 0 5px;
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    display: inline-block;
+    transition: opacity 0.6s ease;
+    opacity: 0.5;
+}
+
+.active,
+.carousel:hover {
+    opacity: 1;
+}
+
+
+.container .lower-cards {
+    position: relative;
+    margin-top: 5px;
+    width: 100%;
+    height: 328px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .lower-cards .offers-cards {
+    width: 33%;
+    background: linear-gradient(105.55deg, rgba(0, 0, 0, 0.8) 7.83%, rgba(0, 0, 0, 0.4) 73.45%);
+    mix-blend-mode: normal;
+}
+
+.container .lower-cards .offers-cards img {
+    width: 100%;
+    height: 328px;
+    display: block;
+    opacity: 0.5;
+}
+
+.container .lower-cards .offers-cards .details-container {
+    position: relative;
+    margin-top: -40%;
+}
+
+.container .lower-cards .offers-cards span {
+    font-size: 40px;
+    line-height: 52px;
+    color: var(--color-primary);
+    margin-left: 20px;
+    margin-right: 60px;
+    display: flex;
+    cursor: pointer;
+}

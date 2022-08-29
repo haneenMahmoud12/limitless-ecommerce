@@ -1,0 +1,19 @@
+<div class="container">
+    <div *ngIf="imgs && imgs.length>0" class="upper-cards">
+        <!-- <span class="today">TODAY</span>
+        <span class="best-offer">BEST OFFER</span> -->
+        <img *ngFor="let img of imgs;let i=index" [src]="img" [ngClass]="{'img-active':currentIndex===i}">
+        <div *ngIf="indicators" class="carousel-container">
+            <span class="carousel" *ngFor="let carousel of imgs; let i=index" [ngClass]="{'active':currentIndex===i}"
+                (click)="getImg(i)"></span>
+        </div>
+    </div>
+    <div class="lower-cards">
+        <div class="offers-cards" *ngFor="let offer of offers">
+            <img [src]="offer.img">
+            <div class="details-container">
+                <span class="details">{{offer.title}}</span>
+            </div>
+        </div>
+    </div>
+</div>
