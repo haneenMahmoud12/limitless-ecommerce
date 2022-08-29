@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import "~bootstrap/dist/css/bootstrap.css"; */
+
 :root {
     /* COLORS */
     --color-primary: #ffffff;
-    --color-secondary: #F9FAFB;
+    --color-secondary: #F8F9FA;
     --color-green: #2D906E;
     --color-mint: #49C69B;
     --color-lightMint: #3AC591;
@@ -31,5 +33,13 @@ body {
     background-repeat: no-repeat;
     min-height: 100vh;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

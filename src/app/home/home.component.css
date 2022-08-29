@@ -1,4 +1,10 @@
 .container .offers {
+    top: 183px;
     width: 100%;
     top: inherit;
+}
+
+.container .featured-category {
+    position: relative;
+    top: 4809px;
 }

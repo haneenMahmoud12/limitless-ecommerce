@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IOffer } from '../models/offers';
+import { AuthenticationService } from '../services/authentication.service';
+import { ShopService } from '../services/shop.service';
 
 @Component({
   selector: 'app-offers-carousel',
@@ -25,9 +27,15 @@ export class OffersCarouselComponent implements OnInit {
       title: `20% Discount`,
       img: `/assets/meds.jpg`
     }];
-  constructor() { }
+  constructor(private shopService: ShopService, private auth: AuthenticationService) { }
 
   ngOnInit(): void {
+    this.auth.login().subscribe({
+      next: (response) => {
+        console.log(response);
+      }
+    })
+
   }
   getImg(i: number): void {
     this.currentIndex = i;

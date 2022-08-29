@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 808px;
+    background-color: var(--color-secondary)
+}
+
+.container .title {
+    height: 52px;
+    left: 41.25%;
+    right: 40.73%;
+    font-size: 40px;
+    line-height: 52px;
+    text-align: center;
+    color: #161D25;
+}
+
+.container .subtitle {
+    left: 33.49%;
+    right: 33.49%;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+    text-align: center;
+    color: #5E5E5E;
+}
