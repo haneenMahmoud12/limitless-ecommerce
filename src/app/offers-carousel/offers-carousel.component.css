@@ -70,7 +70,10 @@
 .container .lower-cards .offers-cards img {
     width: 100%;
     height: 328px;
+<<<<<<< HEAD
     top: 1029px;
+=======
+>>>>>>> 8fb747f7d5594f20329b6cf1084b6b8c98dbc21f
     display: block;
     opacity: 0.5;
 }

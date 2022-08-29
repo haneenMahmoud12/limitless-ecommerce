@@ -7,4 +7,6 @@
 .container .featured-category {
     position: relative;
     top: 4809px;
+    width: 100%;
+    top: inherit;
 }
