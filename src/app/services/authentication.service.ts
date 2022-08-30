@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
-
+  ///LOGIN
   public login() {
     return this.http.post('https://limit-lessstaging.azurewebsites.net/webapi2/Customer/login',
       {

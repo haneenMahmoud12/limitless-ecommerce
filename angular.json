@@ -91,10 +91,7 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
-=======
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
->>>>>>> 8fb747f7d5594f20329b6cf1084b6b8c98dbc21f
               "src/styles.css"
             ],
             "scripts": []
@@ -103,8 +100,4 @@
       }
     }
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 8fb747f7d5594f20329b6cf1084b6b8c98dbc21f

@@ -1,10 +1,9 @@
-.container {
-    width: inherit;
-    /* position: relative; */
+.container .m-0 {
+    width: 100%;
     top: inherit;
 }
 
-.container .upper-cards {
+/* .container .upper-cards {
     position: relative;
     width: 100%;
     height: 842px;
@@ -16,13 +15,12 @@
     display: block;
     width: 100%;
     height: 842px;
-}
+} */
 
-.container .upper-cards img {
+/* .container .upper-cards img {
     display: none;
-    /* width: 100%; */
-}
-
+} */
+/* 
 .container .upper-cards .carousel-container {
     position: absolute;
     right: 0;
@@ -88,4 +86,4 @@
     margin-right: 60px;
     display: flex;
     cursor: pointer;
-}
+} */
