@@ -1,16 +1,21 @@
 .container {
+    height: 808px;
+    background-color: var(--color-secondary);
+    display: flex;
+    flex-direction: column;
+}
+
+.container .text {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 808px;
-    background-color: var(--color-secondary)
 }
 
 .container .title {
+    position: relative;
+    top: 61px;
     height: 52px;
-    left: 41.25%;
-    right: 40.73%;
     font-size: 40px;
     line-height: 52px;
     text-align: center;
@@ -18,11 +23,24 @@
 }
 
 .container .subtitle {
-    left: 33.49%;
-    right: 33.49%;
+    position: relative;
+    top: 70px;
     font-weight: 400;
     font-size: 20px;
     line-height: 22px;
     text-align: center;
     color: #5E5E5E;
+}
+
+.container .top-products {
+    position: relative;
+    top: 100px;
+    height: 420px;
+    background-color: var(--color-primary);
+}
+
+.container .btn {
+    position: relative;
+    top: 180px;
+    align-self: center;
 }
