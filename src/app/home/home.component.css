@@ -1,12 +1,9 @@
-.container .offers {
+.offers {
     position: relative;
-    top: 183px;
-    width: 100%;
     top: 183px;
 }
 
-.container .featured-category {
+.featured-category {
     position: relative;
     top: 4809px;
-    width: 100%;
 }

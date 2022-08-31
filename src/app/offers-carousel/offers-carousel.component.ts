@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IOffer } from '../models/offers';
 import { AuthenticationService } from '../services/authentication.service';
 import { ShopService } from '../services/shop.service';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-offers-carousel',

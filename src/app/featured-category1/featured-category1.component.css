@@ -1,46 +1,84 @@
-.container {
+.card {
     height: 808px;
     background-color: var(--color-secondary);
-    display: flex;
-    flex-direction: column;
+    border: none;
 }
 
-.container .text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.container .title {
+.card .content {
     position: relative;
-    top: 61px;
+    height: 415px;
+    background-color: var(--color-primary);
+    margin: 0px;
+    top: 30px;
+}
+
+.card-2 {
+    height: 826px;
+    background-color: var(--color-primary);
+    border: none;
+}
+
+.card button {
+    margin-top: 80px;
+}
+
+.card h1 {
     height: 52px;
+    margin-top: 30px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-style: normal;
+    font-weight: 700;
     font-size: 40px;
     line-height: 52px;
-    text-align: center;
+
     color: #161D25;
 }
 
-.container .subtitle {
-    position: relative;
-    top: 70px;
+.card h2 {
+    top: 54.63%;
+    bottom: 45.14%;
+    font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 22px;
-    text-align: center;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
     color: #5E5E5E;
 }
 
-.container .top-products {
-    position: relative;
-    top: 100px;
-    height: 420px;
-    background-color: var(--color-primary);
+.card-1 img {
+    width: 296px;
+    height: 266px;
 }
 
-.container .btn {
-    position: relative;
-    top: 180px;
-    align-self: center;
+.card-1 h4 {
+    margin-top: 10px;
+    margin-left: 13px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: #161D25;
+}
+
+.card-1 h5 {
+    margin-top: 10px;
+    margin-left: 13px;
+    font-style: normal;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: rgba(94, 94, 94, 0.7);
+}
+
+.card-1 h6 {
+    margin-top: 10px;
+    margin-left: 13px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 22px;
+    color: #3AC591;
 }

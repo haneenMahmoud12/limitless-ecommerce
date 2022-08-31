@@ -24,7 +24,6 @@ html {
 
 body {
     width: 100%;
-    font-family: 'Runda';
     font-style: normal;
     font-weight: 400;
     color: var(--color-font1);
@@ -32,17 +31,10 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
-}
-
-html,
-body {
-    height: 100%;
-}
-
-body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
 
 
 html,
@@ -50,12 +42,8 @@ body {
     height: 100%;
 }
 
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-}
 
-.btn {
+.btnStyle {
     border: 1px solid var(--color-lightMint);
     background-color: var(--color-secondary);
     border-radius: 8px;
