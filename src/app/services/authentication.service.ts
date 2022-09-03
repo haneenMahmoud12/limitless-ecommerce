@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ILoginData } from '../models/loginData';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient) { }
   ///LOGIN
   public login() {
-    return this.http.post('https://limit-lessstaging.azurewebsites.net/webapi2/Customer/login',
+    return this.http.post<ILoginData>('https://limit-lessstaging.azurewebsites.net/webapi2/Customer/login',
       {
         "osVersion": "12",
         "os": "android",
