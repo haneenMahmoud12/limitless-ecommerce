@@ -13,12 +13,17 @@ import { FeaturedCategory1Component } from './featured-category1/featured-catego
 import { SharedModule } from './shared/shared.module';
 import { AuthTokenInterceptor } from './auth-token.interceptor';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CartsModule } from './carts/carts.module';
+import { StepperComponent } from './stepper/stepper.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    FeaturedCategory1Component
+    FeaturedCategory1Component,
+    StepperComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HttpClientModule,
     SharedModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    CartsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

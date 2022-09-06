@@ -40,12 +40,12 @@ export class OffersCarouselComponent implements OnInit {
   constructor(private shopService: ShopService, private auth: AuthenticationService) { }
 
   ngOnInit(): void {
-    this.auth.login().subscribe({
-      next: (response) => {
-        this.loginData = response;
-        console.log(this.loginData);
-      }
-    })
+    // this.auth.login().subscribe({
+    //   next: (response) => {
+    //     this.loginData = response;
+    //     console.log(this.loginData);
+    //   }
+    // })
 
     // this.shopService.getHomePageSliderImgs(this.loginData.data.accessToken).subscribe({
     //   next: (response) => {

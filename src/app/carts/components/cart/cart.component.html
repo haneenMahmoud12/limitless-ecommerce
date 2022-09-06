@@ -1,9 +1,26 @@
 <div class="container-fluid p-5">
     <h1>Checkout</h1>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row row-cols-2">
             <div class="col">
-                <div class="card cart-items bg-white"></div>
+                <div class="card cart-items bg-white border-0">
+                    <ul class="list-group" *ngFor="let product of cart">
+                        <li class="list-group-item list-group-item-action border-0 d-flex p-4 ">
+                            <img [src]="product.img" alt="img">
+                            <div class="d-flex w-50 flex-column">
+                                <h1>{{product.name}}</h1>
+                                <h2>{{product.capsules}} Capsules</h2>
+                                <h3>EGP {{product.price}}</h3>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-text">-</span>
+                                <input type="text" class="form-control" value="1">
+                                <span class="input-group-text">+</span>
+                            </div>
+                            <hr>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="col">
                 <div class="card order-summary bg-white border-0 ">
@@ -24,6 +41,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>

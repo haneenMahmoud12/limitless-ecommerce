@@ -1,0 +1,149 @@
+.container-fluid {
+    background: var(--color-secondary);
+    border-radius: 8px;
+}
+
+.order-summary {
+    height: 600px;
+    width: 472px;
+}
+
+.overflow-scroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-primary);
+    border-radius: 10px;
+}
+
+.overflow-scroll::-webkit-scrollbar {
+    width: 12px;
+    background-color: var(--color-primary);
+}
+
+.overflow-scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #DFDFDF;
+}
+
+.overflow-scroll {
+    scrollbar-color: #DFDFDF var(--color-primary);
+}
+
+.btn-edit {
+    background: rgba(58, 197, 145, 0.05);
+    border-radius: 8px;
+    width: 92.79px;
+    height: 45px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--color-lightMint);
+}
+
+.order-summary-span {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 24px;
+    color: var(--color-font1);
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    color: var(--color-font1);
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 22px;
+    color: #5E5E5E;
+    display: flex;
+    justify-content: space-between;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h5 {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 24px;
+    color: var(--color-font1);
+}
+
+img {
+    width: 80px;
+    height: 77.84px;
+    margin-right: 10px;
+}
+
+.totalPrice {
+    font-weight: 500;
+    color: #5E5E5E;
+}
+
+.price {
+    font-weight: 700;
+    color: #49C69B;
+}
+
+.card-inner {
+    background-color: var(--color-secondary);
+    border-radius: 8px;
+}
+
+.cart-items {
+    height: 474px;
+    border-radius: 8px;
+}
+
+.address {
+    font-size: 18px;
+    line-height: 20px;
+    color: #5E5E5E;
+}
+
+.residence {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    color: var(--color-font1);
+}
+
+.change {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    cursor: pointer;
+    color: #3AC591;
+}
+
+.change-address-h4 {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+}
+
+.change-address-h5 {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+}
+
+.modal-content {
+    border-radius: 8px;
+}
+
+
+.form-check-input {
+    /* margin: 10px; */
+    width: 39px;
+    height: 39px;
+    color: #fff;
+    border-color: var(--color-lightMint);
+    background-color: white;
+}
