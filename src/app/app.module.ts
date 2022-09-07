@@ -14,8 +14,10 @@ import { SharedModule } from './shared/shared.module';
 import { AuthTokenInterceptor } from './auth-token.interceptor';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CartsModule } from './carts/carts.module';
-import { StepperComponent } from './stepper/stepper.component';
+import { StepperComponent } from './checkout/stepper/stepper.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ShippingComponent } from './checkout/shipping/shipping.component';
+import { OrderSummaryComponent } from './checkout/order-summary/order-summary.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
     HomeComponent,
     FeaturedCategory1Component,
     StepperComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ShippingComponent,
+    OrderSummaryComponent
   ],
   imports: [
     BrowserModule,

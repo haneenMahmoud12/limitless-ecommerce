@@ -4,7 +4,7 @@ import { IProduct } from '../models/product';
 import { ProductsService } from '../products/services/products.service';
 import { AuthenticationService } from '../services/authentication.service';
 
-declare var window: any;
+// declare var window: any;
 
 @Component({
   selector: 'app-checkout',
@@ -13,30 +13,16 @@ declare var window: any;
 })
 export class CheckoutComponent implements OnInit {
 
-  formModal: any;
+  // formModal: any;
 
   loginData: ILoginData = {
     data: {
       accessToken: '',
-      isGuest: false
+      isGuest: true
     },
     message: '',
     errorList: []
   };
-
-  addresses: {
-    residence: string,
-    address: string
-  }[] = [
-      {
-        residence: 'Office',
-        address: 'El-Sadat, Zawya Abou Muslim, Al Haram,Giza Governorate'
-      },
-      {
-        residence: 'Home',
-        address: '12 Ahmed El-Samman, Makram Ebeid, Nasr City'
-      }
-    ]
 
   constructor(private productService: ProductsService, private auth: AuthenticationService) { }
   items: IProduct[] = [
@@ -75,9 +61,9 @@ export class CheckoutComponent implements OnInit {
       }
     })
 
-    this.formModal = new window.bootstrap.Modal(
-      document.getElementById('changeAddressModal')
-    );
+    // this.formModal = new window.bootstrap.Modal(
+    //   document.getElementById('changeAddressModal')
+    // );
   }
   public displayProducts() {
     this.productService.getProducts().subscribe({
@@ -87,13 +73,16 @@ export class CheckoutComponent implements OnInit {
     })
   }
 
-  openFormModal() {
-    this.formModal.show();
-  }
+  // openFormModal() {
+  //   this.formModal.show();
+  // }
 
-  saveAddress() {
-    // confirm or save something
-    this.formModal.hide();
-  }
+  // saveAddress() {
+  //   // confirm or save something
+  //   this.formModal.hide();
+  // }
 
+  handleClick() {
+    this.displayProducts();
+  }
 }

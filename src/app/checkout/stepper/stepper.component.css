@@ -1,13 +1,8 @@
- .container-fluid {
-     background: var(--color-secondary);
-     /* border-radius: 8px; */
- }
+.container-fluid {
+    background: var(--color-secondary);
+    border-radius: 8px;
+}
 
- .inner-container {
-     margin: 40px;
- }
-
- /*
 .order-summary {
     height: 600px;
     width: 472px;
@@ -50,17 +45,8 @@
     font-size: 26px;
     line-height: 24px;
     color: var(--color-font1);
-} */
+}
 
- h1 {
-     font-weight: 700;
-     font-size: 40px;
-     line-height: 47px;
-     color: var(--color-font1);
- }
-
-
- /* 
 h3 {
     font-size: 16px;
     line-height: 22px;
@@ -80,62 +66,24 @@ h5 {
     color: var(--color-font1);
 }
 
-
-.card-inner {
-    background-color: var(--color-secondary);
-    border-radius: 8px;
+img {
+    width: 80px;
+    height: 77.84px;
+    margin-right: 10px;
 }
+
+.totalPrice {
+    font-weight: 500;
+    color: #5E5E5E;
+}
+
+.price {
+    font-weight: 700;
+    color: #49C69B;
+}
+
 
 .cart-items {
     height: 474px;
     border-radius: 8px;
 }
-
-.address {
-    font-size: 18px;
-    line-height: 20px;
-    color: #5E5E5E;
-}
-
-.residence {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 20px;
-    color: var(--color-font1);
-}
-
-.change {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
-    cursor: pointer;
-    color: #3AC591;
-}
-
-.change-address-h4 {
-    font-weight: 700;
-    font-size: 35px;
-    line-height: 24px;
-    letter-spacing: 0.2px;
-}
-
-.change-address-h5 {
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 24px;
-    letter-spacing: 0.2px;
-}
-
-.modal-content {
-    border-radius: 8px;
-}
-
-
-.form-check-input {
-    margin: 10px;
-    width: 39px;
-    height: 39px;
-    color: #fff;
-    border-color: var(--color-lightMint);
-    background-color: white;
-} */
