@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { IProduct } from 'src/app/models/product';
 
 @Component({
@@ -24,9 +25,12 @@ export class CartComponent implements OnInit {
       price: 150
     }
   ]
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  handleClick() {
+    this.router.navigate(['shipping']);
+  }
 }

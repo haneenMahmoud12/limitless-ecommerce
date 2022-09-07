@@ -62,3 +62,18 @@ body {
     line-height: 22px;
     border-radius: 8px;
 }
+
+.btnStyle6 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    cursor: pointer;
+    color: #3AC591;
+    background-color: var(--color-secondary);
+    box-shadow: none;
+}
+
+.breadcrumb-not-active {
+    color: #5e5e5ecc;
+    text-decoration: none;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IProduct } from '../models/product';
 
 @Component({
@@ -32,9 +33,13 @@ export class FeaturedCategory1Component implements OnInit {
       tagOffer: 0.2
     }
   ]
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  handleClick() {
+    this.router.navigate(['productDetails']);
   }
 
 }

@@ -4,6 +4,7 @@ import { AuthenticationService } from '../services/authentication.service';
 import { ShopService } from '../services/shop.service';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { ILoginData } from '../models/loginData';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-offers-carousel',
@@ -37,7 +38,7 @@ export class OffersCarouselComponent implements OnInit {
       title: `20% Discount`,
       img: `/assets/meds.jpg`
     }];
-  constructor(private shopService: ShopService, private auth: AuthenticationService) { }
+  constructor(private shopService: ShopService, private auth: AuthenticationService, private router: Router) { }
 
   ngOnInit(): void {
     // this.auth.login().subscribe({
@@ -57,4 +58,7 @@ export class OffersCarouselComponent implements OnInit {
     this.currentIndex = i;
   }
 
+  handleClick() {
+    this.router.navigate(['productDetails']);
+  }
 }

@@ -1,21 +1,36 @@
-<div class="card cart-items bg-white border-0 p-5">
-    <span class="order-summary-span">Order Summary</span>
-    <div class="card card-inner m-3 p-5 border-0">
-        <h5 class="d-flex justify-content-between">
-            <span>Address</span>
-            <button type="button" class="btn change" (click)="openFormModal()"> Change
-                ></button>
-        </h5>
-        <div *ngFor="let address of addresses">
-            <h6 class="residence">{{address.residence}}</h6>
-            <h6 class="address">{{address.address}}</h6>
+<div class="container-fluid outer-container p-5">
+    <app-steps></app-steps>
+    <div class="container-fluid inner-container p-5">
+        <div class="row row-cols-2">
+            <div class="col col-8">
+                <div class="card cart-items bg-white border-0 p-5">
+                    <span class="order-summary-span">Order Summary</span>
+                    <div class="card card-inner m-3 p-5 border-0">
+                        <h5 class="d-flex justify-content-between">
+                            <span class="saved-addresses">Address</span>
+                            <button type="button" class="btn btnStyle6" (click)="openFormModal()"> Change
+                                ></button>
+                        </h5>
+                        <div>
+                            <h6 class="residence">{{chosenAddress.residence}}</h6>
+                            <h6 class="address">{{chosenAddress.address}}</h6>
+                        </div>
+                    </div>
+                    <div class="card card-inner m-3 p-5 border-0">
+                        <h5 class="d-flex justify-content-between">Payment Method</h5>
+                        <h6 class="address">Cash on Delivery</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-4">
+                <app-stepper (theButtonWasClicked)="handleClick()" buttonText="Place Order"></app-stepper>
+            </div>
         </div>
     </div>
-    <div class="card card-inner m-3 p-5 border-0">
-        <h5 class="d-flex justify-content-between">Payment Method</h5>
-        <h6 class="address">Cash on Delivery</h6>
-    </div>
 </div>
+
+
+
 
 
 <div class="modal fade" id="changeAddressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

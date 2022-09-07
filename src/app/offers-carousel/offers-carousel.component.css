@@ -1,9 +1,21 @@
-/* .overlay {
-    background: linear-gradient(115.8deg, #000000 13.04%, rgba(0, 0, 0, 0.12) 53.01%);
-    z-index: 1;
-} */
-
 .card-img-overlay {
     background: linear-gradient(115.8deg, #000000 13.04%, rgba(0, 0, 0, 0.12) 53.01%);
     opacity: 0.8;
+}
+
+.btn-explore {
+    border: 1px solid #ECECEC;
+    border-radius: 8px;
+    width: 159px;
+    height: 52px;
+    position: relative;
+    top: 160px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.carousel-item {
+    cursor: pointer;
 }

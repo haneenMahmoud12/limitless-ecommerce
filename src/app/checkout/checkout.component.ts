@@ -3,6 +3,7 @@ import { ILoginData } from '../models/loginData';
 import { IProduct } from '../models/product';
 import { ProductsService } from '../products/services/products.service';
 import { AuthenticationService } from '../services/authentication.service';
+// import { StepperModule } from 'cdbangular';
 
 // declare var window: any;
 
@@ -50,20 +51,17 @@ export class CheckoutComponent implements OnInit {
     }
   ]
   ngOnInit(): void {
-    this.auth.login().subscribe({
-      next: (response) => {
-        this.loginData = response;
-        // this.auth.setUserToken(this.loginData.data.accessToken);
-        localStorage.setItem('currentUser', JSON.stringify(this.loginData));
-        console.log(localStorage.getItem('currentUser'));
+    // this.auth.login().subscribe({
+    //   next: (response) => {
+    //     this.loginData = response;
+    //     // this.auth.setUserToken(this.loginData.data.accessToken);
+    //     localStorage.setItem('currentUser', JSON.stringify(this.loginData));
+    //     console.log(localStorage.getItem('currentUser'));
 
-        // console.log(this.loginData);
-      }
-    })
+    //     // console.log(this.loginData);
+    //   }
+    // })
 
-    // this.formModal = new window.bootstrap.Modal(
-    //   document.getElementById('changeAddressModal')
-    // );
   }
   public displayProducts() {
     this.productService.getProducts().subscribe({
@@ -72,15 +70,6 @@ export class CheckoutComponent implements OnInit {
       }
     })
   }
-
-  // openFormModal() {
-  //   this.formModal.show();
-  // }
-
-  // saveAddress() {
-  //   // confirm or save something
-  //   this.formModal.hide();
-  // }
 
   handleClick() {
     this.displayProducts();

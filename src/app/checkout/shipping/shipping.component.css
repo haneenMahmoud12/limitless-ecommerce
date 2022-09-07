@@ -1,21 +1,44 @@
-.card {
-    border: none;
-    border-radius: 8px;
+.outer-container {
+    background-color: var(--color-secondary);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .map-container {
     overflow: hidden;
     padding-bottom: 56.25%;
     position: relative;
-    height: 0;
 }
 
 .map-container iframe {
-    left: 0;
-    top: 0;
-    height: 100%;
+    margin-top: 20px;
+    height: 80%;
     width: 100%;
     position: absolute;
+}
+
+.grid span {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.grid input {
+    height: 70px;
+    background: #FFFFFF;
+    border: 1px solid #E3E4E5;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.card {
+    border: none;
+    border-radius: 8px;
+}
+
+.card-inner {
+    background-color: var(--color-secondary);
+    border-radius: 8px;
 }
 
 .btnStyle4 {
@@ -28,6 +51,15 @@
     border-radius: 8px;
 }
 
+.btnStyle5 {
+    background: rgba(217, 217, 217, 0.31);
+    border-radius: 0px 0px 8px 8px;
+    font-size: 20px;
+    line-height: 20px;
+    height: 70px;
+    color: #3AC591;
+}
+
 .form-check {
     background: #FFFFFF;
     border: 1px solid #C4CDD5;
@@ -37,8 +69,14 @@
     padding-top: 20px;
 }
 
+.addresses {
+    background-color: var(--color-secondary);
+    padding: 20px 10px 20px;
+}
+
 .form-check-input {
     margin-left: 5px;
+    margin-right: 5px;
     border: 1px solid #49C69B;
     width: 20px;
     height: 20px;
@@ -50,6 +88,12 @@ h2 {
     line-height: 24px;
     margin-top: 20px;
     margin-left: 20px;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 24px;
 }
 
 h4 {
@@ -65,6 +109,11 @@ label {
     font-size: 18px;
     line-height: 20px;
     color: #5E5E5E;
+    display: inline-flex;
+}
+
+.address .s1 {
+    width: 500px;
 }
 
 .residence {
@@ -77,4 +126,15 @@ label {
 .address-div {
     background-color: var(--color-secondary);
     border-radius: 8px;
+}
+
+.btn-edit {
+    background: #49C69B;
+    mix-blend-mode: normal;
+    opacity: 0.1;
+    border-radius: 4px;
+    width: 46px;
+    height: 46px;
+    position: relative;
+    left: 100px;
 }

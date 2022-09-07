@@ -1,3 +1,9 @@
+.outer-container {
+    background-color: var(--color-secondary);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .order-summary-span {
     font-weight: 700;
     font-size: 26px;
@@ -33,19 +39,17 @@ h5 {
     color: #5E5E5E;
 }
 
+.saved-addresses {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 24px;
+}
+
 .residence {
     font-weight: 500;
     font-size: 20px;
     line-height: 20px;
     color: var(--color-font1);
-}
-
-.change {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
-    cursor: pointer;
-    color: #3AC591;
 }
 
 .change-address-h4 {
