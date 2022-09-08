@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ILoginData } from '../models/loginData';
-import { ProductsService } from '../products/services/products.service';
+import { ProductsService } from '../services/products.service';
 import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
@@ -25,11 +25,18 @@ export class HomeComponent implements OnInit {
         this.loginData = response;
         // this.auth.setUserToken(this.loginData.data.accessToken);
         localStorage.setItem('currentUser', JSON.stringify(this.loginData));
-        console.log(localStorage.getItem('currentUser'));
-        console.log(this.loginData);
-        this.displayProducts();
+        // console.log(localStorage.getItem('currentUser'));
+        // console.log(this.loginData);
+        //this.displayProducts();
       }
     })
+
+    // this.productService.getOffersCategories().subscribe({
+    //   next: (response) => {
+    //     console.log(response);
+
+    //   }
+    // })
   }
 
   public displayProducts() {

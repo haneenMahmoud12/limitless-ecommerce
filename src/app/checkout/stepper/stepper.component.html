@@ -1,33 +1,41 @@
 <div class="card order-summary bg-white border-0 p-5">
     <h2 class="d-flex justify-content-between">
         <span class="order-summary-span">Order Summary</span>
-        <span><button class="btn btn-edit">Edit</button></span>
+        <span><button class="btn btn-edit" (click)="editButtonClicked()">{{editSave}}</button></span>
     </h2>
     <div class="overflow-scroll h-50">
-        <div class="d-flex h-50" *ngFor="let item of items">
-            <img [src]="item.img" alt="img">
+        <div class="d-flex h-50" *ngFor="let item of cartItems">
+            <img [src]="item.data.imageUrl" alt="img">
             <div class="cart-items">
-                <h4>{{item.name}}</h4>
-                <h4 class="price">EGP {{item.price}}</h4>
+                <h4>{{item.data.name}}</h4>
+                <h4 class="d-flex justify-content-between">
+                    <span class="price">EGP {{item.data.priceValue}}</span>
+                    <span class="h4 text-muted mt-2">{{item.data.addToCart.quantity}} items</span>
+                </h4>
+                <div class="input-group" [ngClass]="{'element-hidden' : isHidden == true}">
+                    <span class="input-group-text" (click)="decrement(item.data.id)">-</span>
+                    <span class="form-control">{{item.data.addToCart.quantity}}</span>
+                    <span class="input-group-text" (click)="increment(item.data.id)">+</span>
+                </div>
             </div>
         </div>
     </div>
-    <h3>
-        <span>Subtotal (2 Items)</span>
-        <span>EGP 450</span>
+    <h3 class="mt-5">
+        <span>Subtotal</span>
+        <span>EGP {{totalPrice}}</span>
     </h3>
-    <h3>
+    <!-- <h3>
         <span>Discount 10%</span>
         <span>EGP -50</span>
-    </h3>
-    <h3 class="mb-5">
+    </h3> -->
+    <h3>
         <span>Shipping</span>
         <span>EGP 50</span>
     </h3>
     <hr style="border: 1px solid #F4F6F8;">
     <h4 class="d-flex justify-content-between mb-5">
         <span class="totalPrice">Order Total</span>
-        <span class="price">EGP 500</span>
+        <span class="price">EGP {{totalPrice}}</span>
     </h4>
     <button [disabled]="!isClickable" class="btn btnStyle2" (click)="handleClickedButton()">{{buttonText}}</button>
 </div>

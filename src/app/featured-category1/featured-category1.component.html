@@ -1,23 +1,27 @@
 <div class="card card-1">
     <div class="card-body text-center">
-        <h1 class="card-title">Featured Category 1</h1>
-        <h2 class="card-subtitle mb-2 text-muted">Card subtitle</h2>
+        <h1 class="card-title">{{featuredCategory.data.categoryName}}</h1>
+        <!-- <h2 class="card-subtitle mb-2 text-muted">Card subtitle</h2> -->
         <div class="container mt-5">
             <div class="row">
-                <div class="col-lg-4 col-md-6" *ngFor="let product of products">
-                    <div class="card bg-white" style="height: 415px;width: 345px;cursor: pointer;"
+                <div class="col-lg-4 col-md-6" *ngFor="let product of featuredCategory.data.products; index as i">
+                    <div class="card bg-white" *ngIf="i<3" style="height: 415px;width: 345px;cursor: pointer;"
                         (click)="handleClick()">
                         <div class="card-body">
-                            <img class="card-img" [src]="product.img" alt="img">
+                            <img class="card-img" [src]="product.imageUrl" alt="img">
                             <h4 class="text-start">{{product.name}}</h4>
-                            <h5 class="text-start">{{product.capsules}} Capsules</h5>
-                            <h6 class="text-start">EGP {{product.price}}</h6>
+                            <!-- <h5 class="text-start">{{product.capsules}} Capsules</h5> -->
+                            <h6 class="text-start">
+                                <span class="finalPrice">EGP {{product.priceValue}}</span>
+                                <del class="text-muted h4" *ngIf="product.discountPercentage != 0">EGP
+                                    {{product.price}}</del>
+                            </h6>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button class="btn btnStyle">Explore More</button>
+        <button class="btn btnStyle" (click)="handleClickExplore()">Explore More</button>
     </div>
 </div>
 
@@ -35,7 +39,7 @@
                                 style="height: 573px;">
                             <div class="card-img-overlay">
                                 <h4 class="text-start text-white mb-1">Vegan Protein</h4>
-                                <h5 class="text-start mb-1" style="color: #D6D6D6;;">30 Capsules</h5>
+                                <!-- <h5 class="text-start mb-1" style="color: #D6D6D6;;">30 Capsules</h5> -->
                                 <h6 class="text-start text-white">EGP 200</h6>
                             </div>
                         </div>
@@ -49,7 +53,7 @@
                                         style="height: 268px;">
                                     <div class="card-img-overlay">
                                         <h4 class="text-start text-white mb-1">Vegan Protein</h4>
-                                        <h5 class="text-start mb-1" style="color: #D6D6D6;;">30 Capsules</h5>
+                                        <!-- <h5 class="text-start mb-1" style="color: #D6D6D6;;">30 Capsules</h5> -->
                                         <h6 class="text-start text-white">EGP 200</h6>
                                     </div>
                                 </div>
@@ -63,7 +67,7 @@
                                         style="height: 268px;">
                                     <div class="card-img-overlay">
                                         <h4 class="text-start text-white mb-1">Vegan Protein</h4>
-                                        <h5 class="text-start mb-1" style="color: #D6D6D6;;">30 Capsules</h5>
+                                        <!-- <h5 class="text-start mb-1" style="color: #D6D6D6;;">30 Capsules</h5> -->
                                         <h6 class="text-start text-white">EGP 200</h6>
                                     </div>
                                 </div>
@@ -76,7 +80,7 @@
                                 style="height: 573px;">
                             <div class="card-img-overlay">
                                 <h4 class="text-start text-white mb-1">Vegan Protein</h4>
-                                <h5 class="text-start mb-1" style="color: #D6D6D6;;">30 Capsules</h5>
+                                <!-- <h5 class="text-start mb-1" style="color: #D6D6D6;;">30 Capsules</h5> -->
                                 <h6 class="text-start text-white">EGP 200</h6>
                             </div>
                         </div>

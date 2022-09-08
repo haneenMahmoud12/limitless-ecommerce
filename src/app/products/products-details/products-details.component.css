@@ -28,6 +28,10 @@
     border-radius: 8px;
 }
 
+.form-control {
+    padding-top: 25px;
+}
+
 img {
     height: 536px;
 }
@@ -67,6 +71,7 @@ h2 {
     font-size: 24px;
     line-height: 22px;
     color: #3AC591;
+    margin-right: 20px;
 }
 
 h6 {
@@ -109,11 +114,6 @@ button {
     text-align: center;
     color: 00000;
 }
-
-/* a {
-    color: #5e5e5ecc;
-    text-decoration: none;
-} */
 
 .active {
     color: var(--color-lightMint);

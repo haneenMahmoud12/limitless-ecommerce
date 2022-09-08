@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ILoginData } from '../models/loginData';
 import { IProduct } from '../models/product';
-import { ProductsService } from '../products/services/products.service';
+import { ProductsService } from '../services/products.service';
 import { AuthenticationService } from '../services/authentication.service';
 // import { StepperModule } from 'cdbangular';
 
@@ -26,30 +26,30 @@ export class CheckoutComponent implements OnInit {
   };
 
   constructor(private productService: ProductsService, private auth: AuthenticationService) { }
-  items: IProduct[] = [
-    {
-      id: 0,
-      img: 'assets/limitless-woman-max.png',
-      name: 'Limitless Woman Max',
-      capsules: 30,
-      price: 150,
-      tagOffer: 20
-    },
-    {
-      id: 1,
-      img: 'assets/limitless1.jpg',
-      name: 'Limitless Max',
-      capsules: 30,
-      price: 150
-    },
-    {
-      id: 2,
-      img: 'assets/limitless2.png',
-      name: 'Limitless Tumeric',
-      capsules: 30,
-      price: 150
-    }
-  ]
+  // items: IProduct[] = [
+  //   {
+  //     id: 0,
+  //     img: 'assets/limitless-woman-max.png',
+  //     name: 'Limitless Woman Max',
+  //     capsules: 30,
+  //     price: 150,
+  //     tagOffer: 20
+  //   },
+  //   {
+  //     id: 1,
+  //     img: 'assets/limitless1.jpg',
+  //     name: 'Limitless Max',
+  //     capsules: 30,
+  //     price: 150
+  //   },
+  //   {
+  //     id: 2,
+  //     img: 'assets/limitless2.png',
+  //     name: 'Limitless Tumeric',
+  //     capsules: 30,
+  //     price: 150
+  //   }
+  // ]
   ngOnInit(): void {
     // this.auth.login().subscribe({
     //   next: (response) => {
@@ -66,7 +66,7 @@ export class CheckoutComponent implements OnInit {
   public displayProducts() {
     this.productService.getProducts().subscribe({
       next: (response) => {
-        console.log(response);
+        // console.log(response);
       }
     })
   }

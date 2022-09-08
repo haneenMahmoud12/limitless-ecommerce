@@ -96,13 +96,13 @@ img {
 .input-group .form-control {
     font-weight: 700;
     width: 50px;
-    font-size: 20px;
+    font-size: 25px;
     line-height: 20px;
     color: #161D25;
     text-align: center;
     border: none;
+    padding-top: 35px;
 }
-
 
 .input-group-text {
     width: 50px;
@@ -110,6 +110,7 @@ img {
     opacity: 0.1;
     border-radius: 4px;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 50px;
     cursor: pointer;
+    padding-left: 13px;
 }

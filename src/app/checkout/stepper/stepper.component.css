@@ -87,3 +87,34 @@ img {
     height: 474px;
     border-radius: 8px;
 }
+
+.input-group {
+    cursor: pointer;
+    mix-blend-mode: normal;
+    width: 90px;
+    height: 30px;
+}
+
+.element-hidden {
+    visibility: hidden;
+}
+
+.input-group .form-control {
+    font-weight: 700;
+    width: 30px;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    border: none;
+    padding-top: 10px;
+}
+
+.input-group-text {
+    width: 30px;
+    background: #a5a5a5;
+    opacity: 0.1;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+}

@@ -1,15 +1,14 @@
 export interface IProductDetails {
     "data": {
-        "pictureModels": [
-            {
-                "imageUrl": string,
-                "thumbImageUrl": string,
-                "fullSizeImageUrl": string,
-                "title": string,
-                "alternateText": string,
-                "customProperties": {}
-            }
-        ],
+        "pictureModels":
+        {
+            "imageUrl": string,
+            "thumbImageUrl": string,
+            "fullSizeImageUrl": string,
+            "title": string,
+            "alternateText": string,
+            "customProperties": {}
+        }[],
         "productTags":
         {
             "id": number,
