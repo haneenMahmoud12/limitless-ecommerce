@@ -1,0 +1,71 @@
+.card {
+    height: 808px;
+    background-color: var(--color-secondary);
+    border: none;
+}
+
+.card-2 {
+    height: 826px;
+    background-color: var(--color-primary);
+    border: none;
+}
+
+.card button {
+    margin-top: 80px;
+}
+
+.card h1 {
+    height: 52px;
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+}
+
+.card h2 {
+    font-size: 20px;
+    line-height: 22px;
+    color: #5E5E5E;
+}
+
+.card-1 h4 {
+    margin-top: 10px;
+    margin-left: 13px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.card-1 h5 {
+    margin-top: 10px;
+    margin-left: 13px;
+    font-size: 16px;
+    line-height: 18px;
+    color: rgba(94, 94, 94, 0.7);
+}
+
+.card-1 h6 {
+    margin-top: 10px;
+    margin-left: 13px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 22px;
+    color: #3AC591;
+}
+
+.card-1 img {
+    width: 296px;
+    height: 266px;
+}
+
+.card-1 .grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-2 .card-img-overlay {
+    background: linear-gradient(32.95deg, rgba(0, 0, 0, 0.8) 14.03%, rgba(0, 0, 0, 0.22) 45.59%);
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}

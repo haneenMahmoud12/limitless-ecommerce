@@ -1,0 +1,38 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><i class="fa fa-home"></i><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Immunity Boosters</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Limitless C-Zinc</li>
+    </ol>
+</nav>
+<div class="container-fluid d-flex mt-5 justify-content-between">
+    <div class="row row-cols-2">
+        <div class="col">
+            <span class="badge mt-4">{{productDetails.tagOffer}} % OFF</span>
+            <img [src]="productDetails.img" alt="limitless woman">
+        </div>
+        <div class="col">
+            <div class="card border-0">
+                <h1 class="mb-1">{{productDetails.name}}</h1>
+                <h2>{{productDetails.capsules}} Capsules</h2>
+                <h3><span class="price">Price: </span>
+                    <span class="value"> EGP {{productDetails.price}}</span>
+                </h3>
+                <h6 class="mb-3">Quantity</h6>
+                <div class="cart">
+                    <span>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">+</span>
+                            <input type="text" class="form-control" value="1">
+                            <span class="input-group-text">-</span>
+                        </div>
+                    </span>
+                    <span>
+                        <button class="btn btnStyle2">Add to cart
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

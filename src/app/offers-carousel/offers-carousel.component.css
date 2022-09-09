@@ -1,0 +1,9 @@
+/* .overlay {
+    background: linear-gradient(115.8deg, #000000 13.04%, rgba(0, 0, 0, 0.12) 53.01%);
+    z-index: 1;
+} */
+
+.card-img-overlay {
+    background: linear-gradient(115.8deg, #000000 13.04%, rgba(0, 0, 0, 0.12) 53.01%);
+    opacity: 0.8;
+}
