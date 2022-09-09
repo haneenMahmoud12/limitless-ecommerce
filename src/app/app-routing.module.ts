@@ -1,9 +1,11 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './checkout/carts/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent } from './home/home.component';
-import { ProductsDetailsComponent } from './products/products-details/products-details.component';
+import { ProductsDetailsComponent } from './products-details/products-details.component';
+import { ProductListingComponent } from './product-listing/product-listing.component';
+import { PaymentMethodsComponent } from './payment-methods/payment-methods.component';
 import { StepperComponent } from './checkout/stepper/stepper.component';
 import { ShippingComponent } from './checkout/shipping/shipping.component';
 import { OrderSummaryComponent } from './checkout/order-summary/order-summary.component';
@@ -41,8 +43,15 @@ const routes: Routes = [
   {
     path: 'confirmation',
     component: ConfirmationComponent
+  },
+  {
+    path: 'product-listing',
+    component: ProductListingComponent
+  },
+  {
+    path: 'payment-methods',
+    component: PaymentMethodsComponent
   }
-
 ];
 
 @NgModule({

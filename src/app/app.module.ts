@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { OffersCarouselComponent } from './offers-carousel/offers-carousel.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { CarouselModule } from './offers-carousel/carousel.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FeaturedCategory1Component } from './featured-category1/featured-category1.component';
 import { SharedModule } from './shared/shared.module';
@@ -21,6 +22,10 @@ import { StepsComponent } from './checkout/steps/steps.component';
 import { ConfirmationComponent } from './checkout/confirmation/confirmation.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { FooterComponent } from './footer/footer.component';
+import { ShopByCategoryComponent } from './shop-by-category/shop-by-category.component';
+import { ProductListingComponent } from './product-listing/product-listing.component';
+import { PaymentMethodsComponent } from './payment-methods/payment-methods.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,11 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
     OrderSummaryComponent,
     StepsComponent,
     ConfirmationComponent,
-    OffersCarouselComponent
+    OffersCarouselComponent,
+    FooterComponent,
+    ShopByCategoryComponent,
+    ProductListingComponent,
+    PaymentMethodsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +53,11 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
     SharedModule,
     NgbModule,
     FontAwesomeModule,
-    CarouselModule
+    CarouselModule,
+    HttpClientModule,
+    SharedModule,
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
@@ -55,6 +68,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
   }],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
   constructor(library: FaIconLibrary) {
     library.addIcons(faEdit);

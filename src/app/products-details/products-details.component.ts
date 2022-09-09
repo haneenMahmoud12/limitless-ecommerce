@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 import { ICartItem } from 'src/app/models/cartItem';
 import { ILoginData } from 'src/app/models/loginData';
-import { IProduct } from 'src/app/models/product';
 import { IProductDetails } from 'src/app/models/productDetails';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ShopService } from 'src/app/services/shop.service';

@@ -1,0 +1,53 @@
+.container-fluid {
+    background-color: var(--color-secondary);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    color: var(--color-font1);
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 24px;
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 22px;
+    color: #5E5E5E;
+    display: flex;
+    justify-content: space-between;
+}
+
+h4 {
+    font-size: 22px;
+    line-height: 22px;
+}
+
+.totalPrice {
+    font-weight: 500;
+    color: #5E5E5E;
+}
+
+.price {
+    font-weight: 700;
+    color: #49C69B;
+}
+
+.order-summary {
+    width: 472px;
+    height: 315px;
+    padding: 20px;
+}
+
+button {
+    width: 424px;
+    height: 65px;
+}
