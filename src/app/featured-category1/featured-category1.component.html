@@ -1,7 +1,6 @@
-<div class="card card-1">
+<!-- <div class="card card-1">
     <div class="card-body text-center">
         <h1 class="card-title">{{featuredCategory.data.categoryName}}</h1>
-        <!-- <h2 class="card-subtitle mb-2 text-muted">Card subtitle</h2> -->
         <div class="container mt-5">
             <div class="row">
                 <div class="col-lg-4 col-md-6" *ngFor="let product of featuredCategory.data.products; index as i">
@@ -10,7 +9,6 @@
                         <div class="card-body">
                             <img class="card-img" [src]="product.imageUrl" alt="img">
                             <h4 class="text-start">{{product.name}}</h4>
-                            <!-- <h5 class="text-start">{{product.capsules}} Capsules</h5> -->
                             <h6 class="text-start">
                                 <span class="finalPrice">EGP {{product.priceValue}}</span>
                                 <del class="text-muted h4" *ngIf="product.discountPercentage != 0">EGP
@@ -23,7 +21,39 @@
         </div>
         <button class="btn btnStyle" (click)="handleClickExplore()">Explore More</button>
     </div>
+</div> -->
+
+<div class="card card-1">
+    <div class="card-body text-center">
+        <h1 class="card-title">{{featuredCategory.data.categoryName}}</h1>
+        <div class="container mt-5">
+            <owl-carousel-o [options]="customOptions">
+                <ng-container *ngFor="let product of featuredCategory.data.products">
+                    <ng-template carouselSlide>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card bg-white" style="height: 415px;width: 345px;cursor: pointer;"
+                                    (click)="handleClick()">
+                                    <div class="card-body">
+                                        <img class="card-img" [src]="product.imageUrl" alt="img">
+                                        <h4 class="text-start">{{product.name}}</h4>
+                                        <h6 class="text-start">
+                                            <span class="finalPrice">EGP {{product.priceValue}}</span>
+                                            <del class="text-muted h4" *ngIf="product.discountPercentage != 0">EGP
+                                                {{product.price}}</del>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ng-container>
+            </owl-carousel-o>
+        </div>
+        <button class="btn btnStyle" (click)="handleClickExplore()">Explore More</button>
+    </div>
 </div>
+
 
 <div class="card card-2">
     <div class="card-body text-center">

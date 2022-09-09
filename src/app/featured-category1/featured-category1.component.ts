@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import { IFeaturedCategory } from '../models/featuredCategory';
-import { IProduct } from '../models/product';
 import { IProductDetails } from '../models/productDetails';
 import { ProductsService } from '../services/products.service';
 
@@ -11,6 +12,27 @@ import { ProductsService } from '../services/products.service';
   styleUrls: ['./featured-category1.component.css']
 })
 export class FeaturedCategory1Component implements OnInit {
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      }
+    },
+    nav: true
+  }
   featuredCategory: IFeaturedCategory = {
     data: {
       categoryName: '',

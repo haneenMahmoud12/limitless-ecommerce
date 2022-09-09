@@ -7,12 +7,11 @@ import { AppComponent } from './app.component';
 import { OffersCarouselComponent } from './offers-carousel/offers-carousel.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CarouselModule } from './offers-carousel/carousel.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FeaturedCategory1Component } from './featured-category1/featured-category1.component';
 import { SharedModule } from './shared/shared.module';
 import { AuthTokenInterceptor } from './auth-token.interceptor';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { StepperComponent } from './checkout/stepper/stepper.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ShippingComponent } from './checkout/shipping/shipping.component';
@@ -20,6 +19,8 @@ import { OrderSummaryComponent } from './checkout/order-summary/order-summary.co
 import { CartComponent } from './checkout/carts/cart.component';
 import { StepsComponent } from './checkout/steps/steps.component';
 import { ConfirmationComponent } from './checkout/confirmation/confirmation.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   declarations: [
@@ -32,17 +33,18 @@ import { ConfirmationComponent } from './checkout/confirmation/confirmation.comp
     ShippingComponent,
     OrderSummaryComponent,
     StepsComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    OffersCarouselComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    CarouselModule,
     HttpClientModule,
     SharedModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    CarouselModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
@@ -53,4 +55,8 @@ import { ConfirmationComponent } from './checkout/confirmation/confirmation.comp
   }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faEdit);
+  }
+}

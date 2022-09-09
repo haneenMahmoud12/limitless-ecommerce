@@ -27,7 +27,8 @@ export class HomeComponent implements OnInit {
         localStorage.setItem('currentUser', JSON.stringify(this.loginData));
         // console.log(localStorage.getItem('currentUser'));
         // console.log(this.loginData);
-        //this.displayProducts();
+        // this.displayProducts();
+        // this.displayProductsByTag();
       }
     })
 
@@ -41,6 +42,14 @@ export class HomeComponent implements OnInit {
 
   public displayProducts() {
     this.productService.getProducts().subscribe({
+      next: (response) => {
+        console.log(response);
+      }
+    })
+  }
+
+  public displayProductsByTag() {
+    this.productService.getProductsByTag().subscribe({
       next: (response) => {
         console.log(response);
       }

@@ -4,6 +4,10 @@
     background-size: cover;
 }
 
+.element-hidden {
+    visibility: hidden;
+}
+
 .map-container {
     overflow: hidden;
     padding-bottom: 56.25%;
@@ -129,12 +133,13 @@ label {
 }
 
 .btn-edit {
-    background: #49C69B;
-    mix-blend-mode: normal;
-    opacity: 0.1;
+    color: #49C69B;
+    border: none;
     border-radius: 4px;
     width: 46px;
     height: 46px;
     position: relative;
     left: 100px;
+    background-color: #e8fdf6;
+    ;
 }

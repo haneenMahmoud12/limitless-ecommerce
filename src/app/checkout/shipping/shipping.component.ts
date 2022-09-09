@@ -30,6 +30,7 @@ export class ShippingComponent implements OnInit {
       }
     ]
 
+  isHidden: boolean = false;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -40,7 +41,6 @@ export class ShippingComponent implements OnInit {
       document.getElementById('EditAddressModal')
     );
   }
-
   openFormModal1() {
     this.formModal1.show();
   }
@@ -61,5 +61,9 @@ export class ShippingComponent implements OnInit {
 
   handleClick() {
     this.router.navigate(['summary']);
+  }
+
+  radioButtonClicked(hide: boolean) {
+    this.isHidden = hide;
   }
 }
