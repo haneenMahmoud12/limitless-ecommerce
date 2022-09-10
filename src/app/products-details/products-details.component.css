@@ -85,11 +85,19 @@ h6 {
 
 .card {
     height: 536px;
-    margin-left: -40px;
+    /* margin-left: -40px; */
 }
 
+/* .col1 {
+    width: 40%;
+}
+
+.col2 {
+    width: 60%;
+} */
+
 button {
-    width: 653px;
+    width: 500px;
     height: 70px;
     margin-left: 10px;
 }

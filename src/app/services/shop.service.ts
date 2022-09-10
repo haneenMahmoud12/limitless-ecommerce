@@ -1,7 +1,10 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ICart } from '../models/cart';
 import { ILoginData } from '../models/loginData';
 import { IProductDetails } from '../models/productDetails';
+import { IResponse } from '../models/response';
+import { IUpdateResponse } from '../models/updateResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -38,15 +41,13 @@ export class ShopService {
     localStorage.setItem("totalPrice", "" + this.totalPrice);
 
     const accessToken = JSON.parse(localStorage.getItem('currentUser') || '{}').data.accessToken;
-    // console.log(accessToken);
-
     const modifiedHeader = {
       'Authorization': `Bearer ${accessToken}`
     };
-    return this.http.post('https://limit-lessstaging.azurewebsites.net/webapi2/Cart/AddToCart',
+    return this.http.post<IResponse>('https://limit-lessstaging.azurewebsites.net/webapi2/Cart/AddToCart',
       {
-        "id": 193,
-        "quantity": 2
+        "id": product.data.addToCart.id,
+        "quantity": product.data.addToCart.quantity
       },
       {
         headers: new HttpHeaders(modifiedHeader)
@@ -65,5 +66,32 @@ export class ShopService {
     localStorage.setItem("cachedCart", JSON.stringify(this.cart));
     localStorage.setItem("totalPrice", "" + this.totalPrice);
 
+  }
+
+  public getCart2() {
+    const accessToken = JSON.parse(localStorage.getItem('currentUser') || '{}').data.accessToken;
+    const modifiedHeader = {
+      'Authorization': `Bearer ${accessToken}`
+    };
+    return this.http.get<ICart>('https://limit-lessstaging.azurewebsites.net/webapi2/Cart/GetCart',
+      {
+        headers: new HttpHeaders(modifiedHeader)
+      })
+  }
+
+  public updateCart(id: number, quantity: number) {
+    const accessToken = JSON.parse(localStorage.getItem('currentUser') || '{}').data.accessToken;
+    const modifiedHeader = {
+      'Authorization': `Bearer ${accessToken}`
+    };
+    return this.http.put<IUpdateResponse>('https://limit-lessstaging.azurewebsites.net/webapi2/Cart/UpdateCart/',
+      {
+        "id": id,
+        "quantity": quantity,
+        "isMonthly": false
+      },
+      {
+        headers: new HttpHeaders(modifiedHeader)
+      })
   }
 }

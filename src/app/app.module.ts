@@ -26,6 +26,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ShopByCategoryComponent } from './shop-by-category/shop-by-category.component';
 import { ProductListingComponent } from './product-listing/product-listing.component';
 import { PaymentMethodsComponent } from './payment-methods/payment-methods.component';
+import { OffersPageComponent } from './offers-page/offers-page.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { PaymentMethodsComponent } from './payment-methods/payment-methods.compo
     FooterComponent,
     ShopByCategoryComponent,
     ProductListingComponent,
-    PaymentMethodsComponent
+    PaymentMethodsComponent,
+    OffersPageComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,7 @@ import { StepperComponent } from './checkout/stepper/stepper.component';
 import { ShippingComponent } from './checkout/shipping/shipping.component';
 import { OrderSummaryComponent } from './checkout/order-summary/order-summary.component';
 import { ConfirmationComponent } from './checkout/confirmation/confirmation.component';
+import { OffersPageComponent } from './offers-page/offers-page.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'productDetails',
+    path: 'productDetails/:id',
     component: ProductsDetailsComponent
   },
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'payment-methods',
     component: PaymentMethodsComponent
+  },
+  {
+    path: 'offer/:id',
+    component: OffersPageComponent
   }
 ];
 

@@ -40,20 +40,20 @@ export class HomeComponent implements OnInit {
     // })
   }
 
-  public displayProducts() {
-    this.productService.getProducts().subscribe({
-      next: (response) => {
-        console.log(response);
-      }
-    })
-  }
+  // public displayProducts() {
+  //   this.productService.getProducts(193).subscribe({
+  //     next: (response) => {
+  //       console.log(response);
+  //     }
+  //   })
+  // }
 
-  public displayProductsByTag() {
-    this.productService.getProductsByTag().subscribe({
-      next: (response) => {
-        console.log(response);
-      }
-    })
-  }
+  // public displayProductsByTag() {
+  //   this.productService.getProductsByTag().subscribe({
+  //     next: (response) => {
+  //       console.log(response);
+  //     }
+  //   })
+  // }
 
 }

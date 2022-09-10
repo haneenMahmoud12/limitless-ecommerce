@@ -1,20 +1,19 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><i class="fa fa-home"></i><a class="breadcrumb-not-active" href="#">Home</a></li>
-        <li class="breadcrumb-item"><a class="breadcrumb-not-active" href="#">Immunity Boosters</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Limitless C-Zinc</li>
+        <li class="breadcrumb-item"><a class="breadcrumb-not-active" href="#">{{product.data.categoryName}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{product.data.name}}</li>
     </ol>
 </nav>
 <div class="container-fluid d-flex mt-5 p-5 justify-content-between">
-    <div class="row row-cols-2">
-        <div class="col">
+    <div class="row row-cols-lg-2 row-cols-sm-1">
+        <div class="col col1">
             <span class="badge mt-4">{{product.data.discountPercentage}} % OFF</span>
             <img [src]="product.data.imageUrl" alt="limitless woman">
         </div>
-        <div class="col">
-            <div class="card border-0">
+        <div class="col col2">
+            <div class="card border-0 p-1">
                 <h1 class="mb-1">{{product.data.name}}</h1>
-                <h2>30 Capsules</h2>
                 <h3>
                     <span class="price">Price: </span>
                     <span class="value"> EGP {{product.data.priceValue}}</span>

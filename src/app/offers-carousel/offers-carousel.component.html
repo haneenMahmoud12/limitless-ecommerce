@@ -8,14 +8,14 @@
             aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-        <div class="carousel-item active" (click)="handleClick()">
+        <div class="carousel-item active">
             <img src="assets\brett-jordan-rJVflgqasr4-unsplash.jpg" class="d-block w-100" alt="img">
             <!-- <div class="overlay"></div> -->
         </div>
-        <div class="carousel-item" (click)="handleClick()">
+        <div class="carousel-item">
             <img src="assets\christina-victoria-craft-ZHys6xN7sUE-unsplash.jpg" class="d-block w-100" alt="img">
         </div>
-        <div class="carousel-item" (click)="handleClick()">
+        <div class="carousel-item">
             <img src="assets\daily-nouri-lXMPY-xzMNU-unsplash-10pecrent.jpg" class="d-block w-100" alt="img">
         </div>
     </div>
@@ -28,7 +28,7 @@
                 <img [src]="offer.imageUrl" class="card-img img-fluid" style="height: 328px;">
                 <div class="card-img-overlay">
                     <h2>{{offer.categoryName}}</h2>
-                    <button class="btn btn-explore" (click)="handleClick()">Explore</button>
+                    <button class="btn btn-explore" (click)="handleClick(offer.categoryName)">Explore</button>
                 </div>
             </div>
         </div>

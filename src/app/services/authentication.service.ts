@@ -1,7 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { IAddress } from '../models/address';
 import { ILoginData } from '../models/loginData';
+import { IUpdateResponse } from '../models/updateResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -37,5 +39,38 @@ export class AuthenticationService {
       {
         headers: new HttpHeaders(modifiedHeader)
       });
+  }
+
+  public addAddress(formData: any) {
+    const accessToken = JSON.parse(localStorage.getItem('currentUser') || '{}').data.accessToken;
+    const modifiedHeader = {
+      'Authorization': `Bearer ${accessToken}`
+    };
+    return this.http.post<IUpdateResponse>('https://limit-lessstaging.azurewebsites.net/webapi2/CustomerAddress/AddAddress', formData,
+      {
+        headers: new HttpHeaders(modifiedHeader)
+      })
+  }
+
+  public getAddress() {
+    const accessToken = JSON.parse(localStorage.getItem('currentUser') || '{}').data.accessToken;
+    const modifiedHeader = {
+      'Authorization': `Bearer ${accessToken}`
+    };
+    return this.http.get<IAddress>('https://limit-lessstaging.azurewebsites.net/webapi2/CustomerAddress/Addresses',
+      {
+        headers: new HttpHeaders(modifiedHeader)
+      })
+  }
+
+  public editAddress(formData: any) {
+    const accessToken = JSON.parse(localStorage.getItem('currentUser') || '{}').data.accessToken;
+    const modifiedHeader = {
+      'Authorization': `Bearer ${accessToken}`
+    };
+    return this.http.put<IUpdateResponse>('https://limit-lessstaging.azurewebsites.net/webapi2/CustomerAddress/AddressEdit', formData,
+      {
+        headers: new HttpHeaders(modifiedHeader)
+      })
   }
 }

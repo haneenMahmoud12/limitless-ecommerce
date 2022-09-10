@@ -41,19 +41,33 @@ export class FeaturedCategory1Component implements OnInit {
     message: '',
     errorList: []
   };
+  featuredCategory2: IFeaturedCategory = {
+    data: {
+      categoryName: '',
+      products: []
+    },
+    message: '',
+    errorList: []
+  };
   featuredProducts: IProductDetails[] = [];
   constructor(private router: Router, private productService: ProductsService) { }
 
   ngOnInit(): void {
-    this.productService.getFeaturedCategory().subscribe({
+    this.productService.getFeaturedCategory(41).subscribe({
       next: (response) => {
         this.featuredCategory = response;
       }
     })
+
+    this.productService.getFeaturedCategory(37).subscribe({
+      next: (response) => {
+        this.featuredCategory2 = response;
+      }
+    })
   }
 
-  handleClick() {
-    this.router.navigate(['productDetails']);
+  handleClick(id: number) {
+    this.router.navigate([`productDetails/${id}`]);
   }
 
   handleClickExplore() { }

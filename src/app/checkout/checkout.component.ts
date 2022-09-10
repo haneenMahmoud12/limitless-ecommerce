@@ -63,15 +63,15 @@ export class CheckoutComponent implements OnInit {
     // })
 
   }
-  public displayProducts() {
-    this.productService.getProducts().subscribe({
-      next: (response) => {
-        // console.log(response);
-      }
-    })
-  }
+  // public displayProducts() {
+  //   this.productService.getProducts().subscribe({
+  //     next: (response) => {
+  //       // console.log(response);
+  //     }
+  //   })
+  // }
 
   handleClick() {
-    this.displayProducts();
+    // this.displayProducts();
   }
 }

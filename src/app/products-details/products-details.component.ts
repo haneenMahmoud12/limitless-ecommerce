@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ICartItem } from 'src/app/models/cartItem';
 import { ILoginData } from 'src/app/models/loginData';
 import { IProductDetails } from 'src/app/models/productDetails';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ShopService } from 'src/app/services/shop.service';
+import { IResponse } from '../models/response';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-products-details',
@@ -35,14 +38,14 @@ export class ProductsDetailsComponent implements OnInit {
         cartId: 0
       },
       id: 0,
-      name: 'Limitless Woman Max',
+      name: '',
       shortDescription: '',
       oldPrice: null,
-      price: '150',
+      price: '',
       priceValue: 0,
-      imageUrl: 'assets/limitless-woman-max.png',
+      imageUrl: '',
       hasDiscount: true,
-      discountPercentage: 20,
+      discountPercentage: 0,
       isMonthlySubscription: null,
       currency: 'EGP'
     },
@@ -52,28 +55,13 @@ export class ProductsDetailsComponent implements OnInit {
   cart: IProductDetails[] = [];
   quantity: number = 1;
   disableButton: boolean = false;
-  // productDetails: IProduct = {
-  //   id: 0,
-  //   img: 'assets/limitless-woman-max.png',
-  //   name: 'Limitless Woman Max',
-  //   capsules: 30,
-  //   price: 150,
-  //   tagOffer: 20
-  // }
-  constructor(private shopService: ShopService, private auth: AuthenticationService) { }
+  constructor(private shopService: ShopService, private auth: AuthenticationService, private router: ActivatedRoute,
+    private productService: ProductsService) { }
 
   ngOnInit(): void {
-    // this.auth.login().subscribe({
-    //   next: (response) => {
-    //     this.loginData = response;
-    //     this.auth.setUserToken(this.loginData.data.accessToken);
-    //     localStorage.setItem('currentUser', JSON.stringify(this.loginData));
-    //     console.log(localStorage.getItem('currentUser'));
-    //     console.log(this.loginData);
-    //   }
-    // })
     this.cart = this.shopService.getCart();
     this.finalPrice();
+    this.displayProducts(this.router.snapshot.params['id']);
   }
 
   handleClick() {
@@ -86,7 +74,7 @@ export class ProductsDetailsComponent implements OnInit {
     this.product.data.addToCart = cartItem;
     this.shopService.addToCart(this.product).subscribe({
       next: (response) => {
-        console.log(response);
+        alert(response.message);
       }
     })
   }
@@ -106,5 +94,13 @@ export class ProductsDetailsComponent implements OnInit {
 
   finalPrice() {
     this.product.data.priceValue = parseInt(this.product.data.price) * (100 - (this.product.data.discountPercentage)) / 100;
+  }
+
+  public displayProducts(id: number) {
+    this.productService.getProducts(id).subscribe({
+      next: (response) => {
+        this.product = response;
+      }
+    })
   }
 }

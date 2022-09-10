@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { IProduct } from 'src/app/models/product';
 import { IFeaturedCategory } from '../models/featuredCategory';
 import { IHomeOffers } from '../models/homeOffers';
+import { IOffer } from '../models/offers';
 import { IOffersSubCategories } from '../models/offersSubCategories';
 import { IProductDetails } from '../models/productDetails';
 
@@ -14,7 +15,7 @@ export class ProductsService {
   products: IProduct[] = [];
   constructor(private http: HttpClient) { }
 
-  public getProducts() {
+  public getProducts(id: number) {
     // let headers = new HttpHeaders();
     // headers.set('content-type', 'application/json');
     // headers.set('Access-Control-Allow-Origin', '*');
@@ -23,10 +24,10 @@ export class ProductsService {
     const modifiedHeader = {
       'Authorization': `Bearer ${accessToken}`
     };
-    let params = new HttpParams().set('productId', 193);
-    return this.http.get<IProductDetails>(`https://limit-lessstaging.azurewebsites.net/webapi2/Product/ProductDetails/:productId`, {
+    // let params = new HttpParams().set('productId', 193);
+    return this.http.get<IProductDetails>(`https://limit-lessstaging.azurewebsites.net/webapi2/Product/ProductDetails/${id}`, {
       headers: new HttpHeaders(modifiedHeader),
-      params
+      // params
     });
   }
 
@@ -46,12 +47,12 @@ export class ProductsService {
     });
   }
 
-  public getFeaturedCategory() {
+  public getFeaturedCategory(id: number) {
     const accessToken = JSON.parse(localStorage.getItem('currentUser') || '{}').data.accessToken;
     const modifiedHeader = {
       'Authorization': `Bearer ${accessToken}`
     };
-    return this.http.get<IFeaturedCategory>('https://limit-lessstaging.azurewebsites.net/webapi2/Catalog/ProductsByCategory/41', {
+    return this.http.get<IFeaturedCategory>(`https://limit-lessstaging.azurewebsites.net/webapi2/Catalog/ProductsByCategory/${id}`, {
       headers: new HttpHeaders(modifiedHeader)
     });
   }
@@ -71,7 +72,7 @@ export class ProductsService {
     const modifiedHeader = {
       'Authorization': `Bearer ${accessToken}`
     };
-    return this.http.get<IOffersSubCategories>('https://limit-lessstaging.azurewebsites.net/webapi2/Catalog/OffersSubCategories', {
+    return this.http.get<IOffer>('https://limit-lessstaging.azurewebsites.net/webapi2/Catalog/OffersSubCategories', {
       headers: new HttpHeaders(modifiedHeader)
     });
   }

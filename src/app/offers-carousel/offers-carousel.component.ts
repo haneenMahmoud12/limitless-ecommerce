@@ -58,7 +58,14 @@ export class OffersCarouselComponent implements OnInit {
     this.currentIndex = i;
   }
 
-  handleClick() {
-    this.router.navigate(['productDetails']);
+  handleClick(name: string) {
+    let id = 0;
+    if (name == "Buy 1 get 1")
+      id = 45;
+    else if (name == "Discount 20%")
+      id = 48;
+    else
+      id = 38;
+    this.router.navigate([`offer/${id}`]);
   }
 }

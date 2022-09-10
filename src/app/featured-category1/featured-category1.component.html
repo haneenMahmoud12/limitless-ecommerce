@@ -8,7 +8,7 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-6">
                                 <div class="card bg-white" style="height: 415px;width: 345px;cursor: pointer;"
-                                    (click)="handleClick()">
+                                    (click)="handleClick(product.id)">
                                     <div class="card-body">
                                         <img class="card-img" [src]="product.imageUrl" alt="img">
                                         <h4 class="text-start">{{product.name}}</h4>
@@ -31,19 +31,19 @@
 
 <div class="card card-2">
     <div class="card-body text-center">
-        <h1 class="card-title">Featured Category 2</h1>
-        <h2 class="card-subtitle mb-2 text-muted">Card subtitle</h2>
+        <h1 class="card-title">{{featuredCategory2.data.categoryName}}</h1>
         <div class="container-lg">
             <div class="grid mt-5">
                 <div class="row row-cols-lg-3">
                     <div class="col">
                         <div class="card rounded-4 bg-black" style="height: 573px;cursor: pointer;"
-                            (click)="handleClick()">
-                            <img class="card-img" src="assets\LIMITLESS WOMAN FLYER.png" alt="img"
-                                style="height: 573px;">
+                            (click)="handleClick(featuredCategory2.data.products[0].id)">
+                            <img class="card-img" [src]="featuredCategory2.data.products[0].imageUrl"
+                                [alt]="featuredCategory2.data.products[0].name" style="height: 573px;">
                             <div class="card-img-overlay">
-                                <h4 class="text-start text-white mb-1">Vegan Protein</h4>
-                                <h6 class="text-start text-white">EGP 200</h6>
+                                <h4 class="text-start text-white mb-1">{{featuredCategory2.data.products[0].name}}</h4>
+                                <h6 class="text-start text-white">EGP {{featuredCategory2.data.products[0].priceValue}}
+                                </h6>
                             </div>
                         </div>
                     </div>
@@ -51,12 +51,14 @@
                         <div class="row">
                             <div class="col">
                                 <div class="card rounded-4" style="height: 268px;cursor: pointer;"
-                                    (click)="handleClick()">
-                                    <img class="card-img" src="assets\LIMITLESS WOMAN FLYER.png" alt="img"
-                                        style="height: 268px;">
+                                    (click)="handleClick(featuredCategory2.data.products[1].id)">
+                                    <img class="card-img" [src]="featuredCategory2.data.products[1].imageUrl"
+                                        [alt]="featuredCategory2.data.products[1].name" style="height: 268px;">
                                     <div class="card-img-overlay">
-                                        <h4 class="text-start text-white mb-1">Vegan Protein</h4>
-                                        <h6 class="text-start text-white">EGP 200</h6>
+                                        <h4 class="text-start text-white mb-1">
+                                            {{featuredCategory2.data.products[1].name}}</h4>
+                                        <h6 class="text-start text-white">EGP
+                                            {{featuredCategory2.data.products[2].priceValue}}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -64,24 +66,29 @@
                         <div class="row" style="margin-top: 37px;">
                             <div class="col">
                                 <div class="card rounded-4" style="height: 268px;cursor: pointer;"
-                                    (click)="handleClick()">
-                                    <img class="card-img-top img-fluid" src="assets\LIMITLESS WOMAN FLYER.png" alt="img"
-                                        style="height: 268px;">
+                                    (click)="handleClick(featuredCategory2.data.products[2].id)">
+                                    <img class="card-img-top img-fluid"
+                                        [src]="featuredCategory2.data.products[2].imageUrl"
+                                        [alt]="featuredCategory2.data.products[2].name" style="height: 268px;">
                                     <div class="card-img-overlay">
-                                        <h4 class="text-start text-white mb-1">Vegan Protein</h4>
-                                        <h6 class="text-start text-white">EGP 200</h6>
+                                        <h4 class="text-start text-white mb-1">
+                                            {{featuredCategory2.data.products[2].name}}</h4>
+                                        <h6 class="text-start text-white">EGP
+                                            {{featuredCategory2.data.products[2].priceValue}}</h6>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card rounded-4" style="height: 573px;cursor: pointer;" (click)="handleClick()">
-                            <img class="card-img" src="assets\LIMITLESS WOMAN FLYER.png" alt="img"
-                                style="height: 573px;">
+                        <div class="card rounded-4" style="height: 573px;cursor: pointer;"
+                            (click)="handleClick(featuredCategory2.data.products[3].id)">
+                            <img class="card-img" [src]="featuredCategory2.data.products[3].imageUrl"
+                                [alt]="featuredCategory2.data.products[3].name" style="height: 573px;">
                             <div class="card-img-overlay">
-                                <h4 class="text-start text-white mb-1">Vegan Protein</h4>
-                                <h6 class="text-start text-white">EGP 200</h6>
+                                <h4 class="text-start text-white mb-1">{{featuredCategory2.data.products[3].name}}</h4>
+                                <h6 class="text-start text-white">EGP {{featuredCategory2.data.products[3].priceValue}}
+                                </h6>
                             </div>
                         </div>
                     </div>
