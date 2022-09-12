@@ -24,14 +24,13 @@ export interface IProductDetails {
         "attributes":
         {
             "name": string,
-            "values": [
-                {
-                    "attributeTypeId": number,
-                    "valueRaw": string,
-                    "colorSquaresRgb": null,
-                    "customProperties": {}
-                }
-            ],
+            "values":
+            {
+                "attributeTypeId": number,
+                "valueRaw": string,
+                "colorSquaresRgb": null,
+                "customProperties": {}
+            }[],
             "id": number,
             "customProperties": {}
         }[],

@@ -1,0 +1,21 @@
+h2 {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+}
+
+.order-summary {
+    width: 472px;
+    height: 315px;
+    padding: 20px;
+}
+
+.totalPrice {
+    font-weight: 500;
+    color: #5E5E5E;
+}
+
+.price {
+    font-weight: 700;
+    color: #49C69B;
+}

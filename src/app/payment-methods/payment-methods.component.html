@@ -3,34 +3,46 @@
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#"><i class="fa fa-chevron-left"></i> Back to shipping</a></li>
-                
+
             </ol>
         </nav>
-        <div class="row d-flex justify-content-between">
-            <div class="col-6">
+        <div class="container-fluid outer-container p-5">
+            <div class="container-fluid d-flex justify-content-between">
                 <h1 style="text-align:left;">Checkout</h1>
+                <div class="all-steps" id="all-steps">
+                    <span class="step" style="color: var(--color-lightMint);"><i class="fa fa-check-circle"
+                            style="color: var(--color-lightMint);"></i>Cart</span>
+                    <span class="step" style="color: var(--color-lightMint);"><i class="fa fa-check-circle"
+                            style="color: var(--color-lightMint);"></i>Shipping</span>
+                    <span class="step" style="color: var(--color-lightMint);"><i class="fa"
+                            style="color: var(--color-lightMint);">3</i>Payment</span>
+                    <span class="step"><i class="fa ">4</i>Summary</span>
+                </div>
             </div>
-            <div class="col-3">
-            
-            </div>
-        </div> 
-        <div class="row d-flex justify-content-between">
-            <div class="col-md-12">
-                <form id="paymentMethods">
-                  
-                    <div class="all-steps" id="all-steps">
-                         <span class="step"><i class="fa fa-check-circle"></i>Cart</span>
-                         <span class="step"><i class="fa fa-check-circle"></i>Shipping</span>
-                         <span class="step"><i class="fa ">3</i>Payment</span>
-                         <span class="step"><i class="fa ">4</i>Summary</span>
+        </div>
+        <div class="container-fluid inner-container">
+            <div class="row">
+                <div class="col col-8">
+                    <div class="card p-5">
+                        <h2>Payment Method</h2>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="option1" (click)="radioButtonClicked(true)">
+                            <label class="form-check-label mt-1" for="inlineRadio1">Cash on Delivery</label>
+                        </div>
                     </div>
-                    <div class="row d-flex justify-content-between">
+                </div>
+                <div class="col col-4">
+                    <app-stepper [buttonText]="buttonText" [isClickable]="isClickable"
+                        (theButtonWasClicked)="handleClick()"></app-stepper>
+                </div>
+                <!-- <div class="row d-flex justify-content-between">
                         <div class="col-md-9">
                             <div class="tab">
                                 <h1 class="title">Cart</h1>
                             </div>
                             <div class="tab">
-                               <h1 class="title">Shipping</h1>
+                                <h1 class="title">Shipping</h1>
                             </div>
                             <div class="tab">
                                 <h1 class="title">Payment Methods</h1>
@@ -40,7 +52,7 @@
                             <div class="tab">
                                 <h1 class="title">Summary</h1>
                             </div>
-                            
+
                         </div>
                         <div class="col-md-3">
                             <div class="order-summary">
@@ -49,114 +61,114 @@
                                     <a href="#" class="edit-summary"><i class="fa fa-edit">Edit</i></a>
                                 </div>
                                 <div class="order-summary-item">
-                                <ul>
-                                    <li>
-                                        <div class="item list-group-item">
-                                            <div class="thumbnail card">
-                                                <div class="img-event">
-                                                    <img class="group list-group-image img-fluid" src="../../assets/limitless2.png" alt="" />
-                                                </div>
-                                                <div class="caption card-body">
-                                                    <h4 class="group card-title inner list-group-item-heading">
-                                                        Limitless C-Zinc Original
-                                                    </h4>
-                                                    
-                                                    <div class="row"> 
-                                                        <div class="col-6 col-md-6">
-                                                            <p class="lead">
-                                                                EGP 200</p>
-                                                        </div>
-                                                        <div class="col-6 col-md-6 shopping">
-                                                           <p>1 item</p>
+                                    <ul>
+                                        <li>
+                                            <div class="item list-group-item">
+                                                <div class="thumbnail card">
+                                                    <div class="img-event">
+                                                        <img class="group list-group-image img-fluid"
+                                                            src="../../assets/limitless2.png" alt="" />
+                                                    </div>
+                                                    <div class="caption card-body">
+                                                        <h4 class="group card-title inner list-group-item-heading">
+                                                            Limitless C-Zinc Original
+                                                        </h4>
+
+                                                        <div class="row">
+                                                            <div class="col-6 col-md-6">
+                                                                <p class="lead">
+                                                                    EGP 200</p>
+                                                            </div>
+                                                            <div class="col-6 col-md-6 shopping">
+                                                                <p>1 item</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="item list-group-item">
-                                            <div class="thumbnail card">
-                                                <div class="img-event">
-                                                    <img class="group list-group-image img-fluid" src="../../assets/limitless2.png" alt="" />
-                                                </div>
-                                                <div class="caption card-body">
-                                                    <h4 class="group card-title inner list-group-item-heading">
-                                                        Limitless C-Zinc Original
-                                                    </h4>
-                                                    
-                                                    <div class="row"> 
-                                                        <div class="col-6 col-md-6">
-                                                            <p class="lead">
-                                                                EGP 200</p>
-                                                        </div>
-                                                        <div class="col-6 col-md-6 shopping">
-                                                           <p>1 item</p>
+                                        </li>
+                                        <li>
+                                            <div class="item list-group-item">
+                                                <div class="thumbnail card">
+                                                    <div class="img-event">
+                                                        <img class="group list-group-image img-fluid"
+                                                            src="../../assets/limitless2.png" alt="" />
+                                                    </div>
+                                                    <div class="caption card-body">
+                                                        <h4 class="group card-title inner list-group-item-heading">
+                                                            Limitless C-Zinc Original
+                                                        </h4>
+
+                                                        <div class="row">
+                                                            <div class="col-6 col-md-6">
+                                                                <p class="lead">
+                                                                    EGP 200</p>
+                                                            </div>
+                                                            <div class="col-6 col-md-6 shopping">
+                                                                <p>1 item</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="item list-group-item">
-                                            <div class="thumbnail card">
-                                                <div class="img-event">
-                                                    <img class="group list-group-image img-fluid" src="../../assets/limitless2.png" alt="" />
-                                                </div>
-                                                <div class="caption card-body">
-                                                    <h4 class="group card-title inner list-group-item-heading">
-                                                        Limitless C-Zinc Original
-                                                    </h4>
-                                                    
-                                                    <div class="row"> 
-                                                        <div class="col-6 col-md-6">
-                                                            <p class="lead">
-                                                                EGP 200</p>
-                                                        </div>
-                                                        <div class="col-6 col-md-6 shopping">
-                                                           <p>1 item</p>
+                                        </li>
+                                        <li>
+                                            <div class="item list-group-item">
+                                                <div class="thumbnail card">
+                                                    <div class="img-event">
+                                                        <img class="group list-group-image img-fluid"
+                                                            src="../../assets/limitless2.png" alt="" />
+                                                    </div>
+                                                    <div class="caption card-body">
+                                                        <h4 class="group card-title inner list-group-item-heading">
+                                                            Limitless C-Zinc Original
+                                                        </h4>
+
+                                                        <div class="row">
+                                                            <div class="col-6 col-md-6">
+                                                                <p class="lead">
+                                                                    EGP 200</p>
+                                                            </div>
+                                                            <div class="col-6 col-md-6 shopping">
+                                                                <p>1 item</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="item list-group-item">
-                                            <div class="thumbnail card">
-                                                <div class="img-event">
-                                                    <img class="group list-group-image img-fluid" src="../../assets/limitless2.png" alt="" />
-                                                </div>
-                                                <div class="caption card-body">
-                                                    <h4 class="group card-title inner list-group-item-heading">
-                                                        Limitless C-Zinc Original
-                                                    </h4>
-                                                    
-                                                    <div class="row"> 
-                                                        <div class="col-6 col-md-6">
-                                                            <p class="lead">
-                                                                EGP 200</p>
-                                                        </div>
-                                                        <div class="col-6 col-md-6 shopping">
-                                                           <p>1 item</p>
+                                        </li>
+                                        <li>
+                                            <div class="item list-group-item">
+                                                <div class="thumbnail card">
+                                                    <div class="img-event">
+                                                        <img class="group list-group-image img-fluid"
+                                                            src="../../assets/limitless2.png" alt="" />
+                                                    </div>
+                                                    <div class="caption card-body">
+                                                        <h4 class="group card-title inner list-group-item-heading">
+                                                            Limitless C-Zinc Original
+                                                        </h4>
+
+                                                        <div class="row">
+                                                            <div class="col-6 col-md-6">
+                                                                <p class="lead">
+                                                                    EGP 200</p>
+                                                            </div>
+                                                            <div class="col-6 col-md-6 shopping">
+                                                                <p>1 item</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                    
-                                </ul>
+                                        </li>
+
+                                    </ul>
                                 </div>
                                 <div class="order-summary-total">
                                     <div class="d-flex justify-content-between">
                                         <span>Subtotal</span>
                                         <span>EGP 450</span>
-                                    </div>
-                                    <div class="d-flex justify-content-between">
-                                        <span>Discount 10%</span>
-                                        <span>EGP -50</span>
                                     </div>
                                     <div class="d-flex justify-content-between pb-3">
                                         <span>Shipping</span>
@@ -168,17 +180,16 @@
                                     </div>
                                 </div>
                                 <div style="overflow:auto;" id="nextprevious">
-                                    <div > <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button> <button type="button" id="nextBtn" onclick="nextPrev(1)">Continue</button> </div>
+                                    <div> <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                                        <button type="button" id="nextBtn" (click)="handleClick()">Continue</button>
+                                    </div>
                                 </div>
                             </div>
-                            
                         </div>
-
-                    </div>
-                 </form>
+                    </div> -->
             </div>
-                
-            
+
+
         </div>
     </div>
 </section>

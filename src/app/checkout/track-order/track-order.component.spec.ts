@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StepsComponent } from './steps.component';
+import { TrackOrderComponent } from './track-order.component';
 
-describe('StepsComponent', () => {
-  let component: StepsComponent;
-  let fixture: ComponentFixture<StepsComponent>;
+describe('TrackOrderComponent', () => {
+  let component: TrackOrderComponent;
+  let fixture: ComponentFixture<TrackOrderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StepsComponent ]
+      declarations: [ TrackOrderComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(StepsComponent);
+    fixture = TestBed.createComponent(TrackOrderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

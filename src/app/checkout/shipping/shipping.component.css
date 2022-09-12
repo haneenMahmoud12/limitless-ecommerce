@@ -1,3 +1,7 @@
+.active {
+    color: var(--color-lightMint);
+}
+
 .outer-container {
     background-color: var(--color-secondary);
     background-repeat: no-repeat;
@@ -28,7 +32,7 @@
 }
 
 .grid input {
-    height: 70px;
+    height: 60px;
     background: #FFFFFF;
     border: 1px solid #E3E4E5;
     border-radius: 8px;
@@ -45,6 +49,10 @@
     border-radius: 8px;
 }
 
+.btnStyle2 {
+    margin-left: 300px;
+}
+
 .btnStyle4 {
     align-items: center;
     padding: 16px 40px;
@@ -53,6 +61,10 @@
     height: 52px;
     border: 1px solid #3AC591;
     border-radius: 8px;
+    color: #3AC591;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 20px;
 }
 
 .btnStyle5 {
@@ -84,6 +96,12 @@
     border: 1px solid #49C69B;
     width: 20px;
     height: 20px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
 }
 
 h2 {
@@ -142,4 +160,46 @@ label {
     left: 100px;
     background-color: #e8fdf6;
     ;
+}
+
+.step {
+    padding: 0px 10px;
+}
+
+.step:not(:last-child)::after {
+    display: inline-block;
+    content: "";
+    border-top: .3rem solid #6c757d;
+    width: 5rem;
+    margin: 0 0 0 2rem;
+    transform: translateY(-.2rem);
+}
+
+.step .fa {
+    position: absolute;
+    top: -25px;
+    margin-left: 12px;
+    color: #6c757d;
+    font-size: 26px;
+}
+
+.step:first-child .fa {
+    margin-left: 2px;
+    color: var(--color-lightMint);
+}
+
+.done {
+    color: var(--color-lightMint);
+}
+
+.step .active {
+    opacity: 1
+}
+
+.all-steps {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    right: 0;
+    top: 0;
 }

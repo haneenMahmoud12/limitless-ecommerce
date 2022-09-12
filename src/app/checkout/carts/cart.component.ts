@@ -3,23 +3,8 @@ import { Router } from '@angular/router';
 import { ICart } from 'src/app/models/cart';
 import { IProduct } from 'src/app/models/product';
 import { IProductDetails } from 'src/app/models/productDetails';
+import { IProductInCart } from 'src/app/models/productsInCart';
 import { ShopService } from 'src/app/services/shop.service';
-
-interface IProductInCart {
-  "id": number,
-  "name": string,
-  "shortDescription": string,
-  "imageUrl": string,
-  "quantity": number,
-  "oldPrice": null,
-  "currentPrice": number,
-  "isMonthly": boolean,
-  "unitPrice": string,
-  "subTotalPrice": string,
-  "shoppingCartItemId": number,
-  "isMonthlySubscription": null,
-  "currency": string
-}
 
 @Component({
   selector: 'app-cart',
@@ -100,54 +85,20 @@ export class CartComponent implements OnInit {
     message: '',
     errorList: []
   };
+
   constructor(private router: Router, private shopService: ShopService) { }
 
   ngOnInit(): void {
-    // this.cartItems = this.shopService.getCart();
-    // this.totalPrice = this.shopService.getTotalPrice();
     this.shopService.getCart2().subscribe({
       next: (response) => {
-        // console.log(response);
         this.cart = response;
       }
-    })
+    });
+
   }
 
   handleClick() {
     this.router.navigate(['shipping']);
-  }
-
-  increment(id: number) {
-    // for (let item of this.cart.data.products) {
-    //   if (item.id == id) {
-    //     item.quantity++;
-    //     this.cart.data.oneTimeSubTotal += item.currentPrice;
-    //     this.cart.data.totalPrice += item.currentPrice;
-    //     item.data.addToCart.quantity++;
-    //     this.totalPrice += item.data.priceValue;
-    //     localStorage.setItem("cachedCart", JSON.stringify(this.cartItems));
-    //     localStorage.setItem("totalPrice", "" + this.totalPrice);
-    //     break;
-    //   }
-    // }
-
-  }
-
-  decrement(id: number) {
-    // for (let i = 0; i < this.cartItems.length; i++) {
-    //   if (this.cartItems[i].data.id == id && this.cartItems[i].data.addToCart.quantity == 1) {
-    //     this.totalPrice -= this.cartItems[i].data.priceValue;
-    //     this.cartItems.splice(i, 1);
-    //     break;
-    //   }
-    //   if (this.cartItems[i].data.id == id && this.cartItems[i].data.addToCart.quantity > 1) {
-    //     this.totalPrice -= this.cartItems[i].data.priceValue;
-    //     this.cartItems[i].data.addToCart.quantity--;
-    //     break;
-    //   }
-    // }
-    // localStorage.setItem("cachedCart", JSON.stringify(this.cartItems));
-    // localStorage.setItem("totalPrice", "" + this.totalPrice);
   }
 
   update(product: IProductInCart, quantity: number) {
@@ -156,9 +107,22 @@ export class CartComponent implements OnInit {
       temp = 0;
     this.shopService.updateCart(product.id, temp).subscribe({
       next: (response) => {
-        console.log(response);
+        this.shopService.getCart2().subscribe({
+          next: (response) => {
+            this.cart = response;
+          }
+        });
+        // console.log(response);
+        // localStorage.setItem("cachedCart", JSON.stringify(this.shopService.getCart()));
       }
     })
+  }
+
+  disableButton(): boolean {
+    if (this.cart.message != "your shopping cart is empty")
+      return false;
+    else
+      return true;
   }
 
 }

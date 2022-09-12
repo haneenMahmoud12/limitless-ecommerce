@@ -8,16 +8,19 @@
 <div class="container-fluid d-flex mt-5 p-5 justify-content-between">
     <div class="row row-cols-lg-2 row-cols-sm-1">
         <div class="col col1">
-            <span class="badge mt-4">{{product.data.discountPercentage}} % OFF</span>
-            <img [src]="product.data.imageUrl" alt="limitless woman">
+            <span class="badge mt-4" *ngIf="product.data.discountPercentage!=0">{{product.data.discountPercentage}} %
+                OFF</span>
+            <img [src]="product.data.imageUrl" [alt]="product.data.name">
         </div>
         <div class="col col2">
             <div class="card border-0 p-1">
                 <h1 class="mb-1">{{product.data.name}}</h1>
+                <p>{{product.data.shortDescription}}</p>
                 <h3>
                     <span class="price">Price: </span>
                     <span class="value"> EGP {{product.data.priceValue}}</span>
-                    <del class="text-muted h2">EGP {{product.data.price}}</del>
+                    <del class="text-muted h2" *ngIf="product.data.discountPercentage!=0">EGP
+                        {{product.data.price}}</del>
                 </h3>
                 <h6 class="mb-3">Quantity</h6>
                 <div class="cart">
@@ -34,6 +37,21 @@
                     </span>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid p-5" style="background-color: var(--color-secondary);">
+    <div class="card attributes">
+        <div class="card-header">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                *ngFor="let attribute of product.data.attributes">
+                <input type="radio" class="btn-check" name="btnradio" [id]="attribute.id" autocomplete="off"
+                    (click)="displayAttribute(attribute.id)">
+                <label class="btn btnStyle4" [for]="attribute.id">{{attribute.name}}</label>
+            </div>
+        </div>
+        <div class="card-body" *ngIf="attributeValues[0]">
+            {{attributeValues[0].valueRaw}}
         </div>
     </div>
 </div>

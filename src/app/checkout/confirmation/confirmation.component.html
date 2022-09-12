@@ -4,9 +4,11 @@
         <li class="breadcrumb-item active" aria-current="page">Confirmation</li>
     </ol>
 </nav>
-<div class="container-fluid d-flex justify-content-center align-items-center flex-column">
+<div class="container-fluid d-flex align-items-center flex-column p-5">
     <h1>Order Placed Successfully!</h1>
-    <h5>Your order will be processed as soon as possible. Your order number #676543567 placed successfully,
+    <h5>Your order will be processed as soon as possible. Your order number {{orderNumber}} placed successfully,
         an email has been sent to you with all order information.</h5>
+    <button class="btn btnStyle1 m-4" (click)="trackOrderClicked()">Track Order</button>
+    <app-track-order [hidden]="hideTrackOrderPage" [confirmedOrder]="confirmedOrder"></app-track-order>
     <button class="btn btnStyle6" (click)="handleClick()">Continue Shopping</button>
 </div>

@@ -1,7 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './checkout/carts/cart.component';
-import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsDetailsComponent } from './products-details/products-details.component';
 import { ProductListingComponent } from './product-listing/product-listing.component';
@@ -11,6 +10,8 @@ import { ShippingComponent } from './checkout/shipping/shipping.component';
 import { OrderSummaryComponent } from './checkout/order-summary/order-summary.component';
 import { ConfirmationComponent } from './checkout/confirmation/confirmation.component';
 import { OffersPageComponent } from './offers-page/offers-page.component';
+import { TrackOrderComponent } from './checkout/track-order/track-order.component';
+import { FeaturedComponent } from './featured/featured.component';
 
 const routes: Routes = [
   {
@@ -30,15 +31,11 @@ const routes: Routes = [
     component: StepperComponent
   },
   {
-    path: 'checkout',
-    component: CheckoutComponent
-  },
-  {
     path: 'shipping',
     component: ShippingComponent
   },
   {
-    path: 'summary',
+    path: 'summary/:id',
     component: OrderSummaryComponent
   },
   {
@@ -50,12 +47,20 @@ const routes: Routes = [
     component: ProductListingComponent
   },
   {
-    path: 'payment-methods',
+    path: 'payment-methods/:addressId',
     component: PaymentMethodsComponent
   },
   {
     path: 'offer/:id',
     component: OffersPageComponent
+  },
+  {
+    path: 'trackOrder/:orderNumber',
+    component: TrackOrderComponent
+  },
+  {
+    path: 'featured/:id',
+    component: FeaturedComponent
   }
 ];
 

@@ -70,6 +70,8 @@ export class FeaturedCategory1Component implements OnInit {
     this.router.navigate([`productDetails/${id}`]);
   }
 
-  handleClickExplore() { }
+  handleClickExplore() {
+    this.router.navigate([`featured/${41}`]);
+  }
 
 }

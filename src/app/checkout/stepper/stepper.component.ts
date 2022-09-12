@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ICart } from 'src/app/models/cart';
 import { IProductDetails } from 'src/app/models/productDetails';
+import { IProductInCart } from 'src/app/models/productsInCart';
 import { ShopService } from 'src/app/services/shop.service';
 import { IProduct } from '../../models/product';
 
@@ -11,104 +13,115 @@ import { IProduct } from '../../models/product';
 export class StepperComponent implements OnInit {
   @Input() buttonText: string = '';
   @Input() isClickable: boolean = true;
+  @Input() shippingFee: number = 0;
   @Output() theButtonWasClicked = new EventEmitter();
   isHidden: boolean = true;
   editSave: string = 'Edit';
-  totalPrice: number = 0;
-  cartItems: IProductDetails[] = [{
+  // totalPrice: number = 0;
+  // cartItems: IProductDetails[] = [{
+  //   data: {
+  //     pictureModels: [],
+  //     productTags: [],
+  //     productManufacturers: [],
+  //     attributes: [],
+  //     offerExpiryMessage: '',
+  //     categoryName: '',
+  //     fullDescription: '',
+  //     addToCart: {
+  //       id: 0,
+  //       quantity: 1,
+  //       isMonthly: false,
+  //       cartId: 0
+  //     },
+  //     id: 0,
+  //     name: 'Limitless Woman Max',
+  //     shortDescription: '',
+  //     oldPrice: null,
+  //     price: '150',
+  //     priceValue: 120,
+  //     imageUrl: 'assets/limitless-woman-max.png',
+  //     hasDiscount: true,
+  //     discountPercentage: 20,
+  //     isMonthlySubscription: null,
+  //     currency: 'EGP'
+  //   },
+  //   message: '',
+  //   errorList: []
+  // },
+  // {
+  //   data: {
+  //     pictureModels: [],
+  //     productTags: [],
+  //     productManufacturers: [],
+  //     attributes: [],
+  //     offerExpiryMessage: '',
+  //     categoryName: '',
+  //     fullDescription: '',
+  //     addToCart: {
+  //       id: 1,
+  //       quantity: 3,
+  //       isMonthly: false,
+  //       cartId: 0
+  //     },
+  //     id: 1,
+  //     name: 'Limitless Max',
+  //     shortDescription: '',
+  //     oldPrice: null,
+  //     price: '150',
+  //     priceValue: 150,
+  //     imageUrl: 'assets/limitless1.jpg',
+  //     hasDiscount: false,
+  //     discountPercentage: 0,
+  //     isMonthlySubscription: null,
+  //     currency: 'EGP'
+  //   },
+  //   message: '',
+  //   errorList: []
+  // }];
+  cart: ICart = {
     data: {
-      pictureModels: [],
-      productTags: [],
-      productManufacturers: [],
-      attributes: [],
-      offerExpiryMessage: '',
-      categoryName: '',
-      fullDescription: '',
-      addToCart: {
-        id: 0,
-        quantity: 1,
-        isMonthly: false,
-        cartId: 0
-      },
-      id: 0,
-      name: 'Limitless Woman Max',
-      shortDescription: '',
-      oldPrice: null,
-      price: '150',
-      priceValue: 120,
-      imageUrl: 'assets/limitless-woman-max.png',
-      hasDiscount: true,
-      discountPercentage: 20,
-      isMonthlySubscription: null,
-      currency: 'EGP'
+      products: [],
+      oneTimeSubTotal: '',
+      monthlySubTotal: '',
+      discountAmount: '',
+      discountCoupon: null,
+      totalPrice: ''
     },
     message: '',
     errorList: []
-  },
-  {
-    data: {
-      pictureModels: [],
-      productTags: [],
-      productManufacturers: [],
-      attributes: [],
-      offerExpiryMessage: '',
-      categoryName: '',
-      fullDescription: '',
-      addToCart: {
-        id: 1,
-        quantity: 3,
-        isMonthly: false,
-        cartId: 0
-      },
-      id: 1,
-      name: 'Limitless Max',
-      shortDescription: '',
-      oldPrice: null,
-      price: '150',
-      priceValue: 150,
-      imageUrl: 'assets/limitless1.jpg',
-      hasDiscount: false,
-      discountPercentage: 0,
-      isMonthlySubscription: null,
-      currency: 'EGP'
-    },
-    message: '',
-    errorList: []
-  }];
+  };
   constructor(private shopService: ShopService) { }
 
   ngOnInit(): void {
-    this.cartItems = this.shopService.getCart();
-    this.totalPrice = this.shopService.getTotalPrice();
+    // this.cartItems = this.shopService.getCart();
+    // this.totalPrice = this.shopService.getTotalPrice();
+    // this.shopService.getCart2().subscribe({
+    //   next: (response) => {
+    //     console.log('stepper:');
+    //     console.log(response);
+    //     this.cart = response;
+    //   }
+    // })
+    this.shopService.getCart2().subscribe({
+      next: (response) => {
+        this.cart = response;
+      }
+    })
   }
 
-  increment(id: number) {
-    for (let item of this.cartItems) {
-      if (item.data.id == id) {
-        item.data.addToCart.quantity++;
-        this.totalPrice += item.data.priceValue;
-        localStorage.setItem("cachedCart", JSON.stringify(this.cartItems));
-        localStorage.setItem("totalPrice", "" + this.totalPrice);
-        break;
+  update(product: IProductInCart, quantity: number) {
+    let temp = product.quantity + quantity;
+    if (temp < 0)
+      temp = 0;
+    this.shopService.updateCart(product.id, temp).subscribe({
+      next: (response) => {
+        this.shopService.getCart2().subscribe({
+          next: (response) => {
+            this.cart = response;
+          }
+        })
       }
-    }
-  }
-
-  decrement(id: number) {
-    for (let i = 0; i < this.cartItems.length; i++) {
-      if (this.cartItems[i].data.id == id && this.cartItems[i].data.addToCart.quantity == 1) {
-        this.totalPrice -= this.cartItems[i].data.priceValue;
-        this.cartItems.splice(i, 1);
-        break;
-      }
-      if (this.cartItems[i].data.id == id && this.cartItems[i].data.addToCart.quantity > 1) {
-        this.totalPrice -= this.cartItems[i].data.priceValue;
-        this.cartItems[i].data.addToCart.quantity--;
-        break;
-      }
-    }
-    localStorage.setItem("cachedCart", JSON.stringify(this.cartItems));
-    localStorage.setItem("totalPrice", "" + this.totalPrice);
+    })
   }
 
   handleClickedButton() {

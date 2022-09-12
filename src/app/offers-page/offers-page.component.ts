@@ -4,6 +4,7 @@ import { IFeaturedCategory } from '../models/featuredCategory';
 import { IOffer } from '../models/offers';
 import { IProduct } from '../models/product';
 import { ProductsService } from '../services/products.service';
+import { ShopService } from '../services/shop.service';
 
 @Component({
   selector: 'app-offers-page',
@@ -27,7 +28,7 @@ export class OffersPageComponent implements OnInit {
       "name": "",
       "products": []
     };
-  constructor(private router: Router, private productService: ProductsService, private activatedRouter: ActivatedRoute) { }
+  constructor(private router: Router, private productService: ProductsService, private activatedRouter: ActivatedRoute, private shopService: ShopService) { }
 
   ngOnInit(): void {
 
@@ -45,6 +46,10 @@ export class OffersPageComponent implements OnInit {
         this.offersToDisplay = category;
       }
     }
+  }
+
+  handleClick(id: number) {
+    this.router.navigate([`productDetails/${id}`])
   }
 
 }

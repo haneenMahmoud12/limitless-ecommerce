@@ -11,6 +11,16 @@
     color: var(--color-font1);
 }
 
+.active {
+    color: var(--color-lightMint);
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+}
+
 h4 {
     font-size: 22px;
 }
@@ -78,4 +88,47 @@ h5 {
     color: #fff;
     border-color: var(--color-lightMint);
     background-color: white;
+}
+
+.step {
+    padding: 0px 10px;
+}
+
+.step:not(:last-child)::after {
+    display: inline-block;
+    content: "";
+    border-top: .3rem solid #6c757d;
+    width: 5rem;
+    margin: 0 0 0 2rem;
+    transform: translateY(-.2rem);
+}
+
+.step .fa {
+    position: absolute;
+    top: -25px;
+    margin-left: 12px;
+    color: #6c757d;
+    font-size: 26px;
+}
+
+.step:first-child .fa {
+    margin-left: 2px;
+    color: var(--color-lightMint);
+}
+
+
+.done {
+    color: var(--color-lightMint);
+}
+
+.step .active {
+    opacity: 1
+}
+
+.all-steps {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    right: 0;
+    top: 0;
 }

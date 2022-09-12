@@ -1,8 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IAddress } from 'src/app/models/address';
+import { IAddressItem } from 'src/app/models/addressItem';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 declare var window: any;
-
 @Component({
   selector: 'app-shipping',
   templateUrl: './shipping.component.html',
@@ -13,25 +16,31 @@ export class ShippingComponent implements OnInit {
   formModal1: any;
   formModal2: any;
 
-  addresses: {
-    residence: string,
-    address: string,
-    phone: string
-  }[] = [
-      {
-        residence: 'Office',
-        address: 'El-Sadat, Zawya Abou Muslim, Al Haram,Giza Governorate',
-        phone: '+20 112 190 1909'
-      },
-      {
-        residence: 'Home',
-        address: '12 Ahmed El-Samman, Makram Ebeid, Nasr City',
-        phone: '+20 112 190 1909'
-      }
-    ]
+  chosenAddressId: number = 0;
 
+  disableButton: boolean = false;
+
+  addressForm: FormGroup = this.fb.group({
+    FirstName: ["", Validators.required],
+    LastName: ["", Validators.required],
+    PhoneNumber: ["", Validators.required],
+    Email: ["", Validators.required, Validators.email],
+    Title: ["", Validators.required],
+    City: ["", Validators.required],
+    Area: ["", Validators.required],
+    Street: ["", Validators.required],
+    BuildingNumber: ["", Validators.required],
+    ApartmentNumber: ["", Validators.required],
+  })
+  savedAddresses: IAddress = {
+    data: [],
+    message: '',
+    errorList: []
+  };
   isHidden: boolean = false;
-  constructor(private router: Router) { }
+
+  shippingFee: number = 0;
+  constructor(private router: Router, private fb: FormBuilder, private auth: AuthenticationService) { }
 
   ngOnInit(): void {
     this.formModal1 = new window.bootstrap.Modal(
@@ -40,13 +49,28 @@ export class ShippingComponent implements OnInit {
     this.formModal2 = new window.bootstrap.Modal(
       document.getElementById('EditAddressModal')
     );
+    this.auth.getAddress().subscribe({
+      next: (response) => {
+        this.savedAddresses = response;
+      }
+    })
+
   }
   openFormModal1() {
     this.formModal1.show();
   }
 
   saveAddress1() {
-    // confirm or save something
+    this.auth.addAddress(this.addressForm.getRawValue()).subscribe({
+      next: (response) => {
+        alert(response.message);
+      }
+    })
+    this.auth.getAddress().subscribe({
+      next: (response) => {
+        this.savedAddresses = response;
+      }
+    })
     this.formModal1.hide();
   }
 
@@ -55,15 +79,30 @@ export class ShippingComponent implements OnInit {
   }
 
   saveAddress2() {
-    // confirm or save something
+    this.auth.addAddress(this.addressForm.getRawValue()).subscribe({
+      next: (response) => {
+        alert(response.message);
+      }
+    })
     this.formModal2.hide();
   }
 
   handleClick() {
-    this.router.navigate(['summary']);
+    this.router.navigate([`payment-methods/${this.chosenAddressId}`]);
   }
 
   radioButtonClicked(hide: boolean) {
     this.isHidden = hide;
+  }
+
+  chosenAddress(addressId: number) {
+    // console.log("id:" + addressId);
+    this.chosenAddressId = addressId;
+    this.auth.billingAddress(addressId).subscribe({
+      next: (response) => {
+        this.shippingFee = response.data.delivery;
+      }
+    });
+    this.disableButton = true;
   }
 }

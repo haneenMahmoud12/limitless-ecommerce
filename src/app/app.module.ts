@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,11 +15,9 @@ import { SharedModule } from './shared/shared.module';
 import { AuthTokenInterceptor } from './auth-token.interceptor';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { StepperComponent } from './checkout/stepper/stepper.component';
-import { CheckoutComponent } from './checkout/checkout.component';
 import { ShippingComponent } from './checkout/shipping/shipping.component';
 import { OrderSummaryComponent } from './checkout/order-summary/order-summary.component';
 import { CartComponent } from './checkout/carts/cart.component';
-import { StepsComponent } from './checkout/steps/steps.component';
 import { ConfirmationComponent } from './checkout/confirmation/confirmation.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
@@ -27,6 +26,11 @@ import { ShopByCategoryComponent } from './shop-by-category/shop-by-category.com
 import { ProductListingComponent } from './product-listing/product-listing.component';
 import { PaymentMethodsComponent } from './payment-methods/payment-methods.component';
 import { OffersPageComponent } from './offers-page/offers-page.component';
+import { TrackOrderComponent } from './checkout/track-order/track-order.component';
+import { FeaturedComponent } from './featured/featured.component';
+import { CommonModule } from '@angular/common';
+import { ProductsDetailsComponent } from './products-details/products-details.component';
+
 
 @NgModule({
   declarations: [
@@ -35,20 +39,22 @@ import { OffersPageComponent } from './offers-page/offers-page.component';
     FeaturedCategory1Component,
     StepperComponent,
     CartComponent,
-    CheckoutComponent,
+    ProductsDetailsComponent,
     ShippingComponent,
     OrderSummaryComponent,
-    StepsComponent,
     ConfirmationComponent,
     OffersCarouselComponent,
     FooterComponent,
     ShopByCategoryComponent,
     ProductListingComponent,
     PaymentMethodsComponent,
-    OffersPageComponent
+    OffersPageComponent,
+    TrackOrderComponent,
+    FeaturedComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -59,7 +65,9 @@ import { OffersPageComponent } from './offers-page/offers-page.component';
     HttpClientModule,
     SharedModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

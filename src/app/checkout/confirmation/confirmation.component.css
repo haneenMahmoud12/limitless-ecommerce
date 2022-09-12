@@ -18,3 +18,14 @@ h5 {
 .active {
     color: var(--color-lightMint);
 }
+
+.btnStyle1 {
+    background-color: var(--color-lightMint);
+    color: white;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 22px;
+    border-radius: 8px;
+    width: 322px;
+    height: 68px;
+}

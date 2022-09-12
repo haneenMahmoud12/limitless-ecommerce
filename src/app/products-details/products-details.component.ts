@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ICartItem } from 'src/app/models/cartItem';
+// import { ICartItem } from 'src/app/models/cartItem';
 import { ILoginData } from 'src/app/models/loginData';
 import { IProductDetails } from 'src/app/models/productDetails';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ShopService } from 'src/app/services/shop.service';
+import { ICart } from '../models/cart';
 import { IResponse } from '../models/response';
 import { ProductsService } from '../services/products.service';
 
@@ -52,27 +53,50 @@ export class ProductsDetailsComponent implements OnInit {
     message: '',
     errorList: []
   };
-  cart: IProductDetails[] = [];
+  // cart: ICart = {
+  //   data: {
+  //     products: [],
+  //     oneTimeSubTotal: '',
+  //     monthlySubTotal: '',
+  //     discountAmount: '',
+  //     discountCoupon: null,
+  //     totalPrice: ''
+  //   },
+  //   message: '',
+  //   errorList: []
+  // };
   quantity: number = 1;
   disableButton: boolean = false;
+  attributeValues: {
+    attributeTypeId: number,
+    valueRaw: string,
+    colorSquaresRgb: null,
+    customProperties: {}
+  }[] = [];
   constructor(private shopService: ShopService, private auth: AuthenticationService, private router: ActivatedRoute,
     private productService: ProductsService) { }
 
   ngOnInit(): void {
-    this.cart = this.shopService.getCart();
+    // this.cart = this.shopService.getCart2();
+    // this.shopService.getCart2().subscribe({
+    //   next: (response) => {
+    //     console.log('productDetails:');
+    //     console.log(response);
+    //     this.cart = response;
+    //   }
+    // })
     this.finalPrice();
     this.displayProducts(this.router.snapshot.params['id']);
   }
 
   handleClick() {
-    const cartItem: ICartItem = {
+    this.product.data.addToCart = {
       id: this.product.data.id,
       quantity: this.quantity,
       isMonthly: false,
       cartId: 0
-    }
-    this.product.data.addToCart = cartItem;
-    this.shopService.addToCart(this.product).subscribe({
+    };
+    this.shopService.addToCart(this.product.data.addToCart.id, this.product.data.addToCart.quantity).subscribe({
       next: (response) => {
         alert(response.message);
       }
@@ -100,7 +124,18 @@ export class ProductsDetailsComponent implements OnInit {
     this.productService.getProducts(id).subscribe({
       next: (response) => {
         this.product = response;
+        console.log(this.product);
+
       }
     })
+  }
+
+  public displayAttribute(attributeId: number) {
+    console.log(attributeId);
+
+    for (let attribute of this.product.data.attributes) {
+      if (attribute.id == attributeId)
+        this.attributeValues = attribute.values;
+    }
   }
 }

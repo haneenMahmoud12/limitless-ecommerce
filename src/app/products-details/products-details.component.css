@@ -126,3 +126,25 @@ button {
 .active {
     color: var(--color-lightMint);
 }
+
+.attributes {
+    border: none;
+}
+
+.card-header {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 25px;
+    color: #3AC591;
+    background-color: var(--color-primary);
+}
+
+.btn-group {
+    margin-right: 20px;
+}
+
+.btnStyle4 {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 25px;
+}

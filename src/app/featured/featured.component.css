@@ -8,6 +8,10 @@
     color: #6c757d;
 }
 
+.active {
+    color: var(--color-lightMint);
+}
+
 .grid-view,
 .list-view {
     display: inline-block;

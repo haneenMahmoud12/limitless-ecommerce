@@ -2,12 +2,12 @@
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-            <li class="breadcrumb-item active">{{offersToDisplay.name}}</li>
+            <li class="breadcrumb-item active">{{featuredCategory.data.categoryName}}</li>
         </ol>
     </nav>
     <div class="row d-flex justify-content-between">
         <div class="col-6">
-            <h1>{{offersToDisplay.name}}</h1>
+            <h1>{{featuredCategory.data.categoryName}}</h1>
         </div>
         <div class="col-3">
             <div class="list-view"><i id="list" onclick="listView()" class="fa fa-list"></i></div>
@@ -18,7 +18,7 @@
 <section class="products-wrapper pt-5 pb-5">
     <div class="container">
         <div id="productslist" class="row d-flex justify-content-center view-group">
-            <div class="item col-xs-4 col-md-5 col-lg-3 mb-5" *ngFor="let product of offersToDisplay.products">
+            <div class="item col-xs-4 col-md-5 col-lg-3 mb-5" *ngFor="let product of featuredCategory.data.products">
                 <div class="thumbnail card" (click)="handleClick(product.id)">
                     <div class="img-event">
                         <img class="group list-group-image img-fluid" [src]="product.imageUrl" alt="" />

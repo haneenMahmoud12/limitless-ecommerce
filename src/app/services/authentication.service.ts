@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { IAddress } from '../models/address';
+import { IBilling } from '../models/IBillingResponse';
 import { ILoginData } from '../models/loginData';
 import { IUpdateResponse } from '../models/updateResponse';
 
@@ -69,6 +70,18 @@ export class AuthenticationService {
       'Authorization': `Bearer ${accessToken}`
     };
     return this.http.put<IUpdateResponse>('https://limit-lessstaging.azurewebsites.net/webapi2/CustomerAddress/AddressEdit', formData,
+      {
+        headers: new HttpHeaders(modifiedHeader)
+      })
+  }
+
+  // 
+  public billingAddress(addressId: number) {
+    const accessToken = JSON.parse(localStorage.getItem('currentUser') || '{}').data.accessToken;
+    const modifiedHeader = {
+      'Authorization': `Bearer ${accessToken}`
+    };
+    return this.http.get<IBilling>(`https://limit-lessstaging.azurewebsites.net/webapi2/Order/SelectBillingAddress/${addressId}`,
       {
         headers: new HttpHeaders(modifiedHeader)
       })

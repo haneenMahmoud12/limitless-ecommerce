@@ -2,7 +2,11 @@
     background-color: var(--color-secondary);
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+}
+
+.active {
+    color: var(--color-lightMint);
 }
 
 h1 {
@@ -29,6 +33,14 @@ h3 {
 h4 {
     font-size: 22px;
     line-height: 22px;
+}
+
+p {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    background-color: var(--color-secondary);
+    color: var(--color-lightMint);
 }
 
 .totalPrice {
@@ -113,4 +125,43 @@ img {
     font-size: 50px;
     cursor: pointer;
     padding-left: 13px;
+}
+
+.step {
+    padding: 0px 10px;
+}
+
+.step:not(:last-child)::after {
+    display: inline-block;
+    content: "";
+    border-top: .3rem solid #6c757d;
+    width: 5rem;
+    margin: 0 0 0 2rem;
+    transform: translateY(-.2rem);
+}
+
+.step .fa {
+    position: absolute;
+    top: -25px;
+    margin-left: 12px;
+    color: #6c757d;
+    font-size: 26px;
+}
+
+.step:first-child .fa {
+    margin-left: 2px;
+}
+
+.step .active {
+    opacity: 1
+}
+
+.all-steps {
+    margin-top: 30px;
+    /* margin-bottom: 30px; */
+    position: relative;
+}
+
+.done {
+    color: var(--color-lightMint);
 }

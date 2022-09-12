@@ -5,10 +5,19 @@
     </ol>
 </nav>
 <div class="container-fluid p-5">
-    <app-steps step="cart"></app-steps>
+    <div class="container-fluid d-flex justify-content-between">
+        <h1 class="h1">Checkout</h1>
+        <div class="all-steps" id="all-steps">
+            <span class="step done"><i class="fa">1</i>Cart</span>
+            <span class="step"><i class="fa">2</i>Shipping</span>
+            <span class="step"><i class="fa ">3</i>Payment</span>
+            <span class="step"><i class="fa ">4</i>Summary</span>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row row-cols-2">
             <div class="col col-8">
+                <p *ngIf="cart.data.products.length==0" class="text-center">{{cart.message}}</p>
                 <div class="card cart-items bg-white border-0">
                     <ul class="list-group" *ngFor="let product of cart.data.products">
                         <li class="list-group-item list-group-item-action border-0 d-flex p-4 ">
@@ -42,7 +51,8 @@
                         <span class="totalPrice">Total Price</span>
                         <span class="price">EGP {{cart.data.totalPrice}}</span>
                     </h4>
-                    <button class="btn btnStyle2" (click)="handleClick()">Proceed to Shipping</button>
+                    <button class="btn btnStyle2" (click)="handleClick()" [disabled]="disableButton()">Proceed to
+                        Shipping</button>
                 </div>
             </div>
         </div>
