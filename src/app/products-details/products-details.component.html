@@ -50,7 +50,7 @@
                 <label class="btn btnStyle4" [for]="attribute.id">{{attribute.name}}</label>
             </div>
         </div>
-        <div class="card-body" *ngIf="attributeValues[0]">
+        <div class="card-body" *ngIf="attributeValues[0]" [innerHTML]="attributeValues[0].valueRaw">
             {{attributeValues[0].valueRaw}}
         </div>
     </div>
