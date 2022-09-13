@@ -60,18 +60,10 @@ export class TrackOrderComponent implements OnInit {
   ngOnInit(): void {
     this.shopService.trackOrder().subscribe({
       next: (response) => {
-        console.log('track order');
-        // console.log('orderNumber' + this.orderNumber);
         this.orderHistory = response;
-        console.log('orderHistory');
-        console.log(this.orderHistory);
-
         for (let order of this.orderHistory.data) {
           if (order.orderNumber == this.route.snapshot.params['orderNumber']) {
             this.trackOrder = order;
-            console.log('trackOrder');
-            console.log(this.trackOrder);
-
             break;
           }
           else
@@ -97,6 +89,19 @@ export class TrackOrderComponent implements OnInit {
         else
           alert(`${response.errorList}
                 please try again.`);
+      }
+    })
+    this.shopService.trackOrder().subscribe({
+      next: (response) => {
+        this.orderHistory = response;
+        for (let order of this.orderHistory.data) {
+          if (order.orderNumber == this.route.snapshot.params['orderNumber']) {
+            this.trackOrder = order;
+            break;
+          }
+          else
+            this.orderHistory.data.pop();
+        }
       }
     })
   }

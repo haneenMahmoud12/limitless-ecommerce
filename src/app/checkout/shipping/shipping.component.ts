@@ -46,7 +46,7 @@ export class ShippingComponent implements OnInit {
     buildingNumber: 0,
     apartmentNumber: 0
   };
-  isHidden: boolean = false;
+  isHidden: boolean = true;
 
   shippingFee: number = 0;
   constructor(private router: Router, private fb: FormBuilder, private auth: AuthenticationService) { }
@@ -75,12 +75,12 @@ export class ShippingComponent implements OnInit {
         alert(response.message);
       }
     })
+    this.formModal1.hide();
     this.auth.getAddress().subscribe({
       next: (response) => {
         this.savedAddresses = response;
       }
     })
-    this.formModal1.hide();
   }
 
   openFormModal2(addressId: number) {

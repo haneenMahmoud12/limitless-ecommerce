@@ -28,6 +28,9 @@ export class OffersPageComponent implements OnInit {
       "name": "",
       "products": []
     };
+
+  listView: boolean = true;
+  gridView: boolean = false;
   constructor(private router: Router, private productService: ProductsService, private activatedRouter: ActivatedRoute, private shopService: ShopService) { }
 
   ngOnInit(): void {
@@ -40,7 +43,7 @@ export class OffersPageComponent implements OnInit {
     })
   }
 
-  findCategory() {
+  public findCategory() {
     for (let category of this.offersCategory.data) {
       if (category.id == parseInt(this.activatedRouter.snapshot.params['id'])) {
         this.offersToDisplay = category;
@@ -48,8 +51,16 @@ export class OffersPageComponent implements OnInit {
     }
   }
 
-  handleClick(id: number) {
+  public handleClick(id: number) {
     this.router.navigate([`productDetails/${id}`])
   }
 
+  public setGridView() {
+    this.listView = true;
+    this.gridView = false;
+  }
+  public setListView() {
+    this.gridView = true;
+    this.listView = false;
+  }
 }

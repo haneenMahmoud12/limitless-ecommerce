@@ -193,3 +193,17 @@
 .card {
     cursor: pointer;
 }
+
+.list-group-item {
+    height: 184px;
+}
+
+.list-image {
+    height: 180px;
+}
+
+.fa-eye {
+    color: var(--color-lightMint);
+    font-size: 25px;
+    padding: 10px;
+}

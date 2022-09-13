@@ -30,3 +30,7 @@ h2 {
     line-height: 20px;
     color: red;
 }
+
+.active {
+    color: #49C69B;
+}
