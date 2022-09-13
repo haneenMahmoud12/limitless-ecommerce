@@ -11,23 +11,24 @@
                 <li class="breadcrumb-item active" aria-current="page">Payment</li>
             </ol>
         </nav>
-        <div class="container-fluid outer-container p-5">
-            <div class="container-fluid d-flex justify-content-between">
-                <h1 style="text-align:left;">Checkout</h1>
+        <div class="row row-cols-lg-2 row-cols-sm-1">
+            <div class="col col-lg-8">
+                <h1 class="h1">Checkout</h1>
+            </div>
+            <div class="col col-lg-4">
                 <div class="all-steps" id="all-steps">
-                    <span class="step" style="color: var(--color-lightMint);"><i class="fa fa-check-circle"
+                    <span class="step done"><i class="fa fa-check-circle"
                             style="color: var(--color-lightMint);"></i>Cart</span>
-                    <span class="step" style="color: var(--color-lightMint);"><i class="fa fa-check-circle"
+                    <span class="step done"><i class="fa fa-check-circle"
                             style="color: var(--color-lightMint);"></i>Shipping</span>
-                    <span class="step" style="color: var(--color-lightMint);"><i class="fa"
-                            style="color: var(--color-lightMint);">3</i>Payment</span>
+                    <span class="step done"><i class="fa ">3</i>Payment</span>
                     <span class="step"><i class="fa ">4</i>Summary</span>
                 </div>
             </div>
         </div>
         <div class="container-fluid inner-container">
             <div class="row">
-                <div class="col col-8">
+                <div class="col col-lg-8 mb-5">
                     <div class="card p-5">
                         <h2>Payment Method</h2>
                         <div class="form-check form-check-inline">
@@ -37,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col col-4">
+                <div class="col col-lg-4">
                     <app-stepper [buttonText]="buttonText" [isClickable]="isClickable"
                         (theButtonWasClicked)="handleClick()"></app-stepper>
                 </div>

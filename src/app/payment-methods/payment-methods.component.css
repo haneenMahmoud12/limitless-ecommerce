@@ -285,3 +285,7 @@ button:hover {
         margin: 0 2px 0 9px;
     }
 }
+
+.done {
+    color: #49C69B;
+}

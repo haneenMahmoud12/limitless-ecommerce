@@ -17,43 +17,14 @@ export class HomeComponent implements OnInit {
     message: '',
     errorList: []
   };
-  constructor(private productService: ProductsService, private auth: AuthenticationService) { }
+  constructor(private auth: AuthenticationService) { }
 
   ngOnInit(): void {
     this.auth.login().subscribe({
       next: (response) => {
         this.loginData = response;
-        // this.auth.setUserToken(this.loginData.data.accessToken);
         localStorage.setItem('currentUser', JSON.stringify(this.loginData));
-        // console.log(localStorage.getItem('currentUser'));
-        // console.log(this.loginData);
-        // this.displayProducts();
-        // this.displayProductsByTag();
       }
     })
-
-    // this.productService.getOffersCategories().subscribe({
-    //   next: (response) => {
-    //     console.log(response);
-
-    //   }
-    // })
   }
-
-  // public displayProducts() {
-  //   this.productService.getProducts(193).subscribe({
-  //     next: (response) => {
-  //       console.log(response);
-  //     }
-  //   })
-  // }
-
-  // public displayProductsByTag() {
-  //   this.productService.getProductsByTag().subscribe({
-  //     next: (response) => {
-  //       console.log(response);
-  //     }
-  //   })
-  // }
-
 }

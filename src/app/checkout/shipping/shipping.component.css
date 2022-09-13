@@ -131,11 +131,10 @@ label {
     font-size: 18px;
     line-height: 20px;
     color: #5E5E5E;
-    display: inline-flex;
 }
 
 .address .s1 {
-    width: 500px;
+    width: 70%;
 }
 
 .residence {
@@ -157,7 +156,7 @@ label {
     width: 46px;
     height: 46px;
     position: relative;
-    left: 100px;
+    /* left: 100px; */
     background-color: #e8fdf6;
     ;
 }

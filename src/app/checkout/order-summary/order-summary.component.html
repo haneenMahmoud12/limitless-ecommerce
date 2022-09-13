@@ -11,20 +11,25 @@
     </ol>
 </nav>
 <div class="container-fluid outer-container p-5">
-    <div class="container-fluid d-flex justify-content-between">
-        <h1 class="h1">Checkout</h1>
-        <div class="all-steps" id="all-steps">
-            <span class="step done"><i class="fa fa-check-circle"></i>Cart</span>
-            <span class="step done"><i class="fa fa-check-circle"
-                    style="color: var(--color-lightMint);"></i>Shipping</span>
-            <span class="step done"><i class="fa fa-check-circle"
-                    style="color: var(--color-lightMint);"></i>Payment</span>
-            <span class="step done"><i class="fa">4</i>Summary</span>
+    <div class="row row-cols-lg-2 row-cols-sm-1">
+        <div class="col col-lg-8">
+            <h1 class="h1">Checkout</h1>
+        </div>
+        <div class="col col-lg-4">
+            <div class="all-steps" id="all-steps">
+                <span class="step done"><i class="fa fa-check-circle"
+                        style="color: var(--color-lightMint);"></i>Cart</span>
+                <span class="step done"><i class="fa fa-check-circle"
+                        style="color: var(--color-lightMint);"></i>Shipping</span>
+                <span class="step done"><i class="fa fa-check-circle"
+                        style="color: var(--color-lightMint);"></i>Payment</span>
+                <span class="step done"><i class="fa ">4</i>Summary</span>
+            </div>
         </div>
     </div>
     <div class="container-fluid inner-container p-5">
-        <div class="row row-cols-2">
-            <div class="col col-8">
+        <div class="row">
+            <div class="col col-lg-8 mb-5">
                 <div class="card cart-items bg-white border-0 p-5">
                     <span class="order-summary-span">Order Summary</span>
                     <div class="card card-inner m-3 p-5 border-0">
@@ -46,7 +51,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col col-4">
+            <div class="col col-lg-4">
                 <app-stepper (theButtonWasClicked)="handleClick()" buttonText="Place Order"></app-stepper>
             </div>
         </div>

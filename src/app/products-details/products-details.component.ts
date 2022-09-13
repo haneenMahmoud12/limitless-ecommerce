@@ -73,6 +73,7 @@ export class ProductsDetailsComponent implements OnInit {
     colorSquaresRgb: null,
     customProperties: {}
   }[] = [];
+  firstAttributeId: number = 0;
   // finalPrice: number = 0;
   constructor(private shopService: ShopService, private auth: AuthenticationService, private router: ActivatedRoute,
     private productService: ProductsService) { }
@@ -126,16 +127,26 @@ export class ProductsDetailsComponent implements OnInit {
         this.product = response;
         // console.log(this.product);
         this.finalPrice();
+        this.firstAttributeId = this.product.data.attributes[0].id
+        this.attributeValues = this.product.data.attributes[0].values
       }
     })
   }
 
   public displayAttribute(attributeId: number) {
-    console.log(attributeId);
 
     for (let attribute of this.product.data.attributes) {
       if (attribute.id == attributeId)
         this.attributeValues = attribute.values;
     }
   }
+
+  public isChecked(attributeId: number): boolean {
+    if (attributeId == this.firstAttributeId)
+      return true;
+    else
+      return false;
+  }
+
+
 }

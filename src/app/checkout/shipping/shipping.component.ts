@@ -75,12 +75,13 @@ export class ShippingComponent implements OnInit {
         alert(response.message);
       }
     })
-    this.formModal1.hide();
     this.auth.getAddress().subscribe({
       next: (response) => {
         this.savedAddresses = response;
       }
     })
+    this.formModal1.hide();
+
   }
 
   openFormModal2(addressId: number) {

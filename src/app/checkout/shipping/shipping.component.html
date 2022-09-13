@@ -7,30 +7,34 @@
     </ol>
 </nav>
 <div class="container-fluid outer-container p-5">
-    <div class="container-fluid d-flex justify-content-between">
-        <h1 class="h1">Checkout</h1>
-        <div class="all-steps" id="all-steps">
-            <span class="step done"><i class="fa fa-check-circle"></i>Cart</span>
-            <span class="step done"><i class="fa">2</i>Shipping</span>
-            <span class="step"><i class="fa ">3</i>Payment</span>
-            <span class="step"><i class="fa ">4</i>Summary</span>
+    <div class="row row-cols-lg-2 row-cols-sm-1">
+        <div class="col col-lg-8">
+            <h1 class="h1">Checkout</h1>
+        </div>
+        <div class="col col-lg-4">
+            <div class="all-steps" id="all-steps">
+                <span class="step done"><i class="fa fa-check-circle"></i>Cart</span>
+                <span class="step done"><i class="fa">2</i>Shipping</span>
+                <span class="step"><i class="fa ">3</i>Payment</span>
+                <span class="step"><i class="fa ">4</i>Summary</span>
+            </div>
         </div>
     </div>
     <div class="container-fluid inner-container">
         <div class="row">
-            <div class="col col-8">
+            <div class="col col-lg-8 mb-5">
                 <div class="card cart-items bg-white border-0 p-5">
                     <h2>Delivery Method</h2>
                     <div class="p-4">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                value="option1" (click)="radioButtonClicked(false)">
+                                value="option1">
                             <label class="form-check-label mt-1" for="inlineRadio1">Home Delivery</label>
                         </div>
                     </div>
 
                     <hr style="width: 95%; margin-left:15px;">
-                    <div class="container-fluid" [ngClass]="{'element-hidden' : isHidden == true}">
+                    <div class="container-fluid">
                         <div class="container-fluid text-center mt-4" *ngIf="savedAddresses.data.length ==0">
                             <h3>No Saved Addresses</h3>
                             <h4>When you have addresses, you'll see them here.</h4>
@@ -46,13 +50,13 @@
                                 </span>
                                 <span>
                                     <h6 class="residence mt-5 mb-1">{{address.title}}</h6>
-                                    <h6 class="address mt-0">
+                                    <div class="address mt-0 d-flex justify-content-between">
                                         <span class="s1 mt-3">{{address.city}}, {{address.area}}, {{address.street}},
                                             {{address.buildingNumber}}, {{address.apartmentNumber}}</span>
                                         <button class="btn-edit" (click)="openFormModal2(address.id)">
                                             <fa-icon icon="edit"></fa-icon>
                                         </button>
-                                    </h6>
+                                    </div>
                                 </span>
                             </div>
                         </div>
@@ -61,7 +65,7 @@
                 <button class="btn btnStyle5 w-100" (click)="openFormModal1()" *ngIf="savedAddresses.data.length !=0">+
                     Add New Address</button>
             </div>
-            <div class="col">
+            <div class="col col-lg-4">
                 <app-stepper (theButtonWasClicked)="handleClick()" buttonText="Proceed to Payment"
                     [isClickable]="disableButton" [shippingFee]="shippingFee"></app-stepper>
             </div>

@@ -85,16 +85,7 @@ h6 {
 
 .card {
     height: 536px;
-    /* margin-left: -40px; */
 }
-
-/* .col1 {
-    width: 40%;
-}
-
-.col2 {
-    width: 60%;
-} */
 
 button {
     width: 500px;
@@ -147,6 +138,10 @@ button {
     font-weight: 500;
     font-size: 25px;
     line-height: 25px;
+}
+
+.btnStyle2 {
+    width: 380px;
 }
 
 .attributes .card-body {

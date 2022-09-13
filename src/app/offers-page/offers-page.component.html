@@ -33,12 +33,12 @@
         </div>
     </div>
 
-    <div class="container list-view h-25" [hidden]="listView">
+    <div class="container list-view" [hidden]="listView">
         <ul class="list-group" *ngFor="let product of offersToDisplay.products">
             <li class="list-group-item m-4 d-flex justify-content-between">
-                <div class="container-fluid d-flex">
+                <div class="container-fluid d-flex pb-5" style="height: inherit;">
                     <img class="list-image img-fluid" [src]="product.imageUrl" alt="" />
-                    <div class="caption mt-5">
+                    <div class="caption mt-2">
                         <h1 class="group card-title inner list-group-item-heading">{{product.name}}</h1>
                         <p class="lead">EGP {{product.priceValue}}</p>
                     </div>

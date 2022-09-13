@@ -69,10 +69,6 @@ img {
     height: 134.31px;
 }
 
-/* .list-group {
-    width: 979px;
-} */
-
 .list-group-item div {
     margin-left: 10px;
 }
@@ -100,29 +96,29 @@ img {
 .input-group {
     cursor: pointer;
     mix-blend-mode: normal;
-    width: 150px;
-    height: 51px;
+    width: 132px;
+    height: 45px;
 
 }
 
 .input-group .form-control {
     font-weight: 700;
-    width: 50px;
+    width: 44px;
     font-size: 25px;
     line-height: 20px;
     color: #161D25;
     text-align: center;
     border: none;
-    padding-top: 35px;
+    padding-top: 28px;
 }
 
 .input-group-text {
-    width: 50px;
+    width: 44px;
     background: var(--color-secondary);
     opacity: 0.1;
     border-radius: 4px;
     font-weight: 400;
-    font-size: 50px;
+    font-size: 40px;
     cursor: pointer;
     padding-left: 13px;
 }
