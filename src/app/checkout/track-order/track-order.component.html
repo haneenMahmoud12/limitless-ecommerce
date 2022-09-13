@@ -4,47 +4,26 @@
         <li class="breadcrumb-item active" aria-current="page">Track Order</li>
     </ol>
 </nav>
-<div class="container-fluid">
-    <h1 class="text-center">Order # {{trackOrder.id}}</h1>
-    <h4 class="text-center text-muted">On {{trackOrder.date}}</h4>
-    <h2 class="text-success text-center">{{trackOrder.orderStatus}}</h2>
-
-    <div class="container-fluid p-5">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col col-lg-8 mb-5">
-                    <!-- <p *ngIf="confirmedOrder.data.products.length==0" class="text-center">{{confirmedOrder.message}}</p> -->
-                    <div class="card cart-items bg-white border-0">
-                        <h2>Order Details</h2>
-                        <!-- <ul class="list-group" *ngFor="let product of confirmedOrder.data.products">
-                            <li class="list-group-item list-group-item-action border-0 d-flex p-4 ">
-                                <img [src]="product.imageUrl" alt="img">
-                                <div class="d-flex w-50 flex-column">
-                                    <h1>{{product.name}}</h1>
-                                    <h3>EGP {{product.unitPrice}}</h3>
-                                </div>
-                            </li>
-                            <hr style="width: 95%;margin-left:20px;color:grey;">
-                        </ul> -->
-                    </div>
-                </div>
-                <div class="col col-lg-4">
-                    <div class="card order-summary bg-white border-0 ">
-                        <h2>Order Summary</h2>
-                        <h3 class="d-flex justify-content-between mb-5">
-                            <!-- ({{confirmedOrder.data.products.length}} items) -->
-                            <span>Subtotal </span>
-                            <span>EGP {{trackOrder.totalPrice}}</span>
-                        </h3>
-                        <h4 class="d-flex justify-content-between mb-5">
-                            <span class="totalPrice">Total Price</span>
-                            <span class="price">EGP {{trackOrder.totalPrice}}</span>
-                        </h4>
-                        <button class="btn btnStyle7" (click)="handleClick(trackOrder.id)"
-                            [disabled]="disableCancel()">Cancel Order</button>
-                    </div>
-                </div>
-            </div>
+<div class="container-fluid p-5 d-flex justify-content-around">
+    <div class="card order-summary bg-white border-0 p-5">
+        <h2 class="text-center mb-5 mt-5" style="font-size: 40px;">Order # {{trackOrder.id}}</h2>
+        <h4 class=" text-muted text-center mb-5" style="font-size: 20px;">On {{trackOrder.date}}</h4>
+        <h2 class="text-success text-center" style="font-size: 30px;">{{trackOrder.orderStatus}}</h2>
+    </div>
+    <div>
+        <div class="card order-summary bg-white border-0">
+            <h2>Order Summary</h2>
+            <h3 class="d-flex justify-content-between mb-5">
+                <!-- ({{confirmedOrder.data.products.length}} items) -->
+                <span>Subtotal </span>
+                <span>EGP {{trackOrder.totalPrice}}</span>
+            </h3>
+            <h4 class="d-flex justify-content-between mb-5">
+                <span class="totalPrice">Total Price</span>
+                <span class="price">EGP {{trackOrder.totalPrice}}</span>
+            </h4>
+            <button class="btn btnStyle7" (click)="handleClick(trackOrder.id)" [disabled]="disableCancel()">Cancel
+                Order</button>
         </div>
     </div>
 </div>

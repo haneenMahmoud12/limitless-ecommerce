@@ -20,11 +20,13 @@ export class HomeComponent implements OnInit {
   constructor(private auth: AuthenticationService) { }
 
   ngOnInit(): void {
-    this.auth.login().subscribe({
-      next: (response) => {
-        this.loginData = response;
-        localStorage.setItem('currentUser', JSON.stringify(this.loginData));
-      }
-    })
+    if (!localStorage.getItem('currentUser')) {
+      this.auth.login().subscribe({
+        next: (response) => {
+          this.loginData = response;
+          localStorage.setItem('currentUser', JSON.stringify(this.loginData));
+        }
+      })
+    }
   }
 }

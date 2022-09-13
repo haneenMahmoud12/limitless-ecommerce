@@ -73,11 +73,11 @@ export class ShippingComponent implements OnInit {
     this.auth.addAddress(this.addressForm.getRawValue()).subscribe({
       next: (response) => {
         alert(response.message);
-      }
-    })
-    this.auth.getAddress().subscribe({
-      next: (response) => {
-        this.savedAddresses = response;
+        this.auth.getAddress().subscribe({
+          next: (response) => {
+            this.savedAddresses = response;
+          }
+        })
       }
     })
     this.formModal1.hide();
@@ -98,6 +98,11 @@ export class ShippingComponent implements OnInit {
     this.auth.addAddress(this.addressForm.getRawValue()).subscribe({
       next: (response) => {
         alert(response.message);
+        this.auth.getAddress().subscribe({
+          next: (response) => {
+            this.savedAddresses = response;
+          }
+        })
       }
     })
     this.formModal2.hide();

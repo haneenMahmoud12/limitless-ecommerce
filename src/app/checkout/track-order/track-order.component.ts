@@ -89,19 +89,20 @@ export class TrackOrderComponent implements OnInit {
         else
           alert(`${response.errorList}
                 please try again.`);
-      }
-    })
-    this.shopService.trackOrder().subscribe({
-      next: (response) => {
-        this.orderHistory = response;
-        for (let order of this.orderHistory.data) {
-          if (order.orderNumber == this.route.snapshot.params['orderNumber']) {
-            this.trackOrder = order;
-            break;
+
+        this.shopService.trackOrder().subscribe({
+          next: (response) => {
+            this.orderHistory = response;
+            for (let order of this.orderHistory.data) {
+              if (order.orderNumber == this.route.snapshot.params['orderNumber']) {
+                this.trackOrder = order;
+                break;
+              }
+              else
+                this.orderHistory.data.pop();
+            }
           }
-          else
-            this.orderHistory.data.pop();
-        }
+        })
       }
     })
   }

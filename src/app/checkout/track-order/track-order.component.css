@@ -34,3 +34,7 @@ h2 {
 .active {
     color: #49C69B;
 }
+
+.container-fluid {
+    background-color: var(--color-secondary);
+}
