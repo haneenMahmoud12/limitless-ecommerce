@@ -1,0 +1,99 @@
+<div class="card card-1">
+    <div class="card-body text-center">
+        <h1 class="card-title">{{featuredCategory.data.categoryName}}</h1>
+        <div class="container mt-5">
+            <owl-carousel-o [options]="customOptions">
+                <ng-container *ngFor="let product of featuredCategory.data.products">
+                    <ng-template carouselSlide>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card bg-white" style="height: 415px;width: 345px;cursor: pointer;"
+                                    (click)="handleClick(product.id)">
+                                    <div class="card-body">
+                                        <img class="card-img" [src]="product.imageUrl" alt="img">
+                                        <h4 class="text-start">{{product.name}}</h4>
+                                        <h6 class="text-start">
+                                            <span class="finalPrice">EGP {{product.priceValue}}</span>
+                                            <del class="text-muted h4" *ngIf="product.discountPercentage != 0">EGP
+                                                {{product.price}}</del>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ng-container>
+            </owl-carousel-o>
+        </div>
+        <button class="btn btnStyle" (click)="handleClickExplore()">Explore More</button>
+    </div>
+</div>
+
+<div class="card card-2">
+    <div class="card-body text-center">
+        <h1 class="card-title">{{featuredCategory2.data.categoryName}}</h1>
+        <div class="container-lg">
+            <div class="grid mt-5">
+                <div class="row row-cols-lg-3">
+                    <div class="col">
+                        <div class="card rounded-4 bg-black" style="height: 573px;cursor: pointer;"
+                            (click)="handleClick(featuredCategory2.data.products[0].id)">
+                            <img class="card-img" [src]="featuredCategory2.data.products[0].imageUrl"
+                                [alt]="featuredCategory2.data.products[0].name" style="height: 573px;">
+                            <div class="card-img-overlay">
+                                <h4 class="text-start text-white mb-1">{{featuredCategory2.data.products[0].name}}</h4>
+                                <h6 class="text-start text-white">EGP {{featuredCategory2.data.products[0].priceValue}}
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card rounded-4" style="height: 268px;cursor: pointer;"
+                                    (click)="handleClick(featuredCategory2.data.products[1].id)">
+                                    <img class="card-img" [src]="featuredCategory2.data.products[1].imageUrl"
+                                        [alt]="featuredCategory2.data.products[1].name" style="height: 268px;">
+                                    <div class="card-img-overlay">
+                                        <h4 class="text-start text-white mb-1">
+                                            {{featuredCategory2.data.products[1].name}}</h4>
+                                        <h6 class="text-start text-white">EGP
+                                            {{featuredCategory2.data.products[2].priceValue}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 37px;">
+                            <div class="col">
+                                <div class="card rounded-4" style="height: 268px;cursor: pointer;"
+                                    (click)="handleClick(featuredCategory2.data.products[2].id)">
+                                    <img class="card-img-top img-fluid"
+                                        [src]="featuredCategory2.data.products[2].imageUrl"
+                                        [alt]="featuredCategory2.data.products[2].name" style="height: 268px;">
+                                    <div class="card-img-overlay">
+                                        <h4 class="text-start text-white mb-1">
+                                            {{featuredCategory2.data.products[2].name}}</h4>
+                                        <h6 class="text-start text-white">EGP
+                                            {{featuredCategory2.data.products[2].priceValue}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card rounded-4" style="height: 573px;cursor: pointer;"
+                            (click)="handleClick(featuredCategory2.data.products[3].id)">
+                            <img class="card-img" [src]="featuredCategory2.data.products[3].imageUrl"
+                                [alt]="featuredCategory2.data.products[3].name" style="height: 573px;">
+                            <div class="card-img-overlay">
+                                <h4 class="text-start text-white mb-1">{{featuredCategory2.data.products[3].name}}</h4>
+                                <h6 class="text-start text-white">EGP {{featuredCategory2.data.products[3].priceValue}}
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

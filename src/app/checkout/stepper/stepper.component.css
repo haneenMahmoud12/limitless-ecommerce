@@ -1,0 +1,120 @@
+.container-fluid {
+    background: var(--color-secondary);
+    border-radius: 8px;
+}
+
+.order-summary {
+    height: 600px;
+    width: 472px;
+}
+
+.overflow-scroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-primary);
+    border-radius: 10px;
+}
+
+.overflow-scroll::-webkit-scrollbar {
+    width: 12px;
+    background-color: var(--color-primary);
+}
+
+.overflow-scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #DFDFDF;
+}
+
+.overflow-scroll {
+    scrollbar-color: #DFDFDF var(--color-primary);
+}
+
+.btn-edit {
+    background: rgba(58, 197, 145, 0.05);
+    border-radius: 8px;
+    width: 92.79px;
+    height: 45px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--color-lightMint);
+}
+
+.order-summary-span {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 24px;
+    color: var(--color-font1);
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 22px;
+    color: #5E5E5E;
+    display: flex;
+    justify-content: space-between;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h5 {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 24px;
+    color: var(--color-font1);
+}
+
+img {
+    width: 80px;
+    height: 77.84px;
+    margin-right: 10px;
+}
+
+.totalPrice {
+    font-weight: 500;
+    color: #5E5E5E;
+}
+
+.price {
+    font-weight: 700;
+    color: #49C69B;
+}
+
+
+.cart-items {
+    height: 474px;
+    border-radius: 8px;
+}
+
+.input-group {
+    cursor: pointer;
+    mix-blend-mode: normal;
+    width: 90px;
+    height: 30px;
+}
+
+.element-hidden {
+    visibility: hidden;
+}
+
+.input-group .form-control {
+    font-weight: 700;
+    width: 30px;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    border: none;
+    padding-top: 10px;
+}
+
+.input-group-text {
+    width: 30px;
+    background: #a5a5a5;
+    opacity: 0.1;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+}

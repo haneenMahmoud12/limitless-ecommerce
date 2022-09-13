@@ -1,0 +1,81 @@
+h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    color: var(--color-font1);
+}
+
+.step-text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: rgba(94, 94, 94, 0.7);
+}
+
+.step-number {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color: rgba(94, 94, 94, 0.7);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    /* background-color: var(--color-lightMint); */
+}
+
+.steps {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.step-button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--prm-gray);
+    transition: .4s;
+}
+
+/* 
+ .step-button[aria-expanded="true"] {
+     width: 60px;
+     height: 60px;
+     background-color: var(--prm-color);
+     color: #fff;
+ } */
+
+.done {
+    background-color: var(--prm-color);
+    color: #fff;
+}
+
+.step-item {
+    z-index: 10;
+    text-align: center;
+    margin-right: 100px;
+}
+
+#progress {
+    -webkit-appearance: none;
+    position: absolute;
+    width: 95%;
+    z-index: 5;
+    height: 10px;
+    margin-left: 18px;
+    margin-bottom: 18px;
+}
+
+/* to customize progress bar */
+#progress::-webkit-progress-value {
+    background-color: var(--prm-color);
+    transition: .5s ease;
+}
+
+#progress::-webkit-progress-bar {
+    background-color: var(--prm-gray);
+
+}

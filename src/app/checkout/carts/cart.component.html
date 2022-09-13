@@ -1,0 +1,50 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><i class="fa fa-home"></i><a class="breadcrumb-not-active" href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Cart</li>
+    </ol>
+</nav>
+<div class="container-fluid p-5">
+    <app-steps step="cart"></app-steps>
+    <div class="container-fluid">
+        <div class="row row-cols-2">
+            <div class="col col-8">
+                <div class="card cart-items bg-white border-0">
+                    <ul class="list-group" *ngFor="let product of cart.data.products">
+                        <li class="list-group-item list-group-item-action border-0 d-flex p-4 ">
+                            <img [src]="product.imageUrl" alt="img">
+                            <div class="d-flex w-50 flex-column">
+                                <h1>{{product.name}}</h1>
+                                <h3>EGP {{product.subTotalPrice}}</h3>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-text" (click)="update(product,-1)">-</span>
+                                <span class="form-control">{{product.quantity}}</span>
+                                <span class="input-group-text" (click)="update(product,1)">+</span>
+                            </div>
+                        </li>
+                        <hr style="width: 95%;margin-left:20px;color:grey;">
+                    </ul>
+                </div>
+            </div>
+            <div class="col col-4">
+                <div class="card order-summary bg-white border-0 ">
+                    <h2>Order Summary</h2>
+                    <h3>
+                        <span>Subtotal ({{cart.data.products.length}} items)</span>
+                        <span>EGP {{cart.data.oneTimeSubTotal}}</span>
+                    </h3>
+                    <h3 class="mb-5">
+                        <span>Shipping</span>
+                        <span>Calculate at next step</span>
+                    </h3>
+                    <h4 class="d-flex justify-content-between mb-5">
+                        <span class="totalPrice">Total Price</span>
+                        <span class="price">EGP {{cart.data.totalPrice}}</span>
+                    </h4>
+                    <button class="btn btnStyle2" (click)="handleClick()">Proceed to Shipping</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

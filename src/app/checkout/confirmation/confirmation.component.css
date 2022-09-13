@@ -1,0 +1,20 @@
+.container-fluid {
+    background-color: var(--color-secondary);
+    min-height: 100vh;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 42px;
+}
+
+h5 {
+    font-size: 20px;
+    line-height: 23px;
+    color: #2D2D2D;
+}
+
+.active {
+    color: var(--color-lightMint);
+}

@@ -1,0 +1,116 @@
+.container-fluid {
+    background-color: var(--color-secondary);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    color: var(--color-font1);
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 24px;
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 22px;
+    color: #5E5E5E;
+    display: flex;
+    justify-content: space-between;
+}
+
+h4 {
+    font-size: 22px;
+    line-height: 22px;
+}
+
+.totalPrice {
+    font-weight: 500;
+    color: #5E5E5E;
+}
+
+.price {
+    font-weight: 700;
+    color: #49C69B;
+}
+
+.order-summary {
+    width: 472px;
+    height: 315px;
+    padding: 20px;
+}
+
+button {
+    width: 424px;
+    height: 65px;
+}
+
+img {
+    width: 161.1px;
+    height: 134.31px;
+}
+
+/* .list-group {
+    width: 979px;
+} */
+
+.list-group-item div {
+    margin-left: 10px;
+}
+
+.list-group h1 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.list-group h2 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: rgba(94, 94, 94, 0.7);
+}
+
+.list-group h3 {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 22px;
+    color: #49C69B;
+}
+
+.input-group {
+    cursor: pointer;
+    mix-blend-mode: normal;
+    width: 150px;
+    height: 51px;
+
+}
+
+.input-group .form-control {
+    font-weight: 700;
+    width: 50px;
+    font-size: 25px;
+    line-height: 20px;
+    color: #161D25;
+    text-align: center;
+    border: none;
+    padding-top: 35px;
+}
+
+.input-group-text {
+    width: 50px;
+    background: var(--color-secondary);
+    opacity: 0.1;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 50px;
+    cursor: pointer;
+    padding-left: 13px;
+}

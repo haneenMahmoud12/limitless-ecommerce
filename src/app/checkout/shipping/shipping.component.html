@@ -1,0 +1,195 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><i class="fa fa-home"></i><a class="breadcrumb-not-active" href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Shipping</li>
+    </ol>
+</nav>
+<div class="container-fluid outer-container p-5">
+    <app-steps step="shipping"></app-steps>
+    <div class="container-fluid inner-container">
+        <div class="row">
+            <div class="col col-8">
+                <div class="card cart-items bg-white border-0 p-5">
+                    <h2>Delivery Method</h2>
+                    <div class="p-4">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="option1" [checked]="true" (click)="radioButtonClicked(false)">
+                            <label class="form-check-label mt-1" for="inlineRadio1">Home Delivery</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                value="option2" (click)="radioButtonClicked(true)">
+                            <label class="form-check-label mt-1" for="inlineRadio2">Pickup from Pharmacy</label>
+                        </div>
+                    </div>
+
+                    <hr style="width: 95%; margin-left:15px;">
+                    <div class="container-fluid" [ngClass]="{'element-hidden' : isHidden == true}">
+                        <div class="container-fluid" *ngIf="addresses.length ==0">
+                            <h3>No saved addresses</h3>
+                            <h4>When you have addresses, you'll see them here.</h4>
+                            <button class="btn btnStyle4">Add new address</button>
+                        </div>
+                        <div class="container-fluid" *ngIf="addresses.length !=0">
+                            <h3 class="mt-5">Select Address</h3>
+                            <div class="form-check w-100 mb-5 h-25 d-flex addresses border-0"
+                                *ngFor="let address of addresses">
+                                <span>
+                                    <input class="form-check-input mt-5" type="radio" name="flexRadioDefault"
+                                        id="flexRadioDefault1">
+                                </span>
+                                <span>
+                                    <h6 class="residence mt-5 mb-1">{{address.residence}}</h6>
+                                    <h6 class="address mt-0">
+                                        <span class="s1 mt-3">{{address.address}}</span>
+                                        <span class="mt-3"> {{address.phone}}</span>
+                                        <button class="btn-edit" (click)="openFormModal2()">
+                                            <fa-icon icon="edit"></fa-icon>
+                                        </button>
+                                    </h6>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btnStyle5 w-100" (click)="openFormModal1()">+ Add New Address</button>
+            </div>
+            <div class="col">
+                <app-stepper (theButtonWasClicked)="handleClick()" buttonText="Proceed to Payment"></app-stepper>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="AddAddressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="card card-outer m-3 p-5 border-0">
+                    <h4 class="change-address-h4 d-flex justify-content-between">
+                        <span class="mt-3">New Address</span>
+                        <span>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                (click)="saveAddress1()">
+                            </button>
+                        </span>
+                    </h4>
+                    <div class="grid">
+                        <div class="row row-cols-2">
+                            <div class="col d-flex flex-column">
+                                <span>Address Label</span>
+                                <input type="text">
+                            </div>
+                            <div class="col d-flex flex-column">
+                                <span>Address Details</span>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="row row-cols-2">
+                            <div class="col">
+                                <div class="row row-cols-2 mt-4">
+                                    <div class="col d-flex flex-column">
+                                        <span>Building Number</span>
+                                        <input type="text">
+                                    </div>
+                                    <div class="col d-flex flex-column">
+                                        <span>Floor Number</span>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col d-flex flex-column">
+                                        <span>Apartment Number</span>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col d-flex flex-column">
+                                        <span>Mobile Number</span>
+                                        <input type="number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div id="map-container-google-1" class="z-depth-1-half map-container"
+                                    style="height: 500px">
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=cairo&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                        frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btnStyle2" (click)="saveAddress1()">Save Address</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="EditAddressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="card card-outer m-3 p-5 border-0">
+                    <h4 class="change-address-h4 d-flex justify-content-between">
+                        <span class="mt-3">Edit Address</span>
+                        <span>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                (click)="saveAddress2()">
+                            </button>
+                        </span>
+                    </h4>
+                    <div class="grid">
+                        <div class="row row-cols-2">
+                            <div class="col d-flex flex-column">
+                                <span>Address Label</span>
+                                <input type="text">
+                            </div>
+                            <div class="col d-flex flex-column">
+                                <span>Address Details</span>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="row row-cols-2">
+                            <div class="col">
+                                <div class="row row-cols-2 mt-4">
+                                    <div class="col d-flex flex-column">
+                                        <span>Building Number</span>
+                                        <input type="text">
+                                    </div>
+                                    <div class="col d-flex flex-column">
+                                        <span>Floor Number</span>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col d-flex flex-column">
+                                        <span>Apartment Number</span>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col d-flex flex-column">
+                                        <span>Mobile Number</span>
+                                        <input type="number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div id="map-container-google-1" class="z-depth-1-half map-container"
+                                    style="height: 500px">
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                        frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btnStyle2" (click)="saveAddress2()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

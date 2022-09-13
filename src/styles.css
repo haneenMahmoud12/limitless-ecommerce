@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+:root {
+    /* COLORS */
+    --color-primary: #ffffff;
+    --color-secondary: #F8F9FA;
+    --color-green: #2D906E;
+    --color-mint: #49C69B;
+    --color-lightMint: #3AC591;
+    --color-font1: #161D25;
+    --color-font2: #5e5e5eb3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--color-font1);
+    background-color: var(--color-primary);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+
+html,
+body {
+    height: 100%;
+}
+
+
+.btnStyle {
+    border: 1px solid var(--color-lightMint);
+    background-color: var(--color-secondary);
+    border-radius: 8px;
+    padding: 24px 100px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 20px;
+    color: var(--color-lightMint);
+}
+
+.btnStyle2 {
+    background-color: var(--color-lightMint);
+    color: white;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 22px;
+    border-radius: 8px;
+}
+
+.btnStyle6 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    cursor: pointer;
+    color: #3AC591;
+    background-color: var(--color-secondary);
+    box-shadow: none;
+}
+
+.breadcrumb-not-active {
+    color: #5e5e5ecc;
+    text-decoration: none;
+}
