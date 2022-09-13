@@ -73,6 +73,7 @@ export class ProductsDetailsComponent implements OnInit {
     colorSquaresRgb: null,
     customProperties: {}
   }[] = [];
+  // finalPrice: number = 0;
   constructor(private shopService: ShopService, private auth: AuthenticationService, private router: ActivatedRoute,
     private productService: ProductsService) { }
 
@@ -85,7 +86,6 @@ export class ProductsDetailsComponent implements OnInit {
     //     this.cart = response;
     //   }
     // })
-    this.finalPrice();
     this.displayProducts(this.router.snapshot.params['id']);
   }
 
@@ -124,8 +124,8 @@ export class ProductsDetailsComponent implements OnInit {
     this.productService.getProducts(id).subscribe({
       next: (response) => {
         this.product = response;
-        console.log(this.product);
-
+        // console.log(this.product);
+        this.finalPrice();
       }
     })
   }

@@ -161,9 +161,9 @@ export class ShopService {
     const modifiedHeader = {
       'Authorization': `Bearer ${accessToken}`
     };
-    return this.http.get<IUpdateResponse>(`https://limit-lessstaging.azurewebsites.net/webapi2/Order/CancelOrder/${orderId}`,
+    return this.http.put<IUpdateResponse>(`https://limit-lessstaging.azurewebsites.net/webapi2/Order/CancelOrder/${orderId}`, {},
       {
         headers: new HttpHeaders(modifiedHeader)
-      })
+      });
   }
 }

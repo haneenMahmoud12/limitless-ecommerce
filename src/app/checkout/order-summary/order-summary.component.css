@@ -82,12 +82,9 @@ h5 {
 
 
 .form-check-input {
-    /* margin: 10px; */
     width: 39px;
     height: 39px;
-    color: #fff;
     border-color: var(--color-lightMint);
-    background-color: white;
 }
 
 .step {

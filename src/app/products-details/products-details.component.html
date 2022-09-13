@@ -11,6 +11,11 @@
             <span class="badge mt-4" *ngIf="product.data.discountPercentage!=0">{{product.data.discountPercentage}} %
                 OFF</span>
             <img [src]="product.data.imageUrl" [alt]="product.data.name">
+            <!-- <flex-slider flex-slide="s in mySlides">
+                <li>
+                    <img ng-src="{{s}}">
+                </li>
+            </flex-slider> -->
         </div>
         <div class="col col2">
             <div class="card border-0 p-1">
@@ -18,9 +23,9 @@
                 <p>{{product.data.shortDescription}}</p>
                 <h3>
                     <span class="price">Price: </span>
-                    <span class="value"> EGP {{product.data.priceValue}}</span>
+                    <span class="value"> EGP {{product.data.price}}</span>
                     <del class="text-muted h2" *ngIf="product.data.discountPercentage!=0">EGP
-                        {{product.data.price}}</del>
+                        {{product.data.priceValue}}</del>
                 </h3>
                 <h6 class="mb-3">Quantity</h6>
                 <div class="cart">

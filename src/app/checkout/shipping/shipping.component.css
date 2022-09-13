@@ -203,3 +203,9 @@ label {
     right: 0;
     top: 0;
 }
+
+.msg {
+    font-size: 8px;
+    color: red;
+    font-weight: 200;
+}

@@ -37,6 +37,15 @@ export class ShippingComponent implements OnInit {
     message: '',
     errorList: []
   };
+  addressToEdit: IAddressItem = {
+    id: 0,
+    title: '',
+    city: '',
+    area: '',
+    street: '',
+    buildingNumber: 0,
+    apartmentNumber: 0
+  };
   isHidden: boolean = false;
 
   shippingFee: number = 0;
@@ -74,7 +83,13 @@ export class ShippingComponent implements OnInit {
     this.formModal1.hide();
   }
 
-  openFormModal2() {
+  openFormModal2(addressId: number) {
+    for (let address of this.savedAddresses.data) {
+      if (address.id == addressId) {
+        this.addressToEdit = address;
+        break;
+      }
+    }
     this.formModal2.show();
   }
 
@@ -84,6 +99,14 @@ export class ShippingComponent implements OnInit {
         alert(response.message);
       }
     })
+    this.formModal2.hide();
+  }
+
+  closeModal1() {
+    this.formModal1.hide();
+  }
+
+  closeModal2() {
     this.formModal2.hide();
   }
 

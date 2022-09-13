@@ -11,15 +11,16 @@ import { ShopService } from '../../services/shop.service';
   styleUrls: ['./track-order.component.css']
 })
 export class TrackOrderComponent implements OnInit {
-  @Input() confirmedOrder: IOrder = {
-    data: {
-      orderNumber: 0,
-      orderTotal: 0,
-      products: []
-    },
-    message: '',
-    errorList: []
-  };
+  // orderNumber: number = 0;
+  // @Input() confirmedOrder: IOrder = {
+  //   data: {
+  //     orderNumber: 0,
+  //     orderTotal: 0,
+  //     products: []
+  //   },
+  //   message: '',
+  //   errorList: []
+  // };
   orderHistory: ITOResponse = {
     data: [],
     message: '',
@@ -60,13 +61,17 @@ export class TrackOrderComponent implements OnInit {
     this.shopService.trackOrder().subscribe({
       next: (response) => {
         console.log('track order');
-
-        console.log(response);
-
+        // console.log('orderNumber' + this.orderNumber);
         this.orderHistory = response;
+        console.log('orderHistory');
+        console.log(this.orderHistory);
+
         for (let order of this.orderHistory.data) {
           if (order.orderNumber == this.route.snapshot.params['orderNumber']) {
             this.trackOrder = order;
+            console.log('trackOrder');
+            console.log(this.trackOrder);
+
             break;
           }
           else
@@ -94,6 +99,13 @@ export class TrackOrderComponent implements OnInit {
                 please try again.`);
       }
     })
+  }
+
+  disableCancel(): boolean {
+    if (this.trackOrder.orderStatus == 'Cancelled')
+      return true;
+    else
+      return false;
   }
 
 }

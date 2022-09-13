@@ -15,28 +15,6 @@ declare var window: any;
 export class OrderSummaryComponent implements OnInit {
   @Input() page: string = '';
   formModal: any;
-  // chosenAddress: {
-  //   residence: string,
-  //   address: string
-  // } = {
-  //     residence: 'Office',
-  //     address: 'El-Sadat, Zawya Abou Muslim, Al Haram,Giza Governorate'
-  //   }
-
-  addresses: {
-    residence: string,
-    address: string
-  }[] = [
-      {
-        residence: 'Office',
-        address: 'El-Sadat, Zawya Abou Muslim, Al Haram,Giza Governorate'
-      },
-      {
-        residence: 'Home',
-        address: '12 Ahmed El-Samman, Makram Ebeid, Nasr City'
-      }
-    ]
-
   addressForm: FormGroup = this.fb.group({
     FirstName: ["", Validators.required],
     LastName: ["", Validators.required],

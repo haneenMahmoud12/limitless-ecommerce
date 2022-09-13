@@ -35,10 +35,9 @@ export class ConfirmationComponent implements OnInit {
   }
 
   trackOrderClicked() {
-    // this.router.navigate([`trackOrder/${this.orderNumber}`]);
+    this.router.navigate([`trackOrder/${this.orderNumber}`]);
     this.hideTrackOrderPage = false;
     this.hideDiv = true;
-
   }
 
   handleClick() {

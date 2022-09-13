@@ -1,7 +1,13 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><i class="fa fa-home"></i><a class="breadcrumb-not-active" href="#">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Order Summary</li>
+        <li class="breadcrumb-item"><i></i><a class="breadcrumb-not-active" href="cart">Cart</a>
+        </li>
+        <li class="breadcrumb-item"><i></i><a class="breadcrumb-not-active" href="shipping">Shipping</a>
+        </li>
+        <li class="breadcrumb-item"><i></i><a class="breadcrumb-not-active" href="payment-methods">Payment</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Summary</li>
     </ol>
 </nav>
 <div class="container-fluid outer-container p-5">
@@ -65,15 +71,17 @@
                         </span>
                     </h4>
                     <h5 class="change-address-h5">Select Address</h5>
-                    <div class="form-check" *ngFor="let address of addresses">
+                    <div class="form-check" *ngFor="let address of savedAddresses.data">
                         <div class="card card-inner p-4 border-0 m-4 d-flex justify-content-evenly">
                             <span>
                                 <input class="form-check-input" type="radio" name="flexRadioDefault"
                                     id="flexRadioDefault1">
                             </span>
                             <span>
-                                <h6 class="residence">{{address.residence}}</h6>
-                                <h6 class="address">{{address.address}}</h6>
+                                <h6 class="residence">{{address.title}}</h6>
+                                <h6 class="address">{{address.city}}, {{address.area}},
+                                    {{address.street}},
+                                    {{address.buildingNumber}}, {{address.apartmentNumber}}</h6>
                             </span>
                         </div>
                     </div>
