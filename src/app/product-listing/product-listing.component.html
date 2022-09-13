@@ -38,20 +38,12 @@
                                     {{item.currency}} {{item.priceValue}}</p>
                             </div>
                             <div class="col-6 col-md-6 shopping">
-                                <a class="view-product-on-list" href="#"><i class="fa fa-eye"></i></a>
-                                <a class="addToCart" href="#"><i class="fa fa-shopping-bag"></i></a>
-
+                                <i id="eye" (click)="handleClick(item.id)" class="fa fa-eye"></i>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
-
-
-
-
         </div>
     </div>
 </section>

@@ -21,28 +21,22 @@ export class ProductListingComponent implements OnInit {
   };
 
 
-  constructor(
-    private router: ActivatedRoute, private productService: ProductsService) {
+  constructor(private route: Router, private router: ActivatedRoute, private productService: ProductsService) {
   }
 
 
 
 
   ngOnInit(): void {
-
-
     this.productService.getFeaturedCategory(this.router.snapshot.params['id']).subscribe({
       next: (response: IFeaturedCategory) => {
         this.featuredCategory = response;
       }
     })
-
-
   }
-
-
-
-
+  handleClick(productId: number) {
+    this.route.navigate([`productDetails/${productId}`])
+  }
 }
 
 

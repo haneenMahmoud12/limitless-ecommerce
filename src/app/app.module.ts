@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { OffersCarouselComponent } from './offers-carousel/offers-carousel.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { CarouselModule } from './offers-carousel/carousel.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FeaturedCategory1Component } from './featured-category1/featured-category1.component';
 import { SharedModule } from './shared/shared.module';
