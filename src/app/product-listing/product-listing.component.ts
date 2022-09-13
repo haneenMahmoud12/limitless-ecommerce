@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Navigation, Router } from '@angular/router';
+import { IFeaturedCategory } from '../models/featuredCategory';
+import { ProductsService } from '../services/products.service';
+
+
 
 @Component({
   selector: 'app-product-listing',
@@ -6,10 +11,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-listing.component.css']
 })
 export class ProductListingComponent implements OnInit {
+  featuredCategory: IFeaturedCategory = {
+    data: {
+      categoryName: '',
+      products: []
+    },
+    message: '',
+    errorList: []
+  };
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor(
+    private router: ActivatedRoute, private productService: ProductsService) {
   }
 
+
+
+
+  ngOnInit(): void {
+
+
+    this.productService.getFeaturedCategory(this.router.snapshot.params['id']).subscribe({
+      next: (response: IFeaturedCategory) => {
+        this.featuredCategory = response;
+      }
+    })
+
+
+  }
+
+
+
+
 }
+
+

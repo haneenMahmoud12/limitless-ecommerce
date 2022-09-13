@@ -43,7 +43,7 @@ const routes: Routes = [
     component: ConfirmationComponent
   },
   {
-    path: 'product-listing',
+    path: 'product-listing/:id',
     component: ProductListingComponent
   },
   {

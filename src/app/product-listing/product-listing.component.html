@@ -2,232 +2,56 @@
     <nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-            <li class="breadcrumb-item active">Immunity Booster</li>
+            <li class="breadcrumb-item active">"{{featuredCategory.data.categoryName}}"</li>
         </ol>
     </nav>
     <div class="row d-flex justify-content-between">
         <div class="col-6">
-            <h1>Immunity Booster</h1>
+            <h1>{{featuredCategory.data.categoryName}}</h1>
         </div>
         <div class="col-3">
-            <div class="list-view" ><i id="list" onclick="listView()" class="fa fa-list"></i></div>
-            <div class="grid-view" ><i id="grid" onclick="gridView()" class="fa fa-th" aria-hidden="true"></i></div>
+            <div class="list-view"><i id="list" onclick="listView()" class="fa fa-list"></i></div>
+            <div class="grid-view"><i id="grid" onclick="gridView()" class="fa fa-th" aria-hidden="true"></i></div>
         </div>
-    </div> 
+    </div>
 </div>
 <section class="products-wrapper pt-5 pb-5">
     <div class="container">
         <div id="productslist" class="row d-flex justify-content-center view-group">
-            <div class="item col-xs-4 col-md-5 col-lg-3 mb-5 ">
+
+            <div class="item col-xs-4 col-md-5 col-lg-3 mb-5" *ngFor="let item of featuredCategory.data.products">
+
                 <div class="thumbnail card">
                     <div class="img-event">
-                        <img class="group list-group-image img-fluid" src="../../assets/limitless2.png" alt="" />
+                        <img class="group list-group-image img-fluid" src="{{item.imageUrl}}" alt="" />
                     </div>
                     <div class="caption card-body">
                         <h4 class="group card-title inner list-group-item-heading">
-                            Limitless C-Zinc Original
+                            {{item.name}}
                         </h4>
                         <p class="group inner list-group-item-text">
-                            30 Capsules
-                        </p>
-                        <div class="row"> 
-                            <div class="col-6 col-md-6">
-                                <p class="lead">
-                                    EGP 200</p>
-                            </div>
-                            <div class="col-6 col-md-6 shopping">
-                                <a class="view-product-on-list" href="#"><i class="fa fa-eye"></i></a>
-                                <a class="addToCart" href="#"><i class="fa fa-shopping-bag"></i></a>
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item col-xs-4 col-md-5 col-lg-3 mb-5">
-                <div class="thumbnail card">
-                    <div class="discount"><span>20% OFF</span></div>
-                    <div class="img-event">
-                        <img class="group list-group-image img-fluid" src="../../assets/limitless1.jpg" alt="" />
-                    </div>
-                    <div class="caption card-body">
-                        <h4 class="group card-title inner list-group-item-heading">
-                            Limitless C-Zinc Original
-                        </h4>
-                        <p class="group inner list-group-item-text">
-                            30 Capsules
+                            {{item.shortDescription}}
                         </p>
                         <div class="row">
                             <div class="col-6 col-md-6">
                                 <p class="lead">
-                                    EGP 200</p>
+                                    {{item.currency}} {{item.priceValue}}</p>
                             </div>
                             <div class="col-6 col-md-6 shopping">
                                 <a class="view-product-on-list" href="#"><i class="fa fa-eye"></i></a>
                                 <a class="addToCart" href="#"><i class="fa fa-shopping-bag"></i></a>
+
                             </div>
                         </div>
+
                     </div>
                 </div>
+
             </div>
-            <div class="item col-xs-4 col-md-5 col-lg-3 mb-5">
-                <div class="thumbnail card">
-                    <div class="discount"><span>20% OFF</span></div>
-                    <div class="img-event">
-                        <img class="group list-group-image img-fluid" src="../../assets/limitless-woman-max.png" alt="" />
-                    </div>
-                    <div class="caption card-body">
-                        <h4 class="group card-title inner list-group-item-heading">
-                            Limitless C-Zinc Original
-                        </h4>
-                        <p class="group inner list-group-item-text">
-                            30 Capsules
-                        </p>
-                        <div class="row">
-                            <div class="col-6 col-md-6">
-                                <p class="lead">
-                                    EGP 200</p>
-                            </div>
-                            <div class="col-6 col-md-6 shopping">
-                                <a class="view-product-on-list" href="#"><i class="fa fa-eye"></i></a>
-                                <a class="addToCart" href="#"><i class="fa fa-shopping-bag"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item col-xs-4 col-md-5 col-lg-3 mb-5">
-                <div class="thumbnail card">
-                    <div class="img-event">
-                        <img class="group list-group-image img-fluid" src="../../assets/limitless2.png" alt="" />
-                    </div>
-                    <div class="caption card-body">
-                        <h4 class="group card-title inner list-group-item-heading">
-                            Limitless C-Zinc Original
-                        </h4>
-                        <p class="group inner list-group-item-text">
-                            30 Capsules
-                        </p>
-                        <div class="row"> 
-                            <div class="col-6 col-md-6">
-                                <p class="lead">
-                                    EGP 200</p>
-                            </div>
-                            <div class="col-6 col-md-6 shopping">
-                                <a class="view-product-on-list" href="#"><i class="fa fa-eye"></i></a>
-                                <a class="addToCart" href="#"><i class="fa fa-shopping-bag"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item col-xs-4 col-md-5 col-lg-3 mb-5 ">
-                <div class="thumbnail card">
-                    <div class="img-event">
-                        <img class="group list-group-image img-fluid" src="../../assets/limitless2.png" alt="" />
-                    </div>
-                    <div class="caption card-body">
-                        <h4 class="group card-title inner list-group-item-heading">
-                            Limitless C-Zinc Original
-                        </h4>
-                        <p class="group inner list-group-item-text">
-                            30 Capsules
-                        </p>
-                        <div class="row"> 
-                            <div class="col-6 col-md-6">
-                                <p class="lead">
-                                    EGP 200</p>
-                            </div>
-                            <div class="col-6 col-md-6 shopping">
-                                <a class="view-product-on-list" href="#"><i class="fa fa-eye"></i></a>
-                                <a class="addToCart" href="#"><i class="fa fa-shopping-bag"></i></a>
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item col-xs-4 col-md-5 col-lg-3 mb-5">
-                <div class="thumbnail card">
-                    <div class="discount"><span>20% OFF</span></div>
-                    <div class="img-event">
-                        <img class="group list-group-image img-fluid" src="../../assets/limitless1.jpg" alt="" />
-                    </div>
-                    <div class="caption card-body">
-                        <h4 class="group card-title inner list-group-item-heading">
-                            Limitless C-Zinc Original
-                        </h4>
-                        <p class="group inner list-group-item-text">
-                            30 Capsules
-                        </p>
-                        <div class="row">
-                            <div class="col-6 col-md-6">
-                                <p class="lead">
-                                    EGP 200</p>
-                            </div>
-                            <div class="col-6 col-md-6 shopping">
-                                <a class="view-product-on-list" href="#"><i class="fa fa-eye"></i></a>
-                                <a class="addToCart" href="#"><i class="fa fa-shopping-bag"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item col-xs-4 col-md-5 col-lg-3 mb-5">
-                <div class="thumbnail card">
-                    <div class="discount"><span>20% OFF</span></div>
-                    <div class="img-event">
-                        <img class="group list-group-image img-fluid" src="../../assets/limitless-woman-max.png" alt="" />
-                    </div>
-                    <div class="caption card-body">
-                        <h4 class="group card-title inner list-group-item-heading">
-                            Limitless C-Zinc Original
-                        </h4>
-                        <p class="group inner list-group-item-text">
-                            30 Capsules
-                        </p>
-                        <div class="row">
-                            <div class="col-6 col-md-6">
-                                <p class="lead">
-                                    EGP 200</p>
-                            </div>
-                            <div class="col-6 col-md-6 shopping">
-                                <a class="view-product-on-list" href="#"><i class="fa fa-eye"></i></a>
-                                <a class="addToCart" href="#"><i class="fa fa-shopping-bag"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item col-xs-4 col-md-5 col-lg-3 mb-5">
-                <div class="thumbnail card">
-                    <div class="img-event">
-                        <img class="group list-group-image img-fluid" src="../../assets/limitless2.png" alt="" />
-                    </div>
-                    <div class="caption card-body">
-                        <h4 class="group card-title inner list-group-item-heading">
-                            Limitless C-Zinc Original
-                        </h4>
-                        <p class="group inner list-group-item-text">
-                            30 Capsules
-                        </p>
-                        <div class="row"> 
-                            <div class="col-6 col-md-6">
-                                <p class="lead">
-                                    EGP 200</p>
-                            </div>
-                            <div class="col-6 col-md-6 shopping">
-                                <a class="view-product-on-list" href="#"><i class="fa fa-eye"></i></a>
-                                <a class="addToCart" href="#"><i class="fa fa-shopping-bag"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
 
 
-            
+
+
         </div>
     </div>
 </section>
@@ -236,43 +60,7 @@
         <h1>You may also like</h1>
         <div class="row d-flex justify-content-between">
             <a href="#" class="item mb-5 col-6 col-md-3 col-lg-2">
-                
-                    <div class="thumbnail card">
-                        <div class="img-event">
-                            <img class="group list-group-image img-fluid" src="../../assets/limitless2.png" alt="" />
-                        </div>
-                        <div class="caption card-body">
-                            <h4 class="group card-title inner list-group-item-heading">
-                                Limitless C-Zinc Original
-                            </h4>
-                            <p class="group inner list-group-item-text">
-                                30 Capsules
-                            </p>
-                            <p class="lead">EGP 200</p>
-                        </div>
-                             
-                    </div>
-            </a>
-            <a href="#" class="item mb-5 col-6 col-md-3 col-lg-2">
-                
-                <div class="thumbnail card">
-                    <div class="img-event">
-                        <img class="group list-group-image img-fluid" src="../../assets/limitless-woman-max.png" alt="" />
-                    </div>
-                    <div class="caption card-body">
-                        <h4 class="group card-title inner list-group-item-heading">
-                            Limitless C-Zinc Original
-                        </h4>
-                        <p class="group inner list-group-item-text">
-                            30 Capsules
-                        </p>
-                        <p class="lead">EGP 200</p>
-                    </div>
-                         
-                </div>
-            </a>
-            <a href="#" class="item mb-5 col-6 col-md-3 col-lg-2">
-                
+
                 <div class="thumbnail card">
                     <div class="img-event">
                         <img class="group list-group-image img-fluid" src="../../assets/limitless2.png" alt="" />
@@ -286,14 +74,15 @@
                         </p>
                         <p class="lead">EGP 200</p>
                     </div>
-                         
+
                 </div>
             </a>
             <a href="#" class="item mb-5 col-6 col-md-3 col-lg-2">
-                
+
                 <div class="thumbnail card">
                     <div class="img-event">
-                        <img class="group list-group-image img-fluid" src="../../assets/limitless1.jpg" alt="" />
+                        <img class="group list-group-image img-fluid" src="../../assets/limitless-woman-max.png"
+                            alt="" />
                     </div>
                     <div class="caption card-body">
                         <h4 class="group card-title inner list-group-item-heading">
@@ -304,11 +93,11 @@
                         </p>
                         <p class="lead">EGP 200</p>
                     </div>
-                         
+
                 </div>
             </a>
             <a href="#" class="item mb-5 col-6 col-md-3 col-lg-2">
-                
+
                 <div class="thumbnail card">
                     <div class="img-event">
                         <img class="group list-group-image img-fluid" src="../../assets/limitless2.png" alt="" />
@@ -322,11 +111,11 @@
                         </p>
                         <p class="lead">EGP 200</p>
                     </div>
-                         
+
                 </div>
             </a>
             <a href="#" class="item mb-5 col-6 col-md-3 col-lg-2">
-                
+
                 <div class="thumbnail card">
                     <div class="img-event">
                         <img class="group list-group-image img-fluid" src="../../assets/limitless1.jpg" alt="" />
@@ -340,11 +129,47 @@
                         </p>
                         <p class="lead">EGP 200</p>
                     </div>
-                         
+
                 </div>
             </a>
-                
+            <a href="#" class="item mb-5 col-6 col-md-3 col-lg-2">
+
+                <div class="thumbnail card">
+                    <div class="img-event">
+                        <img class="group list-group-image img-fluid" src="../../assets/limitless2.png" alt="" />
+                    </div>
+                    <div class="caption card-body">
+                        <h4 class="group card-title inner list-group-item-heading">
+                            Limitless C-Zinc Original
+                        </h4>
+                        <p class="group inner list-group-item-text">
+                            30 Capsules
+                        </p>
+                        <p class="lead">EGP 200</p>
+                    </div>
+
+                </div>
+            </a>
+            <a href="#" class="item mb-5 col-6 col-md-3 col-lg-2">
+
+                <div class="thumbnail card">
+                    <div class="img-event">
+                        <img class="group list-group-image img-fluid" src="../../assets/limitless1.jpg" alt="" />
+                    </div>
+                    <div class="caption card-body">
+                        <h4 class="group card-title inner list-group-item-heading">
+                            Limitless C-Zinc Original
+                        </h4>
+                        <p class="group inner list-group-item-text">
+                            30 Capsules
+                        </p>
+                        <p class="lead">EGP 200</p>
+                    </div>
+
+                </div>
+            </a>
+
         </div>
-        </div>
-    
+    </div>
+
 </section>
