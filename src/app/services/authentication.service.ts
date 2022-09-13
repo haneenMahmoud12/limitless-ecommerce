@@ -75,7 +75,6 @@ export class AuthenticationService {
       })
   }
 
-  // 
   public billingAddress(addressId: number) {
     const accessToken = JSON.parse(localStorage.getItem('currentUser') || '{}').data.accessToken;
     const modifiedHeader = {
