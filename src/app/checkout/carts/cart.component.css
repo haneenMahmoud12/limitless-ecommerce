@@ -217,8 +217,11 @@ img {
     }
 
     .btnStyle2 {
-        height: 50px;
-        font-size: 14px;
+        height: 40px;
+        font-size: 10px;
+        line-height: normal;
+        width: 50%;
+        align-self: center;
     }
 
     img {
@@ -307,8 +310,10 @@ img {
     }
 
     .btnStyle2 {
-        height: 50px;
-        font-size: 14px;
+        height: 40px;
+        font-size: 10px;
+        line-height: normal;
+        align-self: center;
     }
 
     img {

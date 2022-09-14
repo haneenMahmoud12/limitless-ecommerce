@@ -143,50 +143,38 @@
                                 </div>
                             </div>
                             <div class="row row-cols-2">
-                                <div class="col">
-                                    <div class="row row-cols-2 mt-4">
-                                        <div class="col d-flex flex-column">
-                                            <span>Area</span>
-                                            <span
-                                                *ngIf="addressForm.controls['Area'].hasError('required') && addressForm.controls['Area'].touched"
-                                                class="msg">Area is required!</span>
-                                            <input type="text" formControlName="Area">
-                                        </div>
-                                        <div class="col d-flex flex-column">
-                                            <span>Street</span>
-                                            <span
-                                                *ngIf="addressForm.controls['Street'].hasError('required') && addressForm.controls['Street'].touched"
-                                                class="msg">Street is required!</span>
-                                            <input type="text" formControlName="Street">
-                                        </div>
-                                    </div>
-                                    <div class="row row-cols-2 mt-4">
-                                        <div class="col d-flex flex-column">
-                                            <span>Building Number</span>
-                                            <span
-                                                *ngIf="addressForm.controls['BuildingNumber'].hasError('required') && addressForm.controls['BuildingNumber'].touched"
-                                                class="msg">Building number is required!</span>
-                                            <input type="text" formControlName="BuildingNumber">
-                                        </div>
-                                        <div class="col d-flex flex-column">
-                                            <span>Apartment Number</span>
-                                            <span
-                                                *ngIf="addressForm.controls['ApartmentNumber'].hasError('required') && addressForm.controls['ApartmentNumber'].touched"
-                                                class="msg">Apartment number is required!</span>
-                                            <input type="text" formControlName="ApartmentNumber">
-                                        </div>
-                                    </div>
+                                <div class="col d-flex flex-column">
+                                    <span>Area</span>
+                                    <span
+                                        *ngIf="addressForm.controls['Area'].hasError('required') && addressForm.controls['Area'].touched"
+                                        class="msg">Area is required!</span>
+                                    <input type="text" formControlName="Area">
                                 </div>
-                                <div class="col">
-                                    <div id="map-container-google-1" class="z-depth-1-half map-container"
-                                        style="height: 500px">
-                                        <iframe
-                                            src="https://maps.google.com/maps?q=cairo&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                                            frameborder="0" style="border:0" allowfullscreen></iframe>
-                                    </div>
+                                <div class="col d-flex flex-column">
+                                    <span>Street</span>
+                                    <span
+                                        *ngIf="addressForm.controls['Street'].hasError('required') && addressForm.controls['Street'].touched"
+                                        class="msg">Street is required!</span>
+                                    <input type="text" formControlName="Street">
                                 </div>
                             </div>
-                            <button class="btn btnStyle2" type="submit">Save Address</button>
+                            <div class="row mt-4">
+                                <div class="col d-flex flex-column">
+                                    <span>Building Number</span>
+                                    <span
+                                        *ngIf="addressForm.controls['BuildingNumber'].hasError('required') && addressForm.controls['BuildingNumber'].touched"
+                                        class="msg">Building number is required!</span>
+                                    <input type="text" formControlName="BuildingNumber">
+                                </div>
+                                <div class="col d-flex flex-column">
+                                    <span>Apartment Number</span>
+                                    <span
+                                        *ngIf="addressForm.controls['ApartmentNumber'].hasError('required') && addressForm.controls['ApartmentNumber'].touched"
+                                        class="msg">Apartment number is required!</span>
+                                    <input type="text" formControlName="ApartmentNumber">
+                                </div>
+                            </div>
+                            <button class="btn btnStyle2 mt-2" type="submit">Save Address</button>
                         </div>
 
                     </form>
@@ -241,100 +229,31 @@
                                     <input type="text" formControlName="City" [value]="addressToEdit.city">
                                 </div>
                             </div>
-                            <div class="row row-cols-2">
-                                <div class="col">
-                                    <div class="row row-cols-2 mt-4">
-                                        <div class="col d-flex flex-column">
-                                            <span>Area</span>
-                                            <input type="text" formControlName="Area" [value]="addressToEdit.area">
-                                        </div>
-                                        <div class="col d-flex flex-column">
-                                            <span>Street</span>
-                                            <input type="text" formControlName="Street" [value]="addressToEdit.street">
-                                        </div>
-                                    </div>
-                                    <div class="row row-cols-2 mt-4">
-                                        <div class="col d-flex flex-column">
-                                            <span>Building Number</span>
-                                            <input type="text" formControlName="BuildingNumber"
-                                                [value]="addressToEdit.buildingNumber">
-                                        </div>
-                                        <div class="col d-flex flex-column">
-                                            <span>Apartment Number</span>
-                                            <input type="text" formControlName="ApartmentNumber"
-                                                [value]="addressToEdit.apartmentNumber">
-                                        </div>
-                                    </div>
+                            <div class="row row-cols-2 mt-4">
+                                <div class="col d-flex flex-column">
+                                    <span>Area</span>
+                                    <input type="text" formControlName="Area" [value]="addressToEdit.area">
                                 </div>
-                                <div class="col">
-                                    <div id="map-container-google-1" class="z-depth-1-half map-container"
-                                        style="height: 500px">
-                                        <iframe
-                                            src="https://maps.google.com/maps?q=cairo&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                                            frameborder="0" style="border:0" allowfullscreen></iframe>
-                                    </div>
+                                <div class="col d-flex flex-column">
+                                    <span>Street</span>
+                                    <input type="text" formControlName="Street" [value]="addressToEdit.street">
+                                </div>
+                            </div>
+                            <div class="row row-cols-2 mt-4">
+                                <div class="col d-flex flex-column">
+                                    <span>Building Number</span>
+                                    <input type="text" formControlName="BuildingNumber"
+                                        [value]="addressToEdit.buildingNumber">
+                                </div>
+                                <div class="col d-flex flex-column">
+                                    <span>Apartment Number</span>
+                                    <input type="text" formControlName="ApartmentNumber"
+                                        [value]="addressToEdit.apartmentNumber">
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btnStyle2" (click)="saveAddress2()">Save Changes</button>
+                        <button class="btn btnStyle2 mt-2" (click)="saveAddress2()">Save Changes</button>
                     </form>
-                    <div class="card card-outer m-3 p-5 border-0">
-                        <h4 class="change-address-h4 d-flex justify-content-between">
-                            <span class="mt-3">Edit Address</span>
-                            <span>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                                    (click)="saveAddress2()">
-                                </button>
-                            </span>
-                        </h4>
-                        <div class="grid">
-                            <div class="row row-cols-2">
-                                <div class="col d-flex flex-column">
-                                    <span>Address Label</span>
-                                    <input type="text">
-                                </div>
-                                <div class="col d-flex flex-column">
-                                    <span>Address Details</span>
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="row row-cols-2">
-                                <div class="col">
-                                    <div class="row row-cols-2 mt-4">
-                                        <div class="col d-flex flex-column">
-                                            <span>Building Number</span>
-                                            <input type="text">
-                                        </div>
-                                        <div class="col d-flex flex-column">
-                                            <span>Floor Number</span>
-                                            <input type="text">
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4">
-                                        <div class="col d-flex flex-column">
-                                            <span>Apartment Number</span>
-                                            <input type="text">
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4">
-                                        <div class="col d-flex flex-column">
-                                            <span>Mobile Number</span>
-                                            <input type="number">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div id="map-container-google-1" class="z-depth-1-half map-container"
-                                        style="height: 500px">
-                                        <iframe
-                                            src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                                            frameborder="0" style="border:0" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="btn btnStyle2" (click)="saveAddress2()">Save Changes</button>
-                    </div>
                 </div>
             </div>
         </div>

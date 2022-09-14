@@ -19,7 +19,7 @@
     <div class="container" [hidden]="gridView">
         <div id="productslist" class="row d-flex justify-content-center view-group">
             <div class="item col-xs-4 col-md-5 col-lg-3 mb-5" *ngFor="let product of offersToDisplay.products">
-                <div class="thumbnail card">
+                <div class="thumbnail card" *ngIf="product">
                     <img class="group list-group-image img-fluid" [src]="product.imageUrl" alt="" />
                     <div class="caption card-body d-flex justify-content-between">
                         <div class="text">
@@ -35,7 +35,7 @@
 
     <div class="container list-view" [hidden]="listView">
         <ul class="list-group" *ngFor="let product of offersToDisplay.products">
-            <li class="list-group-item m-4">
+            <li class="list-group-item m-4 " *ngIf="product">
                 <div class="container-fluid d-flex pb-5" style="height: inherit;">
                     <img class="list-image img-fluid" [src]="product.imageUrl" alt="" />
                     <div class="container content d-flex">

@@ -4,7 +4,7 @@
     mix-blend-mode: normal;
     border-radius: 8px;
     width: 165px;
-    height: 70px;
+    height: 50px;
 
 }
 
@@ -161,28 +161,60 @@ button {
         width: 200px;
     }
 
+
+}
+
+@media (max-width:576px) {
+    h1 {
+        font-size: 30px;
+        line-height: normal;
+    }
+
+    h2 {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .price {
+        font-size: 20px;
+        line-height: normal;
+    }
+
+    .value {
+        font-size: 20px;
+        line-height: normal;
+    }
+
+    h6 {
+        font-size: 20px;
+        line-height: normal;
+    }
+
     .input-group {
         width: 99px;
-        height: 60px;
 
     }
 
     .input-group .form-control {
         font-size: 20px;
-        line-height: 20px;
+        line-height: normal;
         width: 33px;
+        height: 40px;
+        padding-top: 10px;
     }
 
 
     .input-group-text {
         width: 33px;
-        font-size: 40px;
+        font-size: 20px;
+        height: 40px;
     }
-}
 
-@media (max-width:576px) {
     .btnStyle2 {
         width: 100px;
+        height: 40px;
+        font-size: 10px;
+        line-height: 10px;
     }
 
     img {

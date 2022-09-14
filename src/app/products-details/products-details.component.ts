@@ -128,8 +128,11 @@ export class ProductsDetailsComponent implements OnInit {
         this.product = response;
         // console.log(this.product);
         this.finalPrice();
-        this.firstAttributeId = this.product.data.attributes[0].id;
-        this.attributeValues = this.product.data.attributes[0].values;
+        if (this.product.data.attributes[0]) {
+          this.firstAttributeId = this.product.data.attributes[0].id;
+          this.attributeValues = this.product.data.attributes[0].values;
+        }
+
         // this.categoryPage = `${this.product.data.}`;
       }
     })

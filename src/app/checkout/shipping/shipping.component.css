@@ -12,19 +12,6 @@
     visibility: hidden;
 }
 
-.map-container {
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    position: relative;
-}
-
-.map-container iframe {
-    margin-top: 20px;
-    height: 80%;
-    width: 100%;
-    position: absolute;
-}
-
 .grid span {
     font-weight: 500;
     font-size: 20px;
@@ -47,10 +34,6 @@
 .card-inner {
     background-color: var(--color-secondary);
     border-radius: 8px;
-}
-
-.btnStyle2 {
-    margin-left: 300px;
 }
 
 .btnStyle4 {
@@ -261,4 +244,10 @@ label {
     .cart-items {
         padding: 0;
     }
+
+    /* .modal-dialog {
+        font-size: 10px;
+        line-height: 10px;
+        font-weight: 300;
+    } */
 }

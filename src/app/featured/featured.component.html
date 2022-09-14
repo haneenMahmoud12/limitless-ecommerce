@@ -10,12 +10,49 @@
             <h1>{{featuredCategory.data.categoryName}}</h1>
         </div>
         <div class="col-3">
-            <div class="list-view"><i id="list" onclick="listView()" class="fa fa-list"></i></div>
-            <div class="grid-view"><i id="grid" onclick="gridView()" class="fa fa-th" aria-hidden="true"></i></div>
+            <div class="list-view"><i id="list" (click)="setListView()" class="fa fa-list"></i></div>
+            <div class="grid-view"><i id="grid" (click)="setGridView()" class="fa fa-th" aria-hidden="true"></i></div>
         </div>
     </div>
 </div>
+
 <section class="products-wrapper pt-5 pb-5">
+    <div class="container" [hidden]="gridView">
+        <div id="productslist" class="row d-flex justify-content-center view-group">
+            <div class="item col-xs-4 col-md-5 col-lg-3 mb-5" *ngFor="let product of featuredCategory.data.products">
+                <div class="thumbnail card d-flex justify-content-between">
+                    <img class="group list-group-image img-fluid" [src]="product.imageUrl" alt="" />
+                    <div class="caption card-body d-flex">
+                        <div class="text">
+                            <h3 class="group card-title inner list-group-item-heading">{{product.name}}</h3>
+                            <p class="lead">EGP {{product.priceValue}}</p>
+                        </div>
+                        <!-- <i id="eye" class="fa fa-eye m-5" (click)="handleClick(product.id)"></i> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container list-view" [hidden]="listView">
+        <ul class="list-group" *ngFor="let product of featuredCategory.data.products">
+            <li class="list-group-item m-4">
+                <div class="container-fluid d-flex pb-5" style="height: inherit;">
+                    <img class="list-image img-fluid" [src]="product.imageUrl" alt="" />
+                    <div class="container content d-flex">
+                        <div class="caption mt-2">
+                            <h1 class="group card-title inner list-group-item-heading">{{product.name}}</h1>
+                            <p class="lead">EGP {{product.priceValue}}</p>
+                        </div>
+                        <i id="eye" class="fa fa-eye" (click)="handleClick(product.id)"></i>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- <section class="products-wrapper pt-5 pb-5">
     <div class="container">
         <div id="productslist" class="row d-flex justify-content-center view-group">
             <div class="item col-xs-4 col-md-5 col-lg-3 mb-5" *ngFor="let product of featuredCategory.data.products">
@@ -35,4 +72,4 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->

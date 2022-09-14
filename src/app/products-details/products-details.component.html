@@ -33,7 +33,7 @@
                             <span class="input-group-text" (click)="increment()">+</span>
                         </div>
                     </span>
-                    <span>
+                    <span *ngIf="product">
                         <button class="btn btnStyle2" (click)="handleClick()">Add to cart
                         </button>
                     </span>

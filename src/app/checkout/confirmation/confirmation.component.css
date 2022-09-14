@@ -29,3 +29,28 @@ h5 {
     width: 322px;
     height: 68px;
 }
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 20px;
+        line-height: normal;
+    }
+
+    h5 {
+        font-size: 12px;
+        line-height: normal;
+    }
+
+
+    .btnStyle1 {
+        font-size: 12px;
+        line-height: normal;
+        width: 100px;
+        height: 40px;
+    }
+
+    .btnStyle6 {
+        font-size: 10px;
+        line-height: normal;
+    }
+}

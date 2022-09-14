@@ -25,3 +25,38 @@ h2 {
     line-height: 52px;
     color: #FFFFFF;
 }
+
+.card {
+    height: 328px;
+}
+
+.card img {
+    height: 328px;
+}
+
+/* @media (max-width: 576px) {
+
+    .card {
+        width: 100%;
+    }
+
+    .card img {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 18px;
+        line-height: 18px;
+        margin-left: 10px;
+    }
+
+    .btn-explore {
+        width: 80px;
+        height: 30px;
+        position: relative;
+        font-size: 10px;
+        line-height: 10px;
+        margin-left: 10px;
+    }
+
+} */
