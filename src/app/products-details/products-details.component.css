@@ -72,6 +72,10 @@ h6 {
     height: 536px;
 }
 
+.row {
+    width: 100%;
+}
+
 button {
     width: 500px;
     height: 70px;
@@ -103,6 +107,7 @@ button {
 
 .attributes {
     border: none;
+    width: 100%;
 }
 
 .card-header {
@@ -131,4 +136,60 @@ button {
     font-weight: 400;
     font-size: 22px;
     line-height: 40px;
+}
+
+@media (max-width:280px) {
+    .btnStyle2 {
+        width: 100px;
+    }
+
+    .btn-group {
+        margin-right: 5px;
+    }
+
+    .btnStyle4 {
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+    .attributes .card-body {
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    img {
+        width: 200px;
+    }
+
+    .input-group {
+        width: 99px;
+        height: 60px;
+
+    }
+
+    .input-group .form-control {
+        font-size: 20px;
+        line-height: 20px;
+        width: 33px;
+    }
+
+
+    .input-group-text {
+        width: 33px;
+        font-size: 40px;
+    }
+
+    /* .attributes {
+        width
+    } */
+}
+
+@media (max-width:576px) {
+    .btnStyle2 {
+        width: 100px;
+    }
+
+    img {
+        height: 300px;
+    }
 }

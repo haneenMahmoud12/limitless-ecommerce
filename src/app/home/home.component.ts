@@ -23,6 +23,8 @@ export class HomeComponent implements OnInit {
     if (!localStorage.getItem('currentUser')) {
       this.auth.login().subscribe({
         next: (response) => {
+          console.log(response);
+
           this.loginData = response;
           localStorage.setItem('currentUser', JSON.stringify(this.loginData));
         }
