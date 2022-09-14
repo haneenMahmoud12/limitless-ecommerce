@@ -156,9 +156,7 @@ label {
     width: 46px;
     height: 46px;
     position: relative;
-    /* left: 100px; */
     background-color: #e8fdf6;
-    ;
 }
 
 .step {
@@ -209,5 +207,58 @@ label {
 @media (max-width: 576px) {
     .all-steps {
         visibility: hidden;
+    }
+
+    .form-check {
+        width: 90%;
+    }
+
+    .top-container {
+        height: 80px;
+    }
+}
+
+@media (max-width: 280px) {
+    h1 {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    h3 {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    label {
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    .address {
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    .residence {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .cart-items {
+        padding: 0;
     }
 }

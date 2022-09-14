@@ -11,7 +11,7 @@
     </ol>
 </nav>
 <div class="container-fluid outer-container p-5">
-    <div class="container-fluid d-flex justify-content-between">
+    <div class="container-fluid d-flex justify-content-between top-container">
         <div class="checkout">
             <h1 class="h1">Checkout</h1>
         </div>
@@ -27,10 +27,10 @@
     <div class="container-fluid inner-container p-5">
         <div class="row">
             <div class="col col-lg-8 mb-5">
-                <div class="card cart-items bg-white border-0 p-5">
+                <div class="card cart-items bg-white border-0 p-3">
                     <span class="order-summary-span">Order Summary</span>
-                    <div class="card card-inner m-3 p-5 border-0">
-                        <h5 class="d-flex justify-content-between">
+                    <div class="card card-inner m-3 p-4 border-0">
+                        <h5 class="d-flex justify-content-between flex-wrap">
                             <span class="saved-addresses">Address</span>
                             <button type="button" class="btn btnStyle6" (click)="openFormModal()"> Change
                                 ></button>
@@ -42,7 +42,7 @@
                                 {{chosenAddress.buildingNumber}}, {{chosenAddress.apartmentNumber}}</h6>
                         </div>
                     </div>
-                    <div class="card card-inner m-3 p-5 border-0">
+                    <div class="card card-inner m-3 p-4 border-0">
                         <h5 class="d-flex justify-content-between">Payment Method</h5>
                         <h6 class="address">Cash on Delivery</h6>
                     </div>

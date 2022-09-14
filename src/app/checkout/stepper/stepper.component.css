@@ -121,3 +121,62 @@ img {
 .btnStyle2 {
     height: 65px;
 }
+
+@media (max-width:280px) {
+    .btn-edit {
+        width: 65px;
+        height: 38px;
+        font-size: 15px;
+        line-height: 15px;
+        margin-left: 5px;
+    }
+
+    .order-summary-span {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    h3 {
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    h5 {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    img {
+        width: 70px;
+        height: 68.11px;
+        margin-right: 10px;
+    }
+
+    .cart-items {
+        height: 550px;
+        border-radius: 8px;
+    }
+
+    .input-group {
+        width: 84px;
+        height: 20px;
+    }
+
+    .input-group .form-control {
+        font-weight: 700;
+        width: 28px;
+        font-size: 15px;
+        line-height: 15px;
+        padding-top: 2px;
+    }
+
+    .input-group-text {
+        width: 28px;
+        height: 20px;
+        font-size: 20px;
+    }
+}

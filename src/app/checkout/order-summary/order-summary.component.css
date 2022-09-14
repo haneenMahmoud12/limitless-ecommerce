@@ -131,4 +131,54 @@ h5 {
     .all-steps {
         visibility: hidden;
     }
+
+    .top-container {
+        height: 80px;
+    }
+}
+
+@media (max-width: 280px) {
+    .order-summary-span {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    h1 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    h5 {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    h6 {
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    .address {
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    .saved-addresses {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .btnStyle6 {
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    .residence {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .cart-items {
+        padding: 0;
+    }
 }
