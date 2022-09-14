@@ -141,10 +141,7 @@ button:hover {
 .all-steps {
     text-align: center;
     margin-top: 30px;
-    margin-bottom: 30px;
     position: absolute;
-    right: 0;
-    top: 0;
 }
 
 .thanks-message {
@@ -288,4 +285,10 @@ button:hover {
 
 .done {
     color: #49C69B;
+}
+
+@media (max-width: 576px) {
+    .all-steps {
+        visibility: hidden;
+    }
 }

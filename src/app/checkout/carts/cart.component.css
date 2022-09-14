@@ -2,7 +2,6 @@
     background-color: var(--color-secondary);
     background-repeat: no-repeat;
     background-size: cover;
-    /* min-height: 100vh; */
 }
 
 .active {
@@ -54,13 +53,11 @@ p {
 }
 
 .order-summary {
-    width: 472px;
     height: 315px;
     padding: 20px;
 }
 
 button {
-    width: 424px;
     height: 65px;
 }
 
@@ -106,7 +103,6 @@ img {
     width: 44px;
     font-size: 25px;
     line-height: 20px;
-    color: #161D25;
     text-align: center;
     border: none;
     padding-top: 28px;
@@ -154,10 +150,39 @@ img {
 
 .all-steps {
     margin-top: 30px;
-    /* margin-bottom: 30px; */
     position: relative;
 }
 
 .done {
     color: var(--color-lightMint);
+}
+
+@media (max-width: 576px) {
+    /* .fa {
+        size: 10px;
+    }
+
+    .all-steps span {
+        display: inline-block;
+        font-size: 8px;
+        width: 80px;
+    }
+
+    .top-container {
+        flex-direction: column;
+    } */
+
+    .input-group {
+        left: 130px;
+    }
+
+    .all-steps {
+        visibility: hidden;
+    }
+}
+
+@media (min-width:577px) and (max-width: 1000px) {
+    .input-group {
+        left: 130px;
+    }
 }

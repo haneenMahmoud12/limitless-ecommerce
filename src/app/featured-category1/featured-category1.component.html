@@ -1,7 +1,8 @@
-<div class="card card-1">
+<div class="container-fluid card-1">
     <div class="card-body text-center">
-        <h1 class="card-title">{{featuredCategory.data.categoryName}}</h1>
+
         <div class="container mt-5">
+            <h1 class="pt-5">{{featuredCategory.data.categoryName}}</h1>
             <owl-carousel-o [options]="customOptions">
                 <ng-container *ngFor="let product of featuredCategory.data.products">
                     <ng-template carouselSlide>

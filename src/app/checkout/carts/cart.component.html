@@ -1,34 +1,36 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><i class="fa fa-home"></i><a class="breadcrumb-not-active" href="#">Home</a></li>
+        <li class="breadcrumb-item"><i class="fa fa-home"></i><a class="breadcrumb-not-active" href="#">Home</a>
+        </li>
         <li class="breadcrumb-item active" aria-current="page">Cart</li>
     </ol>
 </nav>
 <div class="container-fluid pt-5">
-    <div class="container-fluid d-flex justify-content-between">
+    <div class="container-fluid d-flex top-container justify-content-between">
         <div class="checkout">
             <h1 class="h1">Checkout</h1>
         </div>
-        <div class="stepper-component">
-            <div class="all-steps" id="all-steps">
-                <span class="step done"><i class="fa">1</i>Cart</span>
-                <span class="step"><i class="fa">2</i>Shipping</span>
-                <span class="step"><i class="fa ">3</i>Payment</span>
-                <span class="step"><i class="fa ">4</i>Summary</span>
-            </div>
+        <div class="all-steps" id="all-steps">
+            <span class="step done"><i class="fa">1</i>Cart</span>
+            <span class="step"><i class="fa">2</i>Shipping</span>
+            <span class="step"><i class="fa ">3</i>Payment</span>
+            <span class="step"><i class="fa ">4</i>Summary</span>
         </div>
     </div>
-    <div class="container-fluid m-5">
+    <div class="container-fluid">
         <div class="row">
             <div class="col col-lg-8">
                 <p *ngIf="cart.data.products.length==0" class="text-center">{{cart.message}}</p>
                 <div class="card cart-items bg-white border-0 mb-3">
                     <ul class="list-group" *ngFor="let product of cart.data.products">
-                        <li class="list-group-item list-group-item-action border-0 d-flex p-5 ">
-                            <img [src]="product.imageUrl" alt="img">
-                            <div class="d-flex w-50 flex-column">
-                                <h1>{{product.name}}</h1>
-                                <h3>EGP {{product.subTotalPrice}}</h3>
+                        <li
+                            class="list-group-item list-group-item-action border-0 d-flex flex-wrap justify-content-between p-5 ">
+                            <div class="content d-flex">
+                                <img [src]="product.imageUrl" alt="img">
+                                <div class="d-flex w-50 flex-column">
+                                    <h1>{{product.name}}</h1>
+                                    <h3>EGP {{product.subTotalPrice}}</h3>
+                                </div>
                             </div>
                             <div class="input-group">
                                 <span class="input-group-text" (click)="update(product,-1)">-</span>
@@ -41,7 +43,7 @@
                 </div>
             </div>
             <div class="col col-lg-4">
-                <div class="card order-summary bg-white border-0 ">
+                <div class="card order-summary bg-white border-0 pb-5">
                     <h2>Order Summary</h2>
                     <h3>
                         <span>Subtotal ({{cart.data.products.length}} items)</span>

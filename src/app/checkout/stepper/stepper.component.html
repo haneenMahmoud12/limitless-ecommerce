@@ -4,7 +4,7 @@
         <span><button class="btn btn-edit" (click)="editButtonClicked()">{{editSave}}</button></span>
     </h2>
     <div class="overflow-scroll h-50">
-        <div class="d-flex h-50" *ngFor="let item of cart.data.products">
+        <div class="overflow-item d-flex h-75" *ngFor="let item of cart.data.products">
             <img [src]="item.imageUrl" alt="img">
             <div class="cart-items">
                 <h4>{{item.name}}</h4>

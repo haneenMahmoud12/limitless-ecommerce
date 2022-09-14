@@ -197,14 +197,17 @@ label {
 
 .all-steps {
     margin-top: 30px;
-    margin-bottom: 30px;
     position: relative;
-    right: 0;
-    top: 0;
 }
 
 .msg {
     font-size: 8px;
     color: red;
     font-weight: 200;
+}
+
+@media (max-width: 576px) {
+    .all-steps {
+        visibility: hidden;
+    }
 }

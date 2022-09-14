@@ -1,4 +1,4 @@
-.card {
+.container-fluid {
     height: 808px;
     background-color: var(--color-secondary);
     border: none;
@@ -10,22 +10,15 @@
     border: none;
 }
 
-.card button {
+.card-1 button {
     margin-top: 80px;
 }
 
-.card h1 {
-    height: 52px;
+.card-1 h1 {
     margin-top: 30px;
     font-weight: 700;
     font-size: 40px;
     line-height: 52px;
-}
-
-.card h2 {
-    font-size: 20px;
-    line-height: 22px;
-    color: #5E5E5E;
 }
 
 .card-1 h4 {
@@ -55,8 +48,7 @@
 }
 
 .card-1 img {
-    width: 296px;
-    height: 266px;
+    width: 95%;
 }
 
 .card-1 .grid {
@@ -70,3 +62,21 @@
     justify-content: flex-end;
     flex-direction: column;
 }
+
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width:767px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width:991px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width:1999px) {}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width:1399px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}

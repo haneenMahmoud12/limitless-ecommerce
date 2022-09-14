@@ -1,61 +1,59 @@
-<div class="container-fuild">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb" style="margin-left: 30px;">
-            <li class="breadcrumb-item"><i class="fa fa-home"></i><a class="breadcrumb-not-active" href="#">Home</a>
-            </li>
-            <li class="breadcrumb-item"><a class="breadcrumb-not-active" href="#">{{product.data.categoryName}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{product.data.name}}</li>
-        </ol>
-    </nav>
-    <div class="container-fluid d-flex mt-5 p-5 justify-content-between">
-        <div class="row row-cols-lg-2 row-cols-sm-1">
-            <div class="col col1">
-                <span class="badge mt-4" *ngIf="product.data.discountPercentage!=0">{{product.data.discountPercentage}}
-                    %
-                    OFF</span>
-                <img [src]="product.data.imageUrl" [alt]="product.data.name">
-            </div>
-            <div class="col col2">
-                <div class="card border-0 p-1">
-                    <h1 class="mb-1">{{product.data.name}}</h1>
-                    <p>{{product.data.shortDescription}}</p>
-                    <h3>
-                        <span class="price">Price: </span>
-                        <span class="value"> EGP {{product.data.price}}</span>
-                        <del class="text-muted h2" *ngIf="product.data.discountPercentage!=0">EGP
-                            {{product.data.priceValue}}</del>
-                    </h3>
-                    <h6 class="mb-3">Quantity</h6>
-                    <div class="cart">
-                        <span>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" (click)="decrement()">-</span>
-                                <span class="form-control">{{quantity}}</span>
-                                <span class="input-group-text" (click)="increment()">+</span>
-                            </div>
-                        </span>
-                        <span>
-                            <button class="btn btnStyle2" (click)="handleClick()">Add to cart
-                            </button>
-                        </span>
-                    </div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb" style="margin-left: 30px;">
+        <li class="breadcrumb-item"><i class="fa fa-home"></i><a class="breadcrumb-not-active" href="#">Home</a>
+        </li>
+        <li class="breadcrumb-item"><a class="breadcrumb-not-active" href="#">{{product.data.categoryName}}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{product.data.name}}</li>
+    </ol>
+</nav>
+<div class="container-fluid d-flex mt-5 p-5 justify-content-between">
+    <div class="row row-cols-lg-2 row-cols-sm-1">
+        <div class="col col1">
+            <span class="badge mt-4" *ngIf="product.data.discountPercentage!=0">{{product.data.discountPercentage}}
+                %
+                OFF</span>
+            <img [src]="product.data.imageUrl" [alt]="product.data.name">
+        </div>
+        <div class="col col2">
+            <div class="card border-0 p-1">
+                <h1 class="mb-1">{{product.data.name}}</h1>
+                <p>{{product.data.shortDescription}}</p>
+                <h3>
+                    <span class="price">Price: </span>
+                    <span class="value"> EGP {{product.data.price}}</span>
+                    <del class="text-muted h2" *ngIf="product.data.discountPercentage!=0">EGP
+                        {{product.data.priceValue}}</del>
+                </h3>
+                <h6 class="mb-3">Quantity</h6>
+                <div class="cart">
+                    <span>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" (click)="decrement()">-</span>
+                            <span class="form-control">{{quantity}}</span>
+                            <span class="input-group-text" (click)="increment()">+</span>
+                        </div>
+                    </span>
+                    <span>
+                        <button class="btn btnStyle2" (click)="handleClick()">Add to cart
+                        </button>
+                    </span>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid mt-3">
-        <div class="card attributes">
-            <div class="card-header">
-                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
-                    *ngFor="let attribute of product.data.attributes">
-                    <input type="radio" class="btn-check" name="btnradio" [id]="attribute.id" autocomplete="off"
-                        (click)="displayAttribute(attribute.id)" [checked]="isChecked(attribute.id)">
-                    <label class="btn btnStyle4" [for]="attribute.id">{{attribute.name}}</label>
-                </div>
+</div>
+<div class="container-fluid mt-3">
+    <div class="card attributes">
+        <div class="card-header d-flex">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                *ngFor="let attribute of product.data.attributes">
+                <input type="radio" class="btn-check" name="btnradio" [id]="attribute.id" autocomplete="off"
+                    (click)="displayAttribute(attribute.id)" [checked]="isChecked(attribute.id)">
+                <label class="btn btnStyle4" [for]="attribute.id">{{attribute.name}}</label>
             </div>
-            <div class="card-body" *ngIf="attributeValues[0]" [innerHTML]="attributeValues[0].valueRaw">
-                {{attributeValues[0].valueRaw}}
-            </div>
+        </div>
+        <div class="card-body" *ngIf="attributeValues[0]" [innerHTML]="attributeValues[0].valueRaw">
+            {{attributeValues[0].valueRaw}}
         </div>
     </div>
 </div>
